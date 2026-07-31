@@ -33,7 +33,7 @@ export function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden pt-32 pb-20"
     >
       {!reducedMotion && (
-        <div className="pointer-events-none absolute inset-0 -z-0 opacity-90 [mask-image:radial-gradient(ellipse_60%_60%_at_65%_45%,black,transparent)]">
+        <div className="pointer-events-none absolute inset-0 -z-0 opacity-90 [mask-image:radial-gradient(ellipse_38%_42%_at_84%_42%,black,transparent)]">
           <Suspense fallback={null}>
             <HeroScene />
           </Suspense>

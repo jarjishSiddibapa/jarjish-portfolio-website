@@ -86,7 +86,7 @@ function DataPoints() {
         <Float key={i} speed={1 + i * 0.3} floatIntensity={1.6} rotationIntensity={0.4}>
           <mesh
             position={[
-              Math.cos((i / 3) * Math.PI * 2) * 2.9,
+              Math.cos((i / 3) * Math.PI * 2) * 2.1,
               Math.sin((i / 3) * Math.PI * 2) * 1.6,
               -0.8,
             ]}
@@ -117,8 +117,10 @@ export function HeroScene() {
       <pointLight position={[5, 5, 5]} intensity={45} color="#ffffff" />
       <pointLight position={[-5, -3, -5]} intensity={22} color="#7c3aed" />
       <pointLight position={[0, -4, 3]} intensity={12} color="#3a5cf0" />
-      <NeuralNetwork />
-      <DataPoints />
+      <group position={[1.7, 0, 0]}>
+        <NeuralNetwork />
+        <DataPoints />
+      </group>
     </Canvas>
   )
 }
