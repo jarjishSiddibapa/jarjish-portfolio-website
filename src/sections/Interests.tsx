@@ -1,5 +1,5 @@
 import { lazy, Suspense, useRef } from 'react'
-import { BookOpen, Dices, Dumbbell, Users } from 'lucide-react'
+import { BookOpen, Gamepad2, Dumbbell, Users } from 'lucide-react'
 import { useScrollProgressRef } from '@/hooks/useScrollProgressRef'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { Container } from '@/components/ui/Container'
@@ -19,8 +19,8 @@ const interests = [
   },
   {
     id: 'gaming',
-    variant: 'dice' as const,
-    icon: Dices,
+    variant: 'controller' as const,
+    icon: Gamepad2,
     title: 'Gaming',
     blurb:
       'Narrative and strategy games are my actual off-switch, The Last of Us and Assassin\'s Creed included. I like systems with rules worth learning.',

@@ -1,9 +1,9 @@
 import { useRef, type RefObject } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Line } from '@react-three/drei'
-import type { Group, Mesh } from 'three'
+import { Line, RoundedBox } from '@react-three/drei'
+import type { Group } from 'three'
 
-type Variant = 'book' | 'dice' | 'dumbbell' | 'network'
+type Variant = 'book' | 'controller' | 'dumbbell' | 'network'
 
 function Page({ side }: { side: 1 | -1 }) {
   return (
@@ -36,27 +36,60 @@ function BookMesh({ progressRef }: { progressRef: RefObject<number> }) {
   )
 }
 
-function DiceMesh({ progressRef }: { progressRef: RefObject<number> }) {
-  const meshRef = useRef<Mesh>(null)
+function GameControllerMesh({ progressRef }: { progressRef: RefObject<number> }) {
+  const groupRef = useRef<Group>(null)
   useFrame((state) => {
-    if (!meshRef.current) return
+    if (!groupRef.current) return
     const t = state.clock.getElapsedTime()
-    meshRef.current.rotation.y = progressRef.current * Math.PI * 2.2 + t * 0.25
-    meshRef.current.rotation.x = progressRef.current * Math.PI * 0.7 + Math.sin(t * 0.5) * 0.1
-    meshRef.current.position.y = Math.sin(t * 0.9) * 0.08
+    groupRef.current.rotation.y = progressRef.current * Math.PI * 1.8 + Math.sin(t * 0.5) * 0.12
+    groupRef.current.rotation.x = Math.sin(t * 0.4) * 0.08
+    groupRef.current.position.y = Math.sin(t * 0.8) * 0.08
   })
+
+  const buttons: [number, number, string][] = [
+    [0.62, 0.16, '#7c3aed'],
+    [0.78, 0, '#0e7490'],
+    [0.46, 0, '#c2760c'],
+    [0.62, -0.16, '#3a5cf0'],
+  ]
+
   return (
-    <mesh ref={meshRef}>
-      <icosahedronGeometry args={[0.9, 0]} />
-      <meshStandardMaterial
-        color="#22d3ee"
-        flatShading
-        roughness={0.25}
-        metalness={0.5}
-        emissive="#0e7490"
-        emissiveIntensity={0.15}
-      />
-    </mesh>
+    <group ref={groupRef} scale={0.85}>
+      <RoundedBox args={[1.7, 0.58, 0.32]} radius={0.16} smoothness={4}>
+        <meshStandardMaterial color="#3a4256" roughness={0.45} metalness={0.3} />
+      </RoundedBox>
+
+      {[-1, 1].map((side) => (
+        <mesh key={side} position={[side * 0.74, -0.4, 0]} rotation={[0, 0, side * 0.5]}>
+          <capsuleGeometry args={[0.17, 0.4, 6, 12]} />
+          <meshStandardMaterial color="#3a4256" roughness={0.45} metalness={0.3} />
+        </mesh>
+      ))}
+
+      <group position={[-0.48, 0.02, 0.19]}>
+        <mesh>
+          <boxGeometry args={[0.32, 0.1, 0.06]} />
+          <meshStandardMaterial color="#1c2030" roughness={0.5} metalness={0.2} />
+        </mesh>
+        <mesh>
+          <boxGeometry args={[0.1, 0.32, 0.06]} />
+          <meshStandardMaterial color="#1c2030" roughness={0.5} metalness={0.2} />
+        </mesh>
+      </group>
+
+      {buttons.map(([x, y, color], i) => (
+        <mesh key={i} position={[x, y, 0.19]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[0.055, 0.055, 0.05, 16]} />
+          <meshStandardMaterial
+            color={color}
+            roughness={0.3}
+            metalness={0.4}
+            emissive={color}
+            emissiveIntensity={0.3}
+          />
+        </mesh>
+      ))}
+    </group>
   )
 }
 
@@ -138,8 +171,8 @@ function Scene({ variant, progressRef }: InterestSceneProps) {
   switch (variant) {
     case 'book':
       return <BookMesh progressRef={progressRef} />
-    case 'dice':
-      return <DiceMesh progressRef={progressRef} />
+    case 'controller':
+      return <GameControllerMesh progressRef={progressRef} />
     case 'dumbbell':
       return <DumbbellMesh progressRef={progressRef} />
     case 'network':
