@@ -1,9 +1,15 @@
 import { useRef, type RefObject } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Line, RoundedBox } from '@react-three/drei'
+import { OrbitControls, RoundedBox } from '@react-three/drei'
 import type { Group } from 'three'
 
-type Variant = 'book' | 'controller' | 'dumbbell' | 'network'
+type Variant = 'book' | 'controller' | 'dumbbell' | 'people'
+
+/**
+ * Every mesh below drives its primary rotation from scroll progress, recentered
+ * so progress 0.5 (the card sitting dead center in the viewport) lands exactly
+ * on the object's designed "face the camera" pose, not an arbitrary mid-spin angle.
+ */
 
 function Page({ side }: { side: 1 | -1 }) {
   return (
@@ -21,7 +27,8 @@ function BookMesh({ progressRef }: { progressRef: RefObject<number> }) {
   useFrame((state) => {
     if (!groupRef.current) return
     const t = state.clock.getElapsedTime()
-    groupRef.current.rotation.y = progressRef.current * Math.PI * 1.5 + Math.sin(t * 0.6) * 0.15
+    groupRef.current.rotation.y =
+      (progressRef.current - 0.5) * Math.PI * 1.5 + Math.sin(t * 0.6) * 0.08
     groupRef.current.position.y = Math.sin(t * 0.8) * 0.08
   })
   return (
@@ -41,8 +48,9 @@ function GameControllerMesh({ progressRef }: { progressRef: RefObject<number> })
   useFrame((state) => {
     if (!groupRef.current) return
     const t = state.clock.getElapsedTime()
-    groupRef.current.rotation.y = progressRef.current * Math.PI * 1.8 + Math.sin(t * 0.5) * 0.12
-    groupRef.current.rotation.x = Math.sin(t * 0.4) * 0.08
+    groupRef.current.rotation.y =
+      (progressRef.current - 0.5) * Math.PI * 1.6 + Math.sin(t * 0.5) * 0.07
+    groupRef.current.rotation.x = Math.sin(t * 0.4) * 0.05
     groupRef.current.position.y = Math.sin(t * 0.8) * 0.08
   })
 
@@ -98,8 +106,10 @@ function DumbbellMesh({ progressRef }: { progressRef: RefObject<number> }) {
   useFrame((state) => {
     if (!groupRef.current) return
     const t = state.clock.getElapsedTime()
-    groupRef.current.rotation.z = progressRef.current * Math.PI * 1.3 + Math.sin(t * 0.5) * 0.1
-    groupRef.current.rotation.y = t * 0.3
+    groupRef.current.rotation.z =
+      (progressRef.current - 0.5) * Math.PI * 1.3 + Math.sin(t * 0.5) * 0.08
+    groupRef.current.rotation.y =
+      (progressRef.current - 0.5) * Math.PI * 0.5 + Math.sin(t * 0.3) * 0.06
     groupRef.current.position.y = Math.sin(t * 0.7) * 0.08
   })
   return (
@@ -124,40 +134,49 @@ function DumbbellMesh({ progressRef }: { progressRef: RefObject<number> }) {
   )
 }
 
-const NETWORK_NODES: [number, number, number][] = Array.from({ length: 5 }, (_, i) => {
-  const angle = (i / 5) * Math.PI * 2
-  return [Math.cos(angle) * 0.75, Math.sin(angle) * 0.75, 0]
-})
+function PersonFigure({
+  position,
+  color,
+  scale = 1,
+}: {
+  position: [number, number, number]
+  color: string
+  scale?: number
+}) {
+  return (
+    <group position={position} scale={scale}>
+      <mesh position={[0, 0.42, 0]}>
+        <sphereGeometry args={[0.14, 20, 20]} />
+        <meshStandardMaterial
+          color={color}
+          roughness={0.35}
+          metalness={0.35}
+          emissive={color}
+          emissiveIntensity={0.18}
+        />
+      </mesh>
+      <mesh position={[0, 0.08, 0]}>
+        <capsuleGeometry args={[0.16, 0.34, 4, 12]} />
+        <meshStandardMaterial color={color} roughness={0.4} metalness={0.3} />
+      </mesh>
+    </group>
+  )
+}
 
-function NetworkMesh({ progressRef }: { progressRef: RefObject<number> }) {
+function PeopleMesh({ progressRef }: { progressRef: RefObject<number> }) {
   const groupRef = useRef<Group>(null)
   useFrame((state) => {
     if (!groupRef.current) return
     const t = state.clock.getElapsedTime()
-    groupRef.current.rotation.y = progressRef.current * Math.PI * 2.2 + t * 0.2
+    groupRef.current.rotation.y =
+      (progressRef.current - 0.5) * Math.PI * 1.2 + Math.sin(t * 0.5) * 0.07
     groupRef.current.position.y = Math.sin(t * 0.6) * 0.08
   })
   return (
-    <group ref={groupRef}>
-      <mesh>
-        <sphereGeometry args={[0.18, 24, 24]} />
-        <meshStandardMaterial
-          color="#8b5cf6"
-          roughness={0.3}
-          metalness={0.5}
-          emissive="#4c1d95"
-          emissiveIntensity={0.2}
-        />
-      </mesh>
-      {NETWORK_NODES.map((pos, i) => (
-        <group key={i}>
-          <mesh position={pos}>
-            <sphereGeometry args={[0.1, 20, 20]} />
-            <meshStandardMaterial color="#f0b429" roughness={0.3} metalness={0.4} />
-          </mesh>
-          <Line points={[[0, 0, 0], pos]} color="#5b8def" lineWidth={1} transparent opacity={0.45} />
-        </group>
-      ))}
+    <group ref={groupRef} scale={1.05} position={[0, -0.15, 0]}>
+      <PersonFigure position={[0, 0.06, 0.12]} color="#7c3aed" scale={1.15} />
+      <PersonFigure position={[-0.48, -0.05, -0.1]} color="#3a5cf0" scale={0.92} />
+      <PersonFigure position={[0.48, -0.05, -0.1]} color="#0e7490" scale={0.92} />
     </group>
   )
 }
@@ -175,8 +194,8 @@ function Scene({ variant, progressRef }: InterestSceneProps) {
       return <GameControllerMesh progressRef={progressRef} />
     case 'dumbbell':
       return <DumbbellMesh progressRef={progressRef} />
-    case 'network':
-      return <NetworkMesh progressRef={progressRef} />
+    case 'people':
+      return <PeopleMesh progressRef={progressRef} />
   }
 }
 
@@ -191,6 +210,13 @@ export default function InterestScene({ variant, progressRef }: InterestScenePro
       <pointLight position={[3, 3, 3]} intensity={25} color="#ffffff" />
       <pointLight position={[-3, -2, -3]} intensity={12} color="#5b8def" />
       <Scene variant={variant} progressRef={progressRef} />
+      <OrbitControls
+        enableZoom={false}
+        enablePan={false}
+        enableDamping
+        dampingFactor={0.12}
+        rotateSpeed={0.7}
+      />
     </Canvas>
   )
 }

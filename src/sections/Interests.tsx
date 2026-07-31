@@ -35,7 +35,7 @@ const interests = [
   },
   {
     id: 'people',
-    variant: 'network' as const,
+    variant: 'people' as const,
     icon: Users,
     title: 'People',
     blurb:
@@ -54,7 +54,7 @@ function InterestCard({ interest }: { interest: (typeof interests)[number] }) {
       ref={cardRef}
       className="glow-border glass group overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-0.5deg]"
     >
-      <div className="h-44 w-full">
+      <div className="h-44 w-full cursor-grab active:cursor-grabbing" data-cursor-hover>
         {!reducedMotion && (
           <Suspense
             fallback={<div className="h-full w-full animate-pulse bg-ink/[0.025]" />}
