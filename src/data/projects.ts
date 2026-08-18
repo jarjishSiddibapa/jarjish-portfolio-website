@@ -17,6 +17,21 @@ export const projects: ProjectEntry[] = [
     featured: true,
   },
   {
+    id: 'databricks-pyspark-practice',
+    title: 'Databricks & PySpark Data Engineering Practice',
+    category: 'Data & Analytics',
+    description:
+      'Notebook-based data engineering workflows built to go deep on the Databricks and PySpark patterns that show up in production pipelines: DataFrame transformations, joins, window functions, and incremental Delta Lake loads.',
+    highlights: [
+      'DataFrame operations, joins, and window functions in PySpark and Spark SQL',
+      'Deduplication and incremental loading patterns',
+      'Delta Lake MERGE/upserts and partition-aware processing',
+    ],
+    stack: ['Databricks', 'PySpark', 'Spark SQL', 'Delta Lake'],
+    impact: 'Hands-on depth across the Databricks/PySpark patterns production pipelines rely on',
+    featured: true,
+  },
+  {
     id: 'digital-signature-app',
     title: 'RDC Digital Signature Application',
     category: 'Automation',

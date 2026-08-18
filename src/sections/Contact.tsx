@@ -68,7 +68,7 @@ export function Contact() {
           eyebrow="Contact"
           align="center"
           title="Let's build something reliable"
-          description="Open to remote, hybrid, and full-time roles across Thane, Mumbai, and beyond, in data, automation, or AI. Reach out directly."
+          description="Open to remote, hybrid, and full-time roles across Thane, Navi Mumbai, and Mumbai, in data, automation, or AI. Reach out directly."
           className="mx-auto"
         />
 

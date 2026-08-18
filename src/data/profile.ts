@@ -21,7 +21,7 @@ export const profile = {
     "I lean on AI-assisted development to move fast, but the habit that actually matters is the same one behind my production pipelines: never trust output, mine or a model's, until it's validated. That's why my automation reconciles itself, and why my ML work gets judged on cross-validated metrics instead of a single lucky score.",
   ],
   location: 'Thane, Maharashtra, India',
-  openTo: 'Remote, hybrid & on-site across Thane and Mumbai',
+  openTo: 'Remote, hybrid & on-site across Thane, Navi Mumbai & Mumbai',
   email: 'jarjishsiddibapa@gmail.com',
   phone: '+91 7249550565',
   resumeHref,
