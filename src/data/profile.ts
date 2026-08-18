@@ -8,7 +8,7 @@ export const profile = {
   role: 'Data Analyst | SQL, PySpark & Databricks',
   roles: [
     'Data Analyst',
-    'SQL & PySpark Specialist',
+    'Data Engineer',
     'Python Developer',
     'AI/ML Engineer',
   ],
