@@ -17,6 +17,10 @@ dist-ssr
 # personal, unused on the site
 photo/
 
+# graphify knowledge graph (local dev tooling; contains absolute machine paths,
+# not portable to other machines, not part of the deployed site)
+graphify-out/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
