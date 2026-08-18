@@ -5,18 +5,18 @@ const resumeHref = `${import.meta.env.BASE_URL}resume/Jarjish-Siddibapa-Resume.p
 export const profile = {
   name: 'Jarjish Siddibapa',
   initials: 'JS',
-  role: 'Data, Automation & AI/ML Engineer',
+  role: 'Data Analyst | SQL, PySpark & Databricks',
   roles: [
     'Data Analyst',
-    'Python Automation Engineer',
-    'Machine Learning Engineer',
-    'AI Engineer',
+    'SQL & PySpark Specialist',
+    'Python Developer',
+    'AI/ML Engineer',
   ],
   tagline:
-    "I build the systems companies wish they already had: self-auditing data pipelines, automation that runs unattended, and AI/ML products shipped into real production instead of sitting in a notebook.",
+    "I build the systems companies wish they already had: SQL and PySpark pipelines that audit themselves, automation that runs unattended, and AI/ML products shipped into real production instead of sitting in a notebook.",
   bio: [
-    "I'm a Data Analyst and Automation Engineer at RDC Concrete, where I own data and automation problems end to end, from a stakeholder's spreadsheet headache to a deployed, self-auditing production system running across 140+ locations.",
-    'My work sits at the intersection of ERP data (Oracle EBS R12.2.10), Python automation, and applied AI. I write SQL/PL-SQL pipelines that reconcile themselves, build desktop tools with real hardware integrations, and ship LLM-powered chatbots on Gemini and Claude.',
+    "I'm a Data Analyst at RDC Concrete, where I own data problems end to end, from a stakeholder's spreadsheet headache to a deployed, self-auditing production system running across 140+ locations.",
+    'My work leads with SQL, PySpark, and Databricks for data at scale, backed by Python for automation and applied AI. I write SQL/PL-SQL pipelines that reconcile themselves, build desktop tools with real hardware integrations, and ship LLM-powered chatbots on Gemini and Claude.',
     "Outside of work, I build and ship independent ML and deep learning systems end to end, including a ResNet50 transfer-learning model that classifies chest X-rays across 4 diagnostic classes at 95%+ validation accuracy and runs behind a working web app instead of sitting in a notebook.",
     "I lean on AI-assisted development to move fast, but the habit that actually matters is the same one behind my production pipelines: never trust output, mine or a model's, until it's validated. That's why my automation reconciles itself, and why my ML work gets judged on cross-validated metrics instead of a single lucky score.",
   ],

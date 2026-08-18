@@ -11,33 +11,33 @@ type Variant = 'book' | 'controller' | 'people'
  * on the object's designed "face the camera" pose, not an arbitrary mid-spin angle.
  */
 
-function Page({ side }: { side: 1 | -1 }) {
-  return (
-    <group rotation={[0, side * 0.4, 0]}>
-      <mesh position={[side * 0.5, 0, 0]}>
-        <boxGeometry args={[1, 1.3, 0.04]} />
-        <meshStandardMaterial color="#f3ead9" roughness={0.65} metalness={0.05} />
-      </mesh>
-    </group>
-  )
-}
-
 function BookMesh({ progressRef }: { progressRef: RefObject<number> }) {
   const groupRef = useRef<Group>(null)
   useFrame((state) => {
     if (!groupRef.current) return
     const t = state.clock.getElapsedTime()
     groupRef.current.rotation.y =
-      (progressRef.current - 0.5) * Math.PI * 1.5 + Math.sin(t * 0.6) * 0.08
+      (progressRef.current - 0.5) * Math.PI * 1.4 + Math.sin(t * 0.6) * 0.06
     groupRef.current.position.y = Math.sin(t * 0.8) * 0.08
   })
   return (
     <group ref={groupRef}>
-      <Page side={1} />
-      <Page side={-1} />
-      <mesh>
-        <cylinderGeometry args={[0.045, 0.045, 1.32, 12]} />
+      {/* front cover faces +Z, directly at the camera when rotation.y is 0 */}
+      <RoundedBox args={[1.05, 1.4, 0.16]} radius={0.045} smoothness={4}>
+        <meshStandardMaterial color="#7c3aed" roughness={0.35} metalness={0.25} />
+      </RoundedBox>
+      <mesh position={[0, 0.16, 0.081]}>
+        <boxGeometry args={[0.62, 0.05, 0.008]} />
         <meshStandardMaterial color="#f0b429" roughness={0.3} metalness={0.4} />
+      </mesh>
+      <mesh position={[0, 0.02, 0.081]}>
+        <boxGeometry args={[0.42, 0.032, 0.008]} />
+        <meshStandardMaterial color="#f0b429" roughness={0.3} metalness={0.4} />
+      </mesh>
+      {/* page edges, visible strip along the spine-opposite side */}
+      <mesh position={[0.54, 0, 0]}>
+        <boxGeometry args={[0.06, 1.32, 0.14]} />
+        <meshStandardMaterial color="#f3ead9" roughness={0.6} metalness={0.05} />
       </mesh>
     </group>
   )

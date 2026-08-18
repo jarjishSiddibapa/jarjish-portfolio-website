@@ -18,7 +18,7 @@ const pillars = [
     icon: BarChart3,
     title: 'Data & Analytics',
     description:
-      'SQL/PL-SQL pipelines, Power BI dashboards, and statistical analysis across a 140+ location ERP.',
+      'SQL, PySpark, and Databricks pipelines, plus PL/SQL and statistical analysis across a 140+ location ERP.',
     tint: 'from-accent/20 to-accent/5 text-accent',
   },
   {

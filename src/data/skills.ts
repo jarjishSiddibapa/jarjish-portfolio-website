@@ -2,20 +2,6 @@ import type { SkillCategory } from '@/types'
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'ai',
-    title: 'AI & Machine Learning',
-    icon: 'Sparkles',
-    skills: [
-      { name: 'AI-Assisted Development (shipping & validating AI-generated code)', level: 85 },
-      { name: 'LLM APIs (Gemini, Claude)', level: 82 },
-      { name: 'Prompt Engineering & RAG concepts', level: 70 },
-      { name: 'Deep Learning (TensorFlow, ResNet50, transfer learning)', level: 68 },
-      { name: 'scikit-learn (classification & regression)', level: 78 },
-      { name: 'Model evaluation (cross-val, GridSearchCV, ROC/RMSLE)', level: 75 },
-      { name: 'Hugging Face Ecosystem', level: 60 },
-    ],
-  },
-  {
     id: 'data',
     title: 'Data & Analytics',
     icon: 'BarChart3',
@@ -24,7 +10,6 @@ export const skillCategories: SkillCategory[] = [
       { name: 'PySpark', level: 84 },
       { name: 'Databricks', level: 82 },
       { name: 'PL/SQL (Oracle EBS R12.2.10)', level: 88 },
-      { name: 'Power BI', level: 78 },
       { name: 'Advanced Excel', level: 88 },
       { name: 'pandas / NumPy', level: 85 },
     ],
@@ -40,6 +25,20 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Streamlit', level: 80 },
       { name: 'Tesseract OCR / PyMuPDF', level: 82 },
       { name: 'Self-healing service automation', level: 80 },
+    ],
+  },
+  {
+    id: 'ai',
+    title: 'AI & Machine Learning',
+    icon: 'Sparkles',
+    skills: [
+      { name: 'AI-Assisted Development (shipping & validating AI-generated code)', level: 85 },
+      { name: 'LLM APIs (Gemini, Claude)', level: 82 },
+      { name: 'Prompt Engineering & RAG concepts', level: 70 },
+      { name: 'Deep Learning (TensorFlow, ResNet50, transfer learning)', level: 68 },
+      { name: 'scikit-learn (classification & regression)', level: 78 },
+      { name: 'Model evaluation (cross-val, GridSearchCV, ROC/RMSLE)', level: 75 },
+      { name: 'Hugging Face Ecosystem', level: 60 },
     ],
   },
   {
