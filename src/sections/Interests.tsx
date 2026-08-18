@@ -1,5 +1,5 @@
 import { lazy, Suspense, useRef } from 'react'
-import { BookOpen, Gamepad2, Dumbbell, Users } from 'lucide-react'
+import { BookOpen, Gamepad2, Users } from 'lucide-react'
 import { useScrollProgressRef } from '@/hooks/useScrollProgressRef'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { Container } from '@/components/ui/Container'
@@ -24,14 +24,6 @@ const interests = [
     title: 'Gaming',
     blurb:
       'Narrative and strategy games are my actual off-switch, The Last of Us and Assassin\'s Creed included. I like systems with rules worth learning.',
-  },
-  {
-    id: 'fitness',
-    variant: 'dumbbell' as const,
-    icon: Dumbbell,
-    title: 'Training',
-    blurb:
-      'I train at home with dumbbells and a pull-up bar, no gym required. Same rule that keeps a pipeline from breaking: show up for the unglamorous part.',
   },
   {
     id: 'people',
@@ -84,7 +76,7 @@ export function Interests() {
           description="The résumé covers the work. This is the rest of it."
         />
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {interests.map((interest, i) => (
             <Reveal key={interest.id} delay={i * 0.08}>
               <InterestCard interest={interest} />

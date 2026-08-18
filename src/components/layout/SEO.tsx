@@ -3,7 +3,7 @@ import { profile } from '@/data/profile'
 
 const siteUrl = 'https://jarjishsiddibapa.github.io/jarjish-portfolio-website/'
 const description =
-  'Jarjish Siddibapa: Data Analyst, Python Automation Engineer and AI/ML Engineer. Production ERP data pipelines, self-healing automation, LLM-powered products (Gemini, Claude, RAG), and deep learning systems (ResNet50, 95%+ accuracy). Open to remote, hybrid, and full-time roles across Thane, Mumbai, and beyond.'
+  'Jarjish Siddibapa: Data Analyst, Python Automation Engineer and AI/ML Engineer. Advanced SQL, PySpark, and Databricks, production ERP data pipelines, self-healing automation, LLM-powered products (Gemini, Claude, RAG), and deep learning systems (ResNet50, 95%+ accuracy). Open to remote, hybrid, and full-time roles across Thane, Mumbai, and beyond.'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -15,6 +15,8 @@ const jsonLd = {
   knowsAbout: [
     'Data Analysis',
     'SQL',
+    'PySpark',
+    'Databricks',
     'Python Automation',
     'Machine Learning',
     'Deep Learning',

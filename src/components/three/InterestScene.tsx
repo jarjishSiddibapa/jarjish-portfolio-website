@@ -3,7 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, RoundedBox } from '@react-three/drei'
 import type { Group } from 'three'
 
-type Variant = 'book' | 'controller' | 'dumbbell' | 'people'
+type Variant = 'book' | 'controller' | 'people'
 
 /**
  * Every mesh below drives its primary rotation from scroll progress, recentered
@@ -101,39 +101,6 @@ function GameControllerMesh({ progressRef }: { progressRef: RefObject<number> })
   )
 }
 
-function DumbbellMesh({ progressRef }: { progressRef: RefObject<number> }) {
-  const groupRef = useRef<Group>(null)
-  useFrame((state) => {
-    if (!groupRef.current) return
-    const t = state.clock.getElapsedTime()
-    groupRef.current.rotation.z =
-      (progressRef.current - 0.5) * Math.PI * 1.3 + Math.sin(t * 0.5) * 0.08
-    groupRef.current.rotation.y =
-      (progressRef.current - 0.5) * Math.PI * 0.5 + Math.sin(t * 0.3) * 0.06
-    groupRef.current.position.y = Math.sin(t * 0.7) * 0.08
-  })
-  return (
-    <group ref={groupRef}>
-      <mesh rotation={[0, 0, Math.PI / 2]}>
-        <cylinderGeometry args={[0.06, 0.06, 1.4, 16]} />
-        <meshStandardMaterial color="#9aa3b8" roughness={0.3} metalness={0.8} />
-      </mesh>
-      {[-0.62, 0.62].map((x) => (
-        <mesh key={x} position={[x, 0, 0]} rotation={[0, 0, Math.PI / 2]}>
-          <cylinderGeometry args={[0.4, 0.4, 0.22, 24]} />
-          <meshStandardMaterial
-            color="#5b8def"
-            roughness={0.35}
-            metalness={0.55}
-            emissive="#1e3a8a"
-            emissiveIntensity={0.12}
-          />
-        </mesh>
-      ))}
-    </group>
-  )
-}
-
 function PersonFigure({
   position,
   color,
@@ -192,8 +159,6 @@ function Scene({ variant, progressRef }: InterestSceneProps) {
       return <BookMesh progressRef={progressRef} />
     case 'controller':
       return <GameControllerMesh progressRef={progressRef} />
-    case 'dumbbell':
-      return <DumbbellMesh progressRef={progressRef} />
     case 'people':
       return <PeopleMesh progressRef={progressRef} />
   }

@@ -20,12 +20,13 @@ export const skillCategories: SkillCategory[] = [
     title: 'Data & Analytics',
     icon: 'BarChart3',
     skills: [
-      { name: 'SQL / PL-SQL', level: 92 },
-      { name: 'Oracle EBS R12.2.10', level: 85 },
+      { name: 'SQL (advanced queries & optimization)', level: 96 },
+      { name: 'PySpark', level: 84 },
+      { name: 'Databricks', level: 82 },
+      { name: 'PL/SQL (Oracle EBS R12.2.10)', level: 88 },
       { name: 'Power BI', level: 78 },
       { name: 'Advanced Excel', level: 88 },
       { name: 'pandas / NumPy', level: 85 },
-      { name: 'Statistical Analysis', level: 72 },
     ],
   },
   {
