@@ -5,7 +5,7 @@ import { githubUsername } from '@/data/profile'
 import { languageColor } from '@/utils/language-colors'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { Reveal, RevealGroup } from '@/components/ui/Reveal'
+import { Reveal } from '@/components/ui/Reveal'
 import { revealItem } from '@/utils/motion-variants'
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
 import { motion } from 'framer-motion'
@@ -96,7 +96,12 @@ export function GithubStats() {
           </Reveal>
 
           <div className="lg:col-span-2">
-            <RevealGroup className="grid gap-4 sm:grid-cols-2">
+            <motion.div
+              className="grid gap-4 sm:grid-cols-2"
+              initial="hidden"
+              animate={status === 'success' ? 'show' : 'hidden'}
+              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+            >
               {status === 'loading' &&
                 Array.from({ length: 2 }).map((_, i) => (
                   <div
@@ -171,7 +176,7 @@ export function GithubStats() {
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </a>
               )}
-            </RevealGroup>
+            </motion.div>
           </div>
         </div>
 
