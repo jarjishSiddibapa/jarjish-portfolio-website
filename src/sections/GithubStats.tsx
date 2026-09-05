@@ -1,4 +1,4 @@
-import { Star, Users, FolderGit2, ArrowUpRight, RefreshCw } from 'lucide-react'
+import { Star, Users, FolderGit2, ArrowUpRight } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa6'
 import { useGithubStats } from '@/hooks/useGithubStats'
 import { githubUsername } from '@/data/profile'
@@ -11,7 +11,7 @@ import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
 import { motion } from 'framer-motion'
 
 export function GithubStats() {
-  const { profile, repos, status, isRefreshing, refreshedAt, refresh } = useGithubStats()
+  const { profile, repos, status, refreshedAt } = useGithubStats()
 
   return (
     <section id="github" className="relative py-28 sm:py-36">
@@ -22,22 +22,12 @@ export function GithubStats() {
           description="Live repository details from GitHub, including descriptions, stars, languages and recent updates."
         />
 
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-sm text-ink-faint">
+        <div className="mt-6 text-sm text-ink-faint">
           <p>
             {refreshedAt
-              ? `Last checked ${refreshedAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} · updates every 5 minutes`
-              : 'Loading live repository data…'}
+              ? `Synced hourly · last updated ${refreshedAt.toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}`
+              : 'Loading repository data…'}
           </p>
-          <button
-            type="button"
-            onClick={refresh}
-            disabled={isRefreshing}
-            data-cursor-hover
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1.5 text-xs font-medium text-ink-dim transition hover:border-accent/40 hover:text-ink disabled:cursor-wait disabled:opacity-60"
-          >
-            <RefreshCw className={`h-3.5 w-3.5 ${isRefreshing ? 'animate-spin' : ''}`} />
-            Refresh GitHub data
-          </button>
         </div>
 
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
