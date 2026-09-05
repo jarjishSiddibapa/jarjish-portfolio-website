@@ -1,5 +1,302 @@
 {
-  "generatedAt": null,
-  "profile": null,
-  "repos": []
+  "generatedAt": "2026-09-05T09:54:09.063Z",
+  "profile": {
+    "followers": 0,
+    "public_repos": 29,
+    "avatar_url": "https://avatars.githubusercontent.com/u/135226973?v=4",
+    "bio": null,
+    "html_url": "https://github.com/jarjishSiddibapa"
+  },
+  "repos": [
+    {
+      "id": 1318239254,
+      "name": "jarjish-portfolio-website",
+      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "TypeScript",
+      "fork": false,
+      "updated_at": "2026-09-05T09:51:39Z"
+    },
+    {
+      "id": 1357892360,
+      "name": "rdc-digital-signatures",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-digital-signatures",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-09-05T09:20:34Z"
+    },
+    {
+      "id": 1357891868,
+      "name": "rdc-so-ageing-data-push",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-so-ageing-data-push",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-09-05T09:20:33Z"
+    },
+    {
+      "id": 1349203728,
+      "name": "rdc-daily-volume-tracker",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-daily-volume-tracker",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-09-05T06:57:26Z"
+    },
+    {
+      "id": 1346880508,
+      "name": "rdc-erp-meeting-tracker",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-erp-meeting-tracker",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "HTML",
+      "fork": false,
+      "updated_at": "2026-09-04T10:35:58Z"
+    },
+    {
+      "id": 1344682583,
+      "name": "rdc-accounts-suite",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-accounts-suite",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-09-03T05:52:13Z"
+    },
+    {
+      "id": 1067341313,
+      "name": "bank-remake",
+      "html_url": "https://github.com/jarjishSiddibapa/bank-remake",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "Java",
+      "fork": false,
+      "updated_at": "2025-09-30T18:23:47Z"
+    },
+    {
+      "id": 1046919757,
+      "name": "mvc-bank-app",
+      "html_url": "https://github.com/jarjishSiddibapa/mvc-bank-app",
+      "description": "A comprehensive digital banking application built using Java MVC architecture with JSP/Servlet technology, featuring user authentication, fund transfers, dark/light themes, and admin dashboard.",
+      "stargazers_count": 0,
+      "language": "Java",
+      "fork": false,
+      "updated_at": "2025-09-28T07:29:09Z"
+    },
+    {
+      "id": 1026598056,
+      "name": "kendriya_vidyalay",
+      "html_url": "https://github.com/jarjishSiddibapa/kendriya_vidyalay",
+      "description": "School management app using database with java!",
+      "stargazers_count": 0,
+      "language": "Java",
+      "fork": false,
+      "updated_at": "2025-08-04T05:52:33Z"
+    },
+    {
+      "id": 1017129887,
+      "name": "swabhav-assignments",
+      "html_url": "https://github.com/jarjishSiddibapa/swabhav-assignments",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "Java",
+      "fork": false,
+      "updated_at": "2025-07-17T13:53:57Z"
+    },
+    {
+      "id": 1017466733,
+      "name": "test-connection",
+      "html_url": "https://github.com/jarjishSiddibapa/test-connection",
+      "description": null,
+      "stargazers_count": 0,
+      "language": null,
+      "fork": false,
+      "updated_at": "2025-07-10T15:18:55Z"
+    },
+    {
+      "id": 957139589,
+      "name": "forms-practice",
+      "html_url": "https://github.com/jarjishSiddibapa/forms-practice",
+      "description": "Practicing the forms concepts just as a refresher.",
+      "stargazers_count": 0,
+      "language": "HTML",
+      "fork": false,
+      "updated_at": "2025-04-05T14:52:50Z"
+    },
+    {
+      "id": 948488238,
+      "name": "responsive-food-website",
+      "html_url": "https://github.com/jarjishSiddibapa/responsive-food-website",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "CSS",
+      "fork": false,
+      "updated_at": "2025-03-23T09:34:26Z"
+    },
+    {
+      "id": 925053648,
+      "name": "travel-page",
+      "html_url": "https://github.com/jarjishSiddibapa/travel-page",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "HTML",
+      "fork": false,
+      "updated_at": "2025-03-13T17:08:24Z"
+    },
+    {
+      "id": 924078570,
+      "name": "lung-disease-classification",
+      "html_url": "https://github.com/jarjishSiddibapa/lung-disease-classification",
+      "description": "A deep learning-based chest X-ray classification system that detects COVID-19, Pneumonia, Tuberculosis, and Normal cases with high accuracy. Built using ResNet50, transfer learning, and a Flask web interface for easy image upload and diagnosis.",
+      "stargazers_count": 0,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "updated_at": "2025-02-07T11:13:34Z"
+    },
+    {
+      "id": 923097286,
+      "name": "web-dev-github-practice",
+      "html_url": "https://github.com/jarjishSiddibapa/web-dev-github-practice",
+      "description": null,
+      "stargazers_count": 0,
+      "language": null,
+      "fork": false,
+      "updated_at": "2025-01-27T16:34:06Z"
+    },
+    {
+      "id": 921242160,
+      "name": "day-9-challenge-follow-along",
+      "html_url": "https://github.com/jarjishSiddibapa/day-9-challenge-follow-along",
+      "description": "This is the follow along website I created from day 9 of '100 Days of Code by Academind'",
+      "stargazers_count": 0,
+      "language": "HTML",
+      "fork": false,
+      "updated_at": "2025-01-24T06:22:45Z"
+    },
+    {
+      "id": 920490303,
+      "name": "html-css-core-concepts-challenge-website",
+      "html_url": "https://github.com/jarjishSiddibapa/html-css-core-concepts-challenge-website",
+      "description": "My solution to the Day 9 challenge from Academind's 100 Days of Web Development course. Built with HTML & CSS to replicate a given design. Check out the final output in the images folder!",
+      "stargazers_count": 0,
+      "language": "HTML",
+      "fork": false,
+      "updated_at": "2025-01-23T15:59:50Z"
+    },
+    {
+      "id": 915628008,
+      "name": "first-website",
+      "html_url": "https://github.com/jarjishSiddibapa/first-website",
+      "description": "Starting over the web development journey.",
+      "stargazers_count": 0,
+      "language": "HTML",
+      "fork": false,
+      "updated_at": "2025-01-21T14:22:39Z"
+    },
+    {
+      "id": 919533152,
+      "name": "first-website-challenge",
+      "html_url": "https://github.com/jarjishSiddibapa/first-website-challenge",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "HTML",
+      "fork": false,
+      "updated_at": "2025-01-20T15:23:56Z"
+    },
+    {
+      "id": 863021744,
+      "name": "vizdoom-reinforcement-learning",
+      "html_url": "https://github.com/jarjishSiddibapa/vizdoom-reinforcement-learning",
+      "description": null,
+      "stargazers_count": 1,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "updated_at": "2025-01-19T13:59:58Z"
+    },
+    {
+      "id": 866476349,
+      "name": "last_day_example",
+      "html_url": "https://github.com/jarjishSiddibapa/last_day_example",
+      "description": null,
+      "stargazers_count": 0,
+      "language": null,
+      "fork": false,
+      "updated_at": "2024-10-02T15:15:42Z"
+    },
+    {
+      "id": 861810347,
+      "name": "heart-disease-classification",
+      "html_url": "https://github.com/jarjishSiddibapa/heart-disease-classification",
+      "description": "Predicts heart disease using the Cleveland Heart Disease dataset. Features models like Logistic Regression and Random Forest. Achieved over 95% accuracy. Explore the project for insights!",
+      "stargazers_count": 1,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "updated_at": "2024-10-02T10:31:14Z"
+    },
+    {
+      "id": 861851807,
+      "name": "movie-recommendation-system",
+      "html_url": "https://github.com/jarjishSiddibapa/movie-recommendation-system",
+      "description": null,
+      "stargazers_count": 0,
+      "language": null,
+      "fork": false,
+      "updated_at": "2024-10-02T10:31:13Z"
+    },
+    {
+      "id": 863029724,
+      "name": "bulldozer-price-prediction",
+      "html_url": "https://github.com/jarjishSiddibapa/bulldozer-price-prediction",
+      "description": null,
+      "stargazers_count": 1,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "updated_at": "2024-10-02T10:31:08Z"
+    },
+    {
+      "id": 861573933,
+      "name": "learn_git_exercise",
+      "html_url": "https://github.com/jarjishSiddibapa/learn_git_exercise",
+      "description": null,
+      "stargazers_count": 0,
+      "language": null,
+      "fork": false,
+      "updated_at": "2024-09-23T06:47:32Z"
+    },
+    {
+      "id": 861388758,
+      "name": "LEARN_GIT",
+      "html_url": "https://github.com/jarjishSiddibapa/LEARN_GIT",
+      "description": null,
+      "stargazers_count": 0,
+      "language": null,
+      "fork": false,
+      "updated_at": "2024-09-23T06:32:03Z"
+    },
+    {
+      "id": 860772922,
+      "name": "my-second-repo",
+      "html_url": "https://github.com/jarjishSiddibapa/my-second-repo",
+      "description": null,
+      "stargazers_count": 0,
+      "language": null,
+      "fork": false,
+      "updated_at": "2024-09-21T06:09:21Z"
+    },
+    {
+      "id": 648494492,
+      "name": "30DaysOfFlutter",
+      "html_url": "https://github.com/jarjishSiddibapa/30DaysOfFlutter",
+      "description": "Learning flutter as a beginner in 30 days",
+      "stargazers_count": 0,
+      "language": "C++",
+      "fork": false,
+      "updated_at": "2023-06-02T07:30:51Z"
+    }
+  ]
 }
