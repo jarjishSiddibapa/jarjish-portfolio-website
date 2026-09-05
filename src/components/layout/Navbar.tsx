@@ -17,11 +17,13 @@ const NAV_LINKS = [
   { id: 'contact', label: 'Contact' },
 ]
 
+const SECTION_IDS = ['hero', ...NAV_LINKS.map((link) => link.id)]
+
 export function Navbar() {
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const active = useActiveSection(NAV_LINKS.map((l) => l.id))
+  const active = useActiveSection(SECTION_IDS)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -151,7 +153,7 @@ export function Navbar() {
               ))}
               <a
                 href={profile.resumeHref}
-              download
+                download
                 className="mt-2 rounded-xl bg-ink px-4 py-3 text-center text-sm font-semibold text-bg"
               >
                 Download Resume
