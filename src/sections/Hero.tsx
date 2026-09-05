@@ -1,10 +1,10 @@
-import { lazy, Suspense, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { lazy, Suspense } from 'react'
+import { motion } from 'framer-motion'
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import { profile, socials } from '@/data/profile'
+import { useTypewriter } from '@/hooks/useTypewriter'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { Container } from '@/components/ui/Container'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { getLenis } from '@/hooks/useLenis'
@@ -14,9 +14,7 @@ const HeroScene = lazy(() =>
 )
 
 export function Hero() {
-  const heroRef = useRef<HTMLElement>(null)
-  const inView = useInView(heroRef)
-  const desktop = useMediaQuery('(min-width: 1024px)')
+  const capability = useTypewriter(profile.roles)
   const reducedMotion = useReducedMotion()
   const githubLink = socials.find((s) => s.icon === 'github')
   const linkedinLink = socials.find((s) => s.icon === 'linkedin')
@@ -26,17 +24,16 @@ export function Hero() {
     if (!el) return
     const lenis = getLenis()
     if (lenis) lenis.scrollTo(el, { offset: -80 })
-    else el.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' })
+    else el.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
     <section
       id="hero"
-      ref={heroRef}
-      className="relative flex min-h-svh items-center overflow-hidden pt-28 pb-24 sm:pt-32"
+      className="relative flex min-h-screen items-center overflow-hidden pt-32 pb-20"
     >
-      {!reducedMotion && desktop && inView && (
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-0 opacity-90 [mask-image:radial-gradient(ellipse_38%_42%_at_84%_42%,black,transparent)]">
+      {!reducedMotion && (
+        <div className="pointer-events-none absolute inset-0 -z-0 opacity-90 [mask-image:radial-gradient(ellipse_38%_42%_at_84%_42%,black,transparent)]">
           <Suspense fallback={null}>
             <HeroScene />
           </Suspense>
@@ -62,7 +59,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[clamp(2.5rem,11vw,3.75rem)] leading-[1.02] font-semibold tracking-tight text-balance sm:text-7xl lg:text-8xl"
+            className="text-6xl leading-[1.02] font-semibold tracking-tight text-balance sm:text-7xl lg:text-8xl"
           >
             <span className="text-ink">{profile.name}</span>
           </motion.h1>
@@ -71,10 +68,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="relative mt-6 inline-block"
+            className="relative mt-6 block max-w-full sm:inline-block"
           >
-            <p className="font-display text-3xl font-semibold text-accent-3 sm:text-4xl">
-              {profile.primaryRole}
+            <p className="flex min-h-9 flex-wrap items-center gap-x-3 font-display text-2xl font-medium sm:text-3xl">
+              <span className="font-semibold text-ink">{profile.primaryRole}</span>
+              <span className="flex min-w-0 items-center text-accent-3">
+                {capability}
+                <span className="ml-1 inline-block h-7 w-[2px] animate-pulse bg-accent-3" />
+              </span>
             </p>
             <motion.svg
               aria-hidden="true"
@@ -96,13 +97,11 @@ export function Hero() {
             </motion.svg>
           </motion.div>
 
-          <p className="mt-5 text-sm font-medium text-ink sm:text-base">{profile.toolkit}</p>
-
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-4 max-w-2xl text-base sm:text-lg text-ink-dim"
+            className="mt-6 max-w-2xl text-lg text-ink-dim"
           >
             {profile.tagline}
           </motion.p>
@@ -111,7 +110,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="mt-7 flex flex-wrap items-center gap-3"
+            className="mt-10 flex flex-wrap items-center gap-4"
           >
             <MagneticButton
               onClick={scrollToProjects}
@@ -151,7 +150,6 @@ export function Hero() {
               )}
             </div>
           </motion.div>
-          <p className="mt-6 text-sm font-medium text-accent-3">{profile.evidence}</p>
         </div>
       </Container>
 
@@ -166,7 +164,7 @@ export function Hero() {
       >
         <span className="text-xs tracking-widest uppercase">Scroll</span>
         <motion.span
-          animate={reducedMotion ? undefined : { y: [0, 8, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
         >
           <ArrowDown className="h-4 w-4" />

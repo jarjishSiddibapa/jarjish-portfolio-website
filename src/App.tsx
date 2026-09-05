@@ -45,11 +45,11 @@ function App() {
         <About />
         <Skills />
         <Experience />
-        <Projects />
         <Education />
+        <Interests />
+        <Projects />
         <GithubStats />
         <Contact />
-        <Interests />
       </main>
       <Footer />
     </MotionConfig>

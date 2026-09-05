@@ -11,10 +11,10 @@ import { cn } from '@/utils/cn'
 type Category = (typeof projectCategories)[number]
 
 export function Projects() {
-  const [filter, setFilter] = useState<Category | 'Featured'>('Featured')
+  const [filter, setFilter] = useState<Category>('All')
 
   const filtered = useMemo(
-    () => (filter === 'Featured' ? projects.filter((p) => p.featured) : filter === 'All' ? projects : projects.filter((p) => p.category === filter)),
+    () => (filter === 'All' ? projects : projects.filter((p) => p.category === filter)),
     [filter],
   )
 
@@ -28,7 +28,7 @@ export function Projects() {
         />
 
         <div className="mt-10 flex flex-wrap gap-2">
-          {(['Featured', ...projectCategories] as const).map((cat) => (
+          {projectCategories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
@@ -57,7 +57,7 @@ export function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="min-w-0"
+                className={cn('min-w-0', project.featured && 'md:col-span-2')}
               >
                 <TiltCard className="glow-border glass h-full rounded-2xl p-7 sm:p-8">
                   <div className="flex flex-wrap items-start justify-between gap-3">
@@ -74,7 +74,7 @@ export function Projects() {
                           rel="noreferrer"
                           data-cursor-hover
                           className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border px-3 text-sm text-ink-dim transition hover:border-accent/50 hover:text-ink"
-                          aria-label={`${project.title} — ${link.label}`}
+                          aria-label={`${project.title}: ${link.label}`}
                         >
                           {link.label === 'GitHub' ? (
                             <FaGithub className="h-4 w-4" />
