@@ -51,7 +51,7 @@ export function useGithubStats() {
     Promise.all([
       fetch(`https://api.github.com/users/${githubUsername}`, {
         cache: 'no-store',
-        headers: { Accept: 'application/vnd.github+json', 'Cache-Control': 'no-cache' },
+        headers: { Accept: 'application/vnd.github+json' },
       }).then((r) =>
         r.ok ? r.json() : Promise.reject(new Error('profile fetch failed')),
       ),
@@ -59,7 +59,7 @@ export function useGithubStats() {
         `https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=100`,
         {
           cache: 'no-store',
-          headers: { Accept: 'application/vnd.github+json', 'Cache-Control': 'no-cache' },
+          headers: { Accept: 'application/vnd.github+json' },
         },
       ).then((r) => (r.ok ? r.json() : Promise.reject(new Error('repos fetch failed')))),
     ])
