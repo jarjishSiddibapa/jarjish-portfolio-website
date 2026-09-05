@@ -25,7 +25,7 @@ export function GithubStats() {
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-sm text-ink-faint">
           <p>
             {refreshedAt
-              ? `Last checked ${refreshedAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
+              ? `Last checked ${refreshedAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} · updates every 5 minutes`
               : 'Loading live repository data…'}
           </p>
           <button

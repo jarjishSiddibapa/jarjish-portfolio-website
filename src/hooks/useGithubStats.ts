@@ -83,9 +83,11 @@ export function useGithubStats() {
     const refreshWhenVisible = () => {
       if (document.visibilityState === 'visible') refresh()
     }
+    const intervalId = window.setInterval(refresh, 5 * 60 * 1000)
     window.addEventListener('focus', refresh)
     document.addEventListener('visibilitychange', refreshWhenVisible)
     return () => {
+      window.clearInterval(intervalId)
       window.removeEventListener('focus', refresh)
       document.removeEventListener('visibilitychange', refreshWhenVisible)
     }
