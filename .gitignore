@@ -1,0 +1,36 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.env
+*.tsbuildinfo
+
+# personal, unused on the site
+photo/
+
+# graphify knowledge graph (local dev tooling; contains absolute machine paths,
+# not portable to other machines, not part of the deployed site)
+graphify-out/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local source copy; the published resume lives under public/resume/
+/Jarjish Siddibapa Resume.pdf
