@@ -4,13 +4,14 @@ import { experience } from '@/data/experience'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Reveal } from '@/components/ui/Reveal'
-import { gsap, ScrollTrigger } from '@/utils/gsap'
+import { gsap } from '@/utils/gsap'
 
 export function Experience() {
   const timelineRef = useRef<HTMLDivElement>(null)
   const lineRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     if (!timelineRef.current || !lineRef.current) return
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -32,7 +33,6 @@ export function Experience() {
 
     return () => {
       ctx.revert()
-      ScrollTrigger.getAll().forEach((t) => t.kill())
     }
   }, [])
 
@@ -42,14 +42,14 @@ export function Experience() {
         <SectionHeading
           eyebrow="Experience"
           title="Where I've built this"
-          description="1+ year turning manual, deadline-driven work into automated systems across ERP data, desktop tools, and AI."
+          description="Operational reporting, finance reconciliation and data quality, with automation built around business needs."
         />
 
         <div ref={timelineRef} className="relative mt-16 pl-10 sm:pl-14">
           <div className="absolute top-1 bottom-1 left-3.5 w-px bg-border sm:left-5" />
           <div
             ref={lineRef}
-            className="absolute top-1 bottom-1 left-3.5 w-px scale-y-0 bg-gradient-to-b from-accent via-accent-2 to-accent-3 sm:left-5"
+            className="absolute top-1 bottom-1 left-3.5 w-px motion-safe:scale-y-0 bg-gradient-to-b from-accent via-accent-2 to-accent-3 sm:left-5"
           />
 
           <div className="flex flex-col gap-14">

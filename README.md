@@ -41,9 +41,10 @@ src/
 **All content lives in `src/data/`** — no need to touch components:
 
 - `profile.ts` — name, role, bio, contact info, social links, stats
-- `skills.ts` — skill categories and proficiency levels
+- `skills.ts` — competency groups and skill chips
 - `experience.ts` — work experience and education entries
-- `projects.ts` — project cards, tech stack, impact metrics
+- `projects.ts` — featured case studies, project categories, verified links and impact
+- `seo.ts` — shared page title, description and canonical URL (also injected into static HTML)
 
 Update `githubUsername` in `profile.ts` to change which GitHub account the live stats section pulls from.
 
@@ -86,7 +87,7 @@ Update the `base` path in two places:
 
 - `vite.config.ts` → `base: '/your-repo-name/'`
 - `package.json` → `"homepage"`
-- `src/components/layout/SEO.tsx` → `siteUrl`
+- `src/data/seo.ts` → `siteUrl`
 - `public/robots.txt` and `public/sitemap.xml`
 
 If you deploy to a custom domain or a user/org page (`<username>.github.io`), set `base: '/'` instead.
@@ -99,8 +100,17 @@ If you deploy to a custom domain or a user/org page (`<username>.github.io`), se
 | `npm run build` | Type-check and build for production |
 | `npm run preview` | Preview the production build locally |
 | `npm run lint` | Run oxlint |
+| `npm test` | Check content and built SEO/resume contracts (run build first) |
 | `npm run deploy` | Build and publish to the `gh-pages` branch |
 
 ## Easter egg
 
 Try the Konami code (`↑ ↑ ↓ ↓ ← → ← → b a`) anywhere on the site.
+
+## Career positioning
+
+The permanent headline is **Data Analyst**, supported by SQL/PLSQL, Python, Excel and Oracle EBS. The default project filter features Daily Volume Tracker, Accounts Suite, SO Ageing, finance reporting/communication automation, then Databricks/PySpark learning work. Other projects remain available through filters.
+
+The public resume is the supplied ATS Data Analyst PDF (updated September 5, 2026), copied byte-for-byte to the existing public path. A local source copy named `Jarjish Siddibapa Resume.pdf` is ignored to avoid publishing a duplicate.
+
+Desktop animations and themes are retained. Decorative Three.js scenes load only on desktop near the viewport, with static interest illustrations on smaller screens. Reduced-motion preferences disable decorative scenes, tilt and magnetic movement.

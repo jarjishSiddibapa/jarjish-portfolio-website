@@ -1,3 +1,4 @@
+import { MotionConfig } from 'framer-motion'
 import { useEffect } from 'react'
 import { useLenis } from '@/hooks/useLenis'
 import { profile } from '@/data/profile'
@@ -32,25 +33,26 @@ function App() {
   }, [])
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <SEO />
       <AmbientBackground />
       <CustomCursor />
       <EasterEgg />
       <Navbar />
-      <main>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-surface focus:p-4">Skip to content</a>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <About />
         <Skills />
         <Experience />
-        <Education />
-        <Interests />
         <Projects />
+        <Education />
         <GithubStats />
         <Contact />
+        <Interests />
       </main>
       <Footer />
-    </>
+    </MotionConfig>
   )
 }
 

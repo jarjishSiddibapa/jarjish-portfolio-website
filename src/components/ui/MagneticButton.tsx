@@ -1,5 +1,6 @@
 import { useRef, type ReactNode } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { cn } from '@/utils/cn'
 
 interface MagneticButtonProps {
@@ -12,6 +13,8 @@ interface MagneticButtonProps {
   rel?: string
   type?: 'button' | 'submit' | 'reset'
   disabled?: boolean
+  download?: boolean
+  'aria-label'?: string
 }
 
 export function MagneticButton({
@@ -24,7 +27,10 @@ export function MagneticButton({
   rel,
   type = 'button',
   disabled,
+  download,
+  'aria-label': ariaLabel,
 }: MagneticButtonProps) {
+  const reducedMotion = useReducedMotion()
   const ref = useRef<HTMLAnchorElement & HTMLButtonElement>(null)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -33,7 +39,7 @@ export function MagneticButton({
 
   const handleMove = (e: React.MouseEvent) => {
     const el = ref.current
-    if (!el) return
+    if (!el || reducedMotion) return
     const rect = el.getBoundingClientRect()
     const relX = e.clientX - (rect.left + rect.width / 2)
     const relY = e.clientY - (rect.top + rect.height / 2)
@@ -48,19 +54,20 @@ export function MagneticButton({
 
   const sharedProps = {
     onClick,
+    'aria-label': ariaLabel,
     onMouseMove: handleMove,
     onMouseLeave: handleLeave,
     'data-cursor-hover': true,
-    style: { x: springX, y: springY },
+    style: reducedMotion ? undefined : { x: springX, y: springY },
     className: cn(className),
-    whileTap: disabled ? undefined : { scale: 0.94 },
-    whileHover: disabled ? undefined : { scale: 1.03 },
+    whileTap: disabled || reducedMotion ? undefined : { scale: 0.94 },
+    whileHover: disabled || reducedMotion ? undefined : { scale: 1.03 },
     transition: { type: 'spring' as const, stiffness: 400, damping: 17 },
   }
 
   if (href) {
     return (
-      <motion.a ref={ref} href={href} target={target} rel={rel} {...sharedProps}>
+      <motion.a ref={ref} href={href} download={download} target={target} rel={rel} {...sharedProps}>
         {children}
       </motion.a>
     )

@@ -31,3 +31,6 @@ graphify-out/
 *.njsproj
 *.sln
 *.sw?
+
+# Local source copy; the published resume lives under public/resume/
+/Jarjish Siddibapa Resume.pdf

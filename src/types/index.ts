@@ -8,7 +8,8 @@ export interface SkillCategory {
   id: string
   title: string
   icon: string
-  skills: { name: string; level: number }[]
+  description: string
+  skills: string[]
 }
 
 export interface ExperienceEntry {
@@ -35,7 +36,9 @@ export interface EducationEntry {
 export interface ProjectEntry {
   id: string
   title: string
-  category: 'Automation' | 'Data & Analytics' | 'AI / ML'
+  category: 'Reporting & Automation' | 'Data & Analytics' | 'Data Engineering' | 'Other Projects'
+  problem?: string
+  context?: string
   description: string
   highlights: string[]
   stack: string[]

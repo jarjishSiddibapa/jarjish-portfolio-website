@@ -1,23 +1,8 @@
 import { ArrowUp, Mail } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6'
-import { profile, socials } from '@/data/profile'
+import { profile, socials, skillMarquee } from '@/data/profile'
 import { Container } from '@/components/ui/Container'
 import { getLenis } from '@/hooks/useLenis'
-
-const skillMarquee = [
-  'Python',
-  'SQL / PL-SQL',
-  'Oracle EBS',
-  'Power BI',
-  'Automation',
-  'Gemini API',
-  'Claude API',
-  'RAG',
-  'Hugging Face',
-  'REST APIs',
-  'Streamlit',
-  'PostgreSQL',
-]
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -25,12 +10,12 @@ export function Footer() {
   const scrollTop = () => {
     const lenis = getLenis()
     if (lenis) lenis.scrollTo(0)
-    else window.scrollTo({ top: 0, behavior: 'smooth' })
+    else window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
   }
 
   return (
     <footer className="relative border-t border-border pt-16 pb-8">
-      <div className="mb-14 overflow-hidden border-y border-border/60 py-4">
+      <div aria-hidden="true" className="mb-14 overflow-hidden border-y border-border/60 py-4">
         <div className="animate-marquee flex w-max gap-10 text-sm text-ink-faint">
           {[...skillMarquee, ...skillMarquee].map((item, i) => (
             <span key={i} className="flex items-center gap-10">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { getLenis } from '@/hooks/useLenis'
@@ -13,11 +13,12 @@ const NAV_LINKS = [
   { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
-  { id: 'github', label: 'GitHub' },
+  { id: 'education', label: 'Education' },
   { id: 'contact', label: 'Contact' },
 ]
 
 export function Navbar() {
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const active = useActiveSection(NAV_LINKS.map((l) => l.id))
@@ -29,6 +30,18 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  useEffect(() => {
+    if (!menuOpen) return
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [menuOpen])
+
   const scrollTo = (id: string) => {
     setMenuOpen(false)
     const el = document.getElementById(id)
@@ -37,7 +50,7 @@ export function Navbar() {
     if (lenis) {
       lenis.scrollTo(el, { offset: -80 })
     } else {
-      el.scrollIntoView({ behavior: 'smooth' })
+      el.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
     }
   }
 
@@ -57,16 +70,17 @@ export function Navbar() {
         >
           <button
             onClick={() => scrollTo('hero')}
+            aria-label="Back to introduction"
             data-cursor-hover
             className="font-display flex items-center gap-2 text-lg font-semibold tracking-tight"
           >
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-white shadow-lg shadow-accent/30">
               {profile.initials}
             </span>
-            <span className="hidden sm:inline">{profile.name}</span>
+            <span className="hidden xl:inline">{profile.name}</span>
           </button>
 
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav aria-label="Main navigation" className="hidden items-center gap-1 lg:flex">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
@@ -93,6 +107,7 @@ export function Navbar() {
             <ThemeToggle className="hidden sm:grid" />
             <MagneticButton
               href={profile.resumeHref}
+              download
               className="hidden items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-bg shadow-soft transition hover:opacity-85 sm:inline-flex"
             >
               Resume <ArrowUpRight className="h-3.5 w-3.5" />
@@ -101,7 +116,10 @@ export function Navbar() {
               onClick={() => setMenuOpen((v) => !v)}
               data-cursor-hover
               className="grid h-10 w-10 place-items-center rounded-full text-ink lg:hidden"
+              ref={menuButtonRef}
               aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
             >
               {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -118,7 +136,7 @@ export function Navbar() {
             transition={{ duration: 0.25 }}
             className="glass mx-4 mt-2 rounded-2xl p-4 lg:hidden"
           >
-            <nav className="flex flex-col gap-1">
+            <nav id="mobile-navigation" aria-label="Mobile navigation" className="flex flex-col gap-1">
               {NAV_LINKS.map((link) => (
                 <button
                   key={link.id}
@@ -133,6 +151,7 @@ export function Navbar() {
               ))}
               <a
                 href={profile.resumeHref}
+              download
                 className="mt-2 rounded-xl bg-ink px-4 py-3 text-center text-sm font-semibold text-bg"
               >
                 Download Resume

@@ -5,27 +5,30 @@ const resumeHref = `${import.meta.env.BASE_URL}resume/Jarjish-Siddibapa-Resume.p
 export const profile = {
   name: 'Jarjish Siddibapa',
   initials: 'JS',
-  role: 'Data Analyst | SQL, PySpark & Databricks',
+  primaryRole: 'Data Analyst',
+  role: 'Data Analyst | SQL & PL/SQL | Python | Excel | Oracle EBS',
+  toolkit: 'SQL & PL/SQL · Python · Excel · Oracle EBS',
   roles: [
-    'Data Analyst',
-    'Data Engineer',
-    'Python Developer',
-    'AI/ML Engineer',
+    'SQL & PL/SQL',
+    'Python & Data Automation',
+    'Reporting & Reconciliation',
+    'Oracle EBS Analytics',
+    'Databricks & PySpark',
   ],
   tagline:
-    "I build the systems companies wish they already had: SQL and PySpark pipelines that audit themselves, automation that runs unattended, and AI/ML products shipped into real production instead of sitting in a notebook.",
+    'I turn complex operational and ERP data into accurate reports, automated workflows and decision-ready insights using SQL, Python and enterprise data systems.',
+  evidence: 'Reporting and automation across 140+ concrete plants',
   bio: [
-    "I'm a Data Analyst at RDC Concrete, where I own data problems end to end, from a stakeholder's spreadsheet headache to a deployed, self-auditing production system running across 140+ locations.",
-    'My work leads with SQL, PySpark, and Databricks for data at scale, backed by Python for automation and applied AI. I write SQL/PL-SQL pipelines that reconcile themselves, build desktop tools with real hardware integrations, and ship LLM-powered chatbots on Gemini and Claude.',
-    "Outside of work, I build and ship independent ML and deep learning systems end to end, including a ResNet50 transfer-learning model that classifies chest X-rays across 4 diagnostic classes at 95%+ validation accuracy and runs behind a working web app instead of sitting in a notebook.",
-    "I lean on AI-assisted development to move fast, but the habit that actually matters is the same one behind my production pipelines: never trust output, mine or a model's, until it's validated. That's why my automation reconciles itself, and why my ML work gets judged on cross-validated metrics instead of a single lucky score.",
+    "I'm a Data Analyst (Graduate Engineer Trainee) at RDC Concrete in Thane. Since October 2025, I've worked with SQL, PL/SQL, Oracle EBS, Python and Excel to improve operational reporting, finance workflows and ERP data quality across 140+ concrete plants.",
+    'My work connects analysis with measurable improvements: Accounts Payables reporting replaces about an hour of daily manual work, while validated Balance Confirmation and Payment Reminder workflows turn a 2–3 day process into minutes. Python/OCR document processing has reduced manual handling by approximately 80%.',
+    'I build validation into the workflow, from SQL reconciliation and master-data checks to a self-auditing SO Ageing feed. Alongside this professional work, I am developing hands-on Databricks and PySpark skills in data transformation, incremental loads and Delta Lake.',
   ],
   location: 'Thane, Maharashtra, India',
   openTo: 'Remote, hybrid & on-site across Thane, Navi Mumbai & Mumbai',
   email: 'jarjishsiddibapa@gmail.com',
   phone: '+91 7249550565',
   resumeHref,
-  availability: 'Available for full-time roles',
+  availability: 'Open to Data Analyst roles',
 }
 
 export const socials: SocialLink[] = [
@@ -38,9 +41,17 @@ export const socials: SocialLink[] = [
 
 export const stats: StatEntry[] = [
   { id: 'plants', label: 'Concrete plants covered by automation', value: 140, suffix: '+' },
-  { id: 'sites', label: 'Sites on live monitoring dashboard', value: 14, suffix: '+' },
+  { id: 'reporting', label: 'Daily manual AP reporting automated', value: 1, suffix: ' hr' },
   { id: 'ocr', label: 'Reduction in manual document handling', value: 80, suffix: '%' },
   { id: 'cgpa', label: 'CGPA in B.E. Computer Science (Hons. AI/ML)', value: 9.54, suffix: '/10' },
 ]
 
 export const githubUsername = 'jarjishSiddibapa'
+
+export const aboutPillars = [
+  { icon: 'BarChart3', title: 'Reporting & analysis', description: 'Production visibility, variance analysis and Excel reporting that help teams act on operational data.' },
+  { icon: 'Database', title: 'Reconciliation & data quality', description: 'SQL and PL/SQL checks for complete, consistent ERP data and finance exception reporting.' },
+  { icon: 'Bot', title: 'Data automation', description: 'Python and REST API workflows that validate data and reduce repetitive reporting work.' },
+]
+
+export const skillMarquee = ['SQL', 'PL/SQL', 'Python', 'Excel', 'Oracle EBS', 'Reporting', 'Reconciliation', 'Data Quality', 'pandas', 'REST APIs', 'Databricks', 'PySpark']

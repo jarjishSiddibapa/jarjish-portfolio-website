@@ -69,7 +69,7 @@ export function Education() {
                   <item.icon className="h-5 w-5" />
                 </span>
                 <div>
-                  <h4 className="font-medium text-ink">{item.title}</h4>
+                  <h3 className="font-medium text-ink">{item.title}</h3>
                   <p className="mt-1 text-sm text-ink-dim">{item.detail}</p>
                 </div>
               </motion.div>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { useInView } from 'framer-motion'
 
 export function AnimatedCounter({
@@ -12,12 +13,13 @@ export function AnimatedCounter({
   duration?: number
   decimals?: number
 }) {
+  const reducedMotion = useReducedMotion()
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
   const [display, setDisplay] = useState(0)
 
   useEffect(() => {
-    if (!inView) return
+    if (!inView || reducedMotion) return
     let raf: number
     const start = performance.now()
 
@@ -29,11 +31,11 @@ export function AnimatedCounter({
     }
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
-  }, [inView, value, duration])
+  }, [inView, value, duration, reducedMotion])
 
   return (
     <span ref={ref}>
-      {display.toFixed(decimals)}
+      {(reducedMotion ? value : display).toFixed(decimals)}
       {suffix}
     </span>
   )
