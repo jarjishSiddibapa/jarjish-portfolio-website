@@ -19,7 +19,7 @@ export function GithubStats() {
         <SectionHeading
           eyebrow="GitHub"
           title="A few things I've open-sourced"
-          description="Most of what I build lives inside private company repos, but here's what I've shared publicly."
+          description="Public repositories behind the featured reporting and finance projects."
         />
 
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
@@ -29,14 +29,17 @@ export function GithubStats() {
                 {profile?.avatar_url ? (
                   <img
                     src={profile.avatar_url}
-                    alt={githubUsername}
+                    alt={`${githubUsername} on GitHub`}
+                    loading="lazy"
+                    width={64}
+                    height={64}
                     className="h-16 w-16 rounded-2xl border border-border"
                   />
                 ) : (
                   <div className="h-16 w-16 animate-pulse rounded-2xl bg-ink/8" />
                 )}
                 <div>
-                  <p className="font-display font-semibold">@{githubUsername}</p>
+                  <p className="font-display break-words font-semibold">@{githubUsername}</p>
                   <a
                     href={`https://github.com/${githubUsername}`}
                     target="_blank"
@@ -49,7 +52,7 @@ export function GithubStats() {
                 </div>
               </div>
 
-              {profile?.bio && <p className="mt-4 text-sm text-ink-dim">{profile.bio}</p>}
+
 
               <div className="mt-6 grid grid-cols-2 gap-3">
                 <div className="rounded-xl border border-border bg-ink/[0.025] p-4">
@@ -118,9 +121,9 @@ export function GithubStats() {
                     className="glass group rounded-2xl border border-border p-5 transition hover:border-accent/40"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="flex items-center gap-2 font-medium text-ink">
+                      <span className="flex min-w-0 items-center gap-2 break-words font-medium text-ink">
                         <FaGithub className="h-4 w-4 text-ink-faint" />
-                        {repo.name}
+                        <span className="min-w-0 break-words">{repo.name}</span>
                       </span>
                       <span className="flex items-center gap-1 text-xs text-ink-faint">
                         <Star className="h-3.5 w-3.5" /> {repo.stargazers_count}

@@ -11,10 +11,10 @@ import { cn } from '@/utils/cn'
 type Category = (typeof projectCategories)[number]
 
 export function Projects() {
-  const [filter, setFilter] = useState<Category>('All')
+  const [filter, setFilter] = useState<Category | 'Featured'>('Featured')
 
   const filtered = useMemo(
-    () => (filter === 'All' ? projects : projects.filter((p) => p.category === filter)),
+    () => (filter === 'Featured' ? projects.filter((p) => p.featured) : filter === 'All' ? projects : projects.filter((p) => p.category === filter)),
     [filter],
   )
 
@@ -23,15 +23,17 @@ export function Projects() {
       <Container>
         <SectionHeading
           eyebrow="Projects"
-          title="Systems I've shipped into production"
-          description="Enterprise automation running across 140+ locations, plus independent ML and deep learning systems built and evaluated end to end. Not tutorials, not notebooks left unfinished."
+          title="Data work with a business purpose"
+          description="Professional reporting, reconciliation and automation first, followed by hands-on data engineering practice."
         />
 
         <div className="mt-10 flex flex-wrap gap-2">
-          {projectCategories.map((cat) => (
+          {(['Featured', ...projectCategories] as const).map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
+              aria-pressed={filter === cat}
+              aria-controls="project-grid"
               data-cursor-hover
               className={cn(
                 'rounded-full border px-4 py-2 text-sm font-medium transition-colors',
@@ -45,7 +47,7 @@ export function Projects() {
           ))}
         </div>
 
-        <motion.div layout className="mt-10 grid gap-6 md:grid-cols-2">
+        <motion.div id="project-grid" layout className="mt-10 grid gap-6 md:grid-cols-2">
           <AnimatePresence mode="popLayout">
             {filtered.map((project) => (
               <motion.div
@@ -55,7 +57,7 @@ export function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className={cn(project.featured && 'md:col-span-2')}
+                className="min-w-0"
               >
                 <TiltCard className="glow-border glass h-full rounded-2xl p-7 sm:p-8">
                   <div className="flex flex-wrap items-start justify-between gap-3">
@@ -71,21 +73,24 @@ export function Projects() {
                           target="_blank"
                           rel="noreferrer"
                           data-cursor-hover
-                          className="grid h-9 w-9 place-items-center rounded-full border border-border text-ink-dim transition hover:border-accent/50 hover:text-ink"
-                          aria-label={link.label}
+                          className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border px-3 text-sm text-ink-dim transition hover:border-accent/50 hover:text-ink"
+                          aria-label={`${project.title} — ${link.label}`}
                         >
                           {link.label === 'GitHub' ? (
                             <FaGithub className="h-4 w-4" />
                           ) : (
                             <ArrowUpRight className="h-4 w-4" />
                           )}
+                          {link.label}
                         </a>
                       ))}
                     </div>
                   </div>
 
                   <h3 className="font-display mt-5 text-2xl font-semibold">{project.title}</h3>
-                  <p className="mt-3 text-ink-dim">{project.description}</p>
+                  {project.context && <p className="mt-2 text-xs font-medium text-accent-3">{project.context}</p>}
+                  {project.problem && <p className="mt-4 text-sm text-ink-dim"><span className="font-semibold text-ink">Problem. </span>{project.problem}</p>}
+                  <p className="mt-3 text-sm text-ink-dim">{project.problem && <span className="font-semibold text-ink">Solution. </span>}{project.description}</p>
 
                   <ul className="mt-5 space-y-2">
                     {project.highlights.map((h, i) => (
@@ -108,7 +113,7 @@ export function Projects() {
                   </div>
 
                   <div className="mt-6 border-t border-border pt-5 text-sm font-medium text-accent-3">
-                    {project.impact}
+                    <span className="font-semibold">Impact. </span>{project.impact}
                   </div>
                 </TiltCard>
               </motion.div>

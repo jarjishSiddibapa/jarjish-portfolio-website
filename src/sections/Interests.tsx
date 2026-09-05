@@ -1,4 +1,6 @@
 import { lazy, Suspense, useRef } from 'react'
+import { useInView } from 'framer-motion'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { BookOpen, Gamepad2, Users } from 'lucide-react'
 import { useScrollProgressRef } from '@/hooks/useScrollProgressRef'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
@@ -38,6 +40,8 @@ const interests = [
 function InterestCard({ interest }: { interest: (typeof interests)[number] }) {
   const cardRef = useRef<HTMLDivElement>(null)
   const progressRef = useScrollProgressRef(cardRef)
+  const visible = useInView(cardRef, { margin: '150px' })
+  const desktop = useMediaQuery('(min-width: 1024px)')
   const reducedMotion = useReducedMotion()
   const Icon = interest.icon
 
@@ -46,14 +50,14 @@ function InterestCard({ interest }: { interest: (typeof interests)[number] }) {
       ref={cardRef}
       className="glow-border glass group overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-0.5deg]"
     >
-      <div className="h-44 w-full cursor-grab active:cursor-grabbing" data-cursor-hover>
-        {!reducedMotion && (
+      <div aria-hidden="true" className="h-44 w-full cursor-grab active:cursor-grabbing" data-cursor-hover>
+        {!reducedMotion && desktop && visible ? (
           <Suspense
             fallback={<div className="h-full w-full animate-pulse bg-ink/[0.025]" />}
           >
             <InterestScene variant={interest.variant} progressRef={progressRef} />
           </Suspense>
-        )}
+        ) : <div className="grid h-full place-items-center bg-gradient-to-br from-accent/10 to-accent-2/10"><Icon className="h-16 w-16 text-accent-3/60" /></div>}
       </div>
       <div className="border-t border-border p-6">
         <div className="flex items-center gap-2.5">

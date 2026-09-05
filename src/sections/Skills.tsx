@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { skillCategories } from '@/data/skills'
 import { iconMap } from '@/utils/icon-map'
 import { Container } from '@/components/ui/Container'
@@ -11,11 +10,11 @@ export function Skills() {
       <Container>
         <SectionHeading
           eyebrow="Skills"
-          title="A stack built for data, automation, and AI"
-          description="Grouped by the kind of problem each toolset solves, from ERP data plumbing to LLM-powered products."
+          title="Tools for analysis, reporting and reliable data"
+          description="SQL and Python at the core, supported by enterprise platforms and data engineering practice."
         />
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid gap-6 md:grid-cols-2">
           {skillCategories.map((category, i) => {
             const Icon = iconMap[category.icon]
             return (
@@ -28,26 +27,11 @@ export function Skills() {
                     <h3 className="font-display text-lg font-semibold">{category.title}</h3>
                   </div>
 
-                  <ul className="space-y-4">
-                    {category.skills.map((skill, si) => (
-                      <li key={skill.name}>
-                        <div className="mb-1.5 flex items-center justify-between text-sm">
-                          <span className="text-ink-dim">{skill.name}</span>
-                          <span className="text-ink-faint">{skill.level}%</span>
-                        </div>
-                        <div className="h-1.5 w-full overflow-hidden rounded-full bg-ink/8">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            viewport={{ once: true, margin: '-40px' }}
-                            transition={{
-                              duration: 1,
-                              delay: si * 0.06,
-                              ease: [0.16, 1, 0.3, 1],
-                            }}
-                            className="h-full rounded-full bg-gradient-to-r from-accent to-accent-2"
-                          />
-                        </div>
+                  <p className="mb-5 text-sm text-ink-dim">{category.description}</p>
+                  <ul className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <li key={skill} className="rounded-xl border border-border bg-ink/[0.035] px-3 py-2 text-sm text-ink-dim">
+                        {skill}
                       </li>
                     ))}
                   </ul>

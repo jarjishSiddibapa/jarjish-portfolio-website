@@ -67,8 +67,8 @@ export function Contact() {
         <SectionHeading
           eyebrow="Contact"
           align="center"
-          title="Let's build something reliable"
-          description="Open to remote, hybrid, and full-time roles across Thane, Navi Mumbai, and Mumbai, in data, automation, or AI. Reach out directly."
+          title="Let's talk data"
+          description="Open to Data Analyst roles: remote, hybrid or on-site across Thane, Navi Mumbai and Mumbai."
           className="mx-auto"
         />
 
@@ -81,9 +81,9 @@ export function Contact() {
                     <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-accent/20 to-accent-2/20 text-accent-3">
                       <item.icon className="h-5 w-5" />
                     </span>
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-xs text-ink-faint uppercase">{item.label}</p>
-                      <p className="mt-0.5 text-sm font-medium text-ink">{item.value}</p>
+                      <p className="mt-0.5 break-words text-sm font-medium text-ink">{item.value}</p>
                     </div>
                   </div>
                 )
@@ -128,6 +128,9 @@ export function Contact() {
                   </label>
                   <input
                     id="name"
+                    required
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
                     name="name"
                     type="text"
                     autoComplete="name"
@@ -137,7 +140,7 @@ export function Contact() {
                     )}
                     placeholder="Your name"
                   />
-                  {errors.name && <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.name}</p>}
+                  {errors.name && <p id="name-error" role="alert" className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.name}</p>}
                 </div>
                 <div className="sm:col-span-1">
                   <label htmlFor="email" className="mb-1.5 block text-sm text-ink-dim">
@@ -145,6 +148,9 @@ export function Contact() {
                   </label>
                   <input
                     id="email"
+                    required
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                     name="email"
                     type="email"
                     autoComplete="email"
@@ -154,7 +160,7 @@ export function Contact() {
                     )}
                     placeholder="you@company.com"
                   />
-                  {errors.email && <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.email}</p>}
+                  {errors.email && <p id="email-error" role="alert" className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.email}</p>}
                 </div>
                 <div className="sm:col-span-2">
                   <label htmlFor="message" className="mb-1.5 block text-sm text-ink-dim">
@@ -162,6 +168,9 @@ export function Contact() {
                   </label>
                   <textarea
                     id="message"
+                    required
+                    aria-invalid={Boolean(errors.message)}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
                     name="message"
                     rows={5}
                     className={cn(
@@ -171,7 +180,7 @@ export function Contact() {
                     placeholder="Tell me about the role or project..."
                   />
                   {errors.message && (
-                    <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.message}</p>
+                    <p id="message-error" role="alert" className="mt-1.5 text-xs text-red-600 dark:text-red-400">{errors.message}</p>
                   )}
                 </div>
               </div>
@@ -191,18 +200,18 @@ export function Contact() {
                 </MagneticButton>
 
                 {status === 'success' && (
-                  <span className="flex items-center gap-1.5 text-sm text-emerald-600 dark:text-emerald-400">
+                  <span role="status" className="flex items-center gap-1.5 text-sm text-emerald-600 dark:text-emerald-400">
                     <CheckCircle2 className="h-4 w-4" /> Message sent, thank you!
                   </span>
                 )}
                 {status === 'error' && (
-                  <span className="flex items-center gap-1.5 text-sm text-red-600 dark:text-red-400">
+                  <span role="status" className="flex items-center gap-1.5 text-sm text-red-600 dark:text-red-400">
                     <AlertCircle className="h-4 w-4" /> Something went wrong. Try email instead.
                   </span>
                 )}
                 {status === 'unconfigured' && (
-                  <span className="text-sm text-ink-faint">
-                    Form isn't wired up yet. Please email{' '}
+                  <span role="status" className="text-sm text-ink-faint">
+                    Please email{' '}
                     <a href={`mailto:${profile.email}`} className="text-accent-3 hover:underline">
                       {profile.email}
                     </a>{' '}

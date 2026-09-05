@@ -2,24 +2,53 @@ import type { ProjectEntry } from '@/types'
 
 export const projects: ProjectEntry[] = [
   {
-    id: 'daily-volume-tracker',
-    title: 'Daily Volume Tracker',
-    category: 'Data & Analytics',
-    description:
-      'A production monitoring dashboard that watches 140+ concrete plants in real time and automatically flags zero-production sites before they become a cost problem.',
-    highlights: [
-      'Auto-flags zero-production plants across 140+ locations',
-      'Emails daily volume and cost-impact reports, including headcount/TM allocation, to the executive committee',
-      'Replaced a manual, spreadsheet-driven reporting process',
-    ],
-    stack: ['Python', 'SQL', 'Oracle EBS', 'pandas', 'Email automation'],
-    impact: 'Executive-facing visibility across 140+ plants, delivered automatically every day',
+    id: 'daily-volume-tracker', title: 'RDC Daily Volume Tracker', category: 'Data & Analytics',
+    context: 'Professional work · RDC Concrete',
+    problem: 'Daily production data was spread across Oracle ERP, manual plant updates and spreadsheets.',
+    description: 'Combined ERP-synchronized and manually entered volumes in one controlled workflow for daily plant and area reporting.',
+    highlights: ['Target tracking, variance analysis and historical comparisons', 'Repeatable Excel reports and Oracle ERP synchronization', 'Zero-volume alerts and audit history for accountable updates'],
+    stack: ['SQL', 'Python', 'Oracle EBS', 'pandas', 'Excel'],
+    impact: 'Daily production visibility across 140+ concrete plants.',
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-daily-volume-tracker' }],
+    featured: true,
+  },
+  {
+    id: 'accounts-suite', title: 'RDC Accounts Suite', category: 'Reporting & Automation',
+    context: 'Professional work · Finance operations',
+    problem: 'Finance teams relied on separate utilities and spreadsheets for reporting, mappings and reconciliation.',
+    description: 'Consolidated financial data processing, Excel reporting, Oracle ERP enrichment and scheduled finance communication in a permission-controlled workspace.',
+    highlights: ['Data validation and exception detection for finance reporting', 'Shared mappings and reconciliation workflows', 'Controlled Excel processing and scheduled communication'],
+    stack: ['Python', 'SQL', 'Excel', 'Oracle ERP', 'MySQL'],
+    impact: 'One workspace for repeatable finance reporting and reconciliation, replacing fragmented utilities.',
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-accounts-suite' }],
+    featured: true,
+  },
+  {
+    id: 'so-ageing-pipeline', title: 'Self-Auditing SO Ageing Pipeline', category: 'Data & Analytics',
+    context: 'Professional work · RDC Concrete',
+    problem: 'A successful data push alone could not establish that ERP ageing data had been delivered completely.',
+    description: 'Built scheduled Oracle EBS refreshes with independent reconciliation to check delivery integrity and expose silent failures.',
+    highlights: ['SQL / PL/SQL processing with refreshes every three hours', 'ERP-to-API delivery with an independent 24-hour reconciliation window', 'Completeness checks and failure detection to support data trust'],
+    stack: ['SQL', 'PL/SQL', 'Oracle EBS', 'Python', 'REST APIs'],
+    impact: 'Independent delivery checks across a 24-hour window, alongside three-hour data refreshes.',
+    featured: true,
+  },
+  {
+    id: 'bulk-mailer-suite', title: 'Finance Reporting & Communication Automation', category: 'Reporting & Automation',
+    context: 'Professional work · Accounts Payables, Balance Confirmation & Payment Reminder',
+    problem: 'Daily AP reports and periodic customer finance communication required repetitive manual preparation.',
+    description: 'Used SQL, Python and Excel to prepare validated finance datasets, generate PDFs and automate report and email distribution.',
+    highlights: ['AP exception reporting: unaccounted transactions, pending MRNs and uninvoiced expense POs', 'Validated Balance Confirmation and Payment Reminder datasets', 'PDF and email workflows across three business entities'],
+    stack: ['SQL', 'Python', 'Excel', 'Oracle EBS', 'PDF generation', 'Email automation'],
+    impact: 'About one hour/day of AP reporting automated; a 2–3 day confirmation/reminder process reduced to minutes.',
     featured: true,
   },
   {
     id: 'databricks-pyspark-practice',
     title: 'Databricks & PySpark Data Engineering Practice',
-    category: 'Data & Analytics',
+    category: 'Data Engineering',
+    context: 'Hands-on practice / learning',
+    problem: 'Develop practical skills in transforming and incrementally loading larger datasets.',
     description:
       'Notebook-based data engineering workflows built to go deep on the Databricks and PySpark patterns that show up in production pipelines: DataFrame transformations, joins, window functions, and incremental Delta Lake loads.',
     highlights: [
@@ -28,28 +57,13 @@ export const projects: ProjectEntry[] = [
       'Delta Lake MERGE/upserts and partition-aware processing',
     ],
     stack: ['Databricks', 'PySpark', 'Spark SQL', 'Delta Lake'],
-    impact: 'Hands-on depth across the Databricks/PySpark patterns production pipelines rely on',
     featured: true,
-  },
-  {
-    id: 'digital-signature-app',
-    title: 'RDC Digital Signature Application',
-    category: 'Automation',
-    description:
-      'A desktop application built from scratch for hardware-based digital signing, with USB PKCS#11 token integration, hot-plug detection, dual placement modes, and batch processing.',
-    highlights: [
-      'PKCS#11 USB hardware token integration with hot-plug detection',
-      'Dual signature-placement modes and batch document processing',
-      'Replaced a paid tool costing ₹20k+ per user with a zero-cost in-house build',
-    ],
-    stack: ['Python', 'customtkinter', 'PKCS#11', 'PDF processing'],
-    impact: '₹20k+ per-user licensing cost eliminated across the organization',
-    featured: true,
+    impact: 'Practice in repeatable transformations and incremental loading; a learning project, not an RDC production system',
   },
   {
     id: 'rdc-stamper',
     title: 'RDC Stamper V1 / V2',
-    category: 'Automation',
+    category: 'Reporting & Automation',
     description:
       'An OCR-based desktop tool for processing and stamping high volumes of PDF documents, with duplicate-detection logic to catch reprocessing errors.',
     highlights: [
@@ -61,23 +75,23 @@ export const projects: ProjectEntry[] = [
     impact: '~80% reduction in manual document handling time',
   },
   {
-    id: 'so-ageing-pipeline',
-    title: 'Self-Auditing SO Ageing Pipeline',
-    category: 'Automation',
+    id: 'digital-signature-app',
+    title: 'RDC Digital Signature Application',
+    category: 'Other Projects',
     description:
-      'A scheduled ERP-to-API data pipeline that pushes customer ageing data every 3 hours and, critically, verifies its own delivery with an independent reconciliation report instead of trusting its own success signal.',
+      'A desktop application built from scratch for hardware-based digital signing, with USB PKCS#11 token integration, hot-plug detection, dual placement modes, and batch processing.',
     highlights: [
-      'Pushes customer ageing data from Oracle ERP every 3 hours',
-      'Independent 24-hour reconciliation report verifies delivery integrity',
-      'Designed to catch silent failures, not just crash on obvious ones',
+      'PKCS#11 USB hardware token integration with hot-plug detection',
+      'Dual signature-placement modes and batch document processing',
+      'Replaced a paid tool costing ₹20k+ per user with a zero-cost in-house build',
     ],
-    stack: ['Python', 'PL/SQL', 'Oracle EBS', 'REST APIs', 'Task Scheduler'],
-    impact: 'Zero-trust reconciliation across a live enterprise data feed',
+    stack: ['Python', 'customtkinter', 'PKCS#11', 'PDF processing'],
+    impact: '₹20k+ per-user licensing cost eliminated across the organization',
   },
   {
     id: 'network-monitoring',
     title: 'Multi-Internet Network Monitoring Dashboard',
-    category: 'Data & Analytics',
+    category: 'Other Projects',
     description:
       'A real-time monitoring dashboard tracking network and internet health across 14+ sites, built to replace a legacy tool that silently lost historical data.',
     highlights: [
@@ -89,23 +103,9 @@ export const projects: ProjectEntry[] = [
     impact: 'Replaced a legacy monitoring tool across 14+ business sites',
   },
   {
-    id: 'bulk-mailer-suite',
-    title: 'Bulk Mailer & Payment Reminder Suite',
-    category: 'Automation',
-    description:
-      'A set of three ERP-integrated desktop applications that generate and send balance confirmations and payment reminders, handling PDF generation, templating, and email dispatch across three business entities.',
-    highlights: [
-      'Deployed across 3 separate business entities',
-      'PDF + email generation integrated directly with Oracle ERP R12.2.10',
-      'Turned a 2-3 day manual process into a task that finishes in minutes',
-    ],
-    stack: ['Python', 'Oracle EBS', 'PDF generation', 'Email automation'],
-    impact: '2-3 day manual workflow reduced to minutes, across 3 entities',
-  },
-  {
     id: 'ai-chatbot',
     title: 'AI Chatbot for Corporate Website',
-    category: 'AI / ML',
+    category: 'Other Projects',
     description:
       'An LLM-powered chatbot built for the corporate website, combining Gemini and Claude APIs behind a Flask backend, with architecture documented for a clean handover to stakeholders.',
     highlights: [
@@ -115,12 +115,11 @@ export const projects: ProjectEntry[] = [
     ],
     stack: ['Python', 'Flask', 'Gemini API', 'Claude API', 'JavaScript'],
     impact: 'Live AI assistant shipped end-to-end for a corporate website',
-    featured: true,
   },
   {
     id: 'lung-disease-classification',
     title: 'Lung Disease Classification (Deep Learning)',
-    category: 'AI / ML',
+    category: 'Other Projects',
     description:
       'A deep learning system that classifies chest X-rays into COVID-19, Pneumonia, Tuberculosis, or Normal using transfer learning on ResNet50, deployed behind a Flask web app for real-time image upload and diagnosis.',
     highlights: [
@@ -134,12 +133,11 @@ export const projects: ProjectEntry[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/lung-disease-classification' },
     ],
-    featured: true,
   },
   {
     id: 'vizdoom-rl',
     title: 'VizDoom RL Agent',
-    category: 'AI / ML',
+    category: 'Other Projects',
     description:
       'A reinforcement learning research project comparing PPO, DQN, A2C, and DDPG agents inside the VizDoom environment, with a Jupyter pipeline for tracking and visualizing training performance across levels.',
     highlights: [
@@ -158,9 +156,10 @@ export const projects: ProjectEntry[] = [
   },
 ]
 
-export const projectCategories = ['All', 'AI / ML', 'Automation', 'Data & Analytics'] as const
+export const projectCategories = ['All', 'Data & Analytics', 'Reporting & Automation', 'Data Engineering', 'Other Projects'] as const
 
 export const pinnedRepoSlugs = projects
-  .flatMap((p) => p.links ?? [])
+  .filter((project) => project.featured)
+  .flatMap((project) => project.links ?? [])
   .filter((link) => link.label === 'GitHub')
-  .map((link) => link.href.split('/').filter(Boolean).pop() as string)
+  .map((link) => link.href.split('/').filter(Boolean).pop()!)

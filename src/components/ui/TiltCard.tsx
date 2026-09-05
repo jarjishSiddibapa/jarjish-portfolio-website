@@ -1,5 +1,6 @@
 import { useRef, type ReactNode } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { cn } from '@/utils/cn'
 
 export function TiltCard({
@@ -9,6 +10,7 @@ export function TiltCard({
   children: ReactNode
   className?: string
 }) {
+  const reducedMotion = useReducedMotion()
   const ref = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0.5)
   const y = useMotionValue(0.5)
@@ -21,7 +23,7 @@ export function TiltCard({
 
   const handleMove = (e: React.MouseEvent) => {
     const rect = ref.current?.getBoundingClientRect()
-    if (!rect) return
+    if (!rect || reducedMotion) return
     x.set((e.clientX - rect.left) / rect.width)
     y.set((e.clientY - rect.top) / rect.height)
   }
@@ -36,7 +38,7 @@ export function TiltCard({
       ref={ref}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
-      style={{ rotateX, rotateY, transformPerspective: 900 }}
+      style={reducedMotion ? undefined : { rotateX, rotateY, transformPerspective: 900 }}
       className={cn('group relative', className)}
     >
       <motion.div

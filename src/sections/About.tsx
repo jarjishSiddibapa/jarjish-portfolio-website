@@ -1,10 +1,11 @@
-import { MapPin, GraduationCap, Briefcase, BarChart3, Bot, BrainCircuit } from 'lucide-react'
-import { profile, stats } from '@/data/profile'
+import { MapPin, GraduationCap, Briefcase } from 'lucide-react'
+import { profile, stats, aboutPillars } from '@/data/profile'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Reveal, RevealGroup } from '@/components/ui/Reveal'
 import { revealItem } from '@/utils/motion-variants'
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
+import { iconMap } from '@/utils/icon-map'
 import { motion } from 'framer-motion'
 
 const quickFacts = [
@@ -13,56 +14,33 @@ const quickFacts = [
   { icon: GraduationCap, label: 'B.E. CSE, Honors in AI/ML, CGPA 9.54/10' },
 ]
 
-const pillars = [
-  {
-    icon: BarChart3,
-    title: 'Data & Analytics',
-    description:
-      'SQL, PySpark, and Databricks pipelines, plus PL/SQL and statistical analysis across a 140+ location ERP.',
-    tint: 'from-accent/20 to-accent/5 text-accent',
-  },
-  {
-    icon: Bot,
-    title: 'Automation Engineering',
-    description:
-      'Self-healing services, hardware-integrated desktop tools, and zero-touch reporting systems.',
-    tint: 'from-accent-3/20 to-accent-3/5 text-accent-3',
-  },
-  {
-    icon: BrainCircuit,
-    title: 'AI & ML Engineering',
-    description:
-      'Production LLM products on Gemini/Claude, AI-assisted development workflows, and independent deep learning work: transfer learning, rigorous model evaluation, not tutorial notebooks.',
-    tint: 'from-accent-2/20 to-accent-2/5 text-accent-2',
-  },
-]
-
 export function About() {
   return (
     <section id="about" className="relative py-28 sm:py-36">
       <Container>
         <SectionHeading
           eyebrow="About"
-          title="One engineer, three problem spaces"
-          description="I don't fit neatly into one job title, and that's the point. Here's the range I actually operate in."
+          title="Accurate data. Useful reports. Less manual work."
+          description="An early-career Data Analyst working with enterprise data and the teams who depend on it."
         />
 
         <RevealGroup className="mt-12 grid gap-4 sm:grid-cols-3">
-          {pillars.map((pillar) => (
-            <motion.div
-              key={pillar.title}
-              variants={revealItem}
-              className="glow-border glass rounded-2xl p-6"
-            >
-              <span
-                className={`grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br ${pillar.tint}`}
+          {aboutPillars.map((pillar) => {
+            const Icon = iconMap[pillar.icon]
+            return (
+              <motion.div
+                key={pillar.title}
+                variants={revealItem}
+                className="glow-border glass rounded-2xl p-6"
               >
-                <pillar.icon className="h-5 w-5" />
-              </span>
-              <h3 className="font-display mt-4 text-lg font-semibold">{pillar.title}</h3>
-              <p className="mt-2 text-sm text-ink-dim">{pillar.description}</p>
-            </motion.div>
-          ))}
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 text-accent-3">
+                  <Icon className="h-5 w-5" aria-hidden />
+                </span>
+                <h3 className="font-display mt-4 text-lg font-semibold">{pillar.title}</h3>
+                <p className="mt-2 text-sm text-ink-dim">{pillar.description}</p>
+              </motion.div>
+            )
+          })}
         </RevealGroup>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-5 lg:gap-16">
@@ -88,14 +66,14 @@ export function About() {
           </div>
 
           <div className="lg:col-span-2">
-            <RevealGroup className="grid grid-cols-2 gap-4">
+            <RevealGroup className="grid grid-cols-1 min-[375px]:grid-cols-2 gap-4">
               {stats.map((stat) => (
                 <motion.div
                   key={stat.id}
                   variants={revealItem}
                   className="glow-border glass rounded-2xl p-6"
                 >
-                  <div className="font-display text-4xl font-semibold text-gradient">
+                  <div className="font-display text-3xl sm:text-4xl font-semibold text-gradient">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                   </div>
                   <p className="mt-2 text-sm text-ink-dim">{stat.label}</p>
