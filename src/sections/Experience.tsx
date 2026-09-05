@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { Building2 } from 'lucide-react'
+import { ArrowUpRight, Building2, FolderGit2 } from 'lucide-react'
 import { experience } from '@/data/experience'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -85,6 +85,35 @@ export function Experience() {
                         </li>
                       ))}
                     </ul>
+
+                    {job.selectedProjects && (
+                      <div className="mt-7 border-t border-border pt-6">
+                        <div className="flex items-center gap-2">
+                          <FolderGit2 className="h-4 w-4 text-accent-3" />
+                          <p className="text-sm font-medium text-ink">Selected RDC systems</p>
+                        </div>
+                        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                          {job.selectedProjects.map((project) => (
+                            <a
+                              key={project.href}
+                              href={project.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              data-cursor-hover
+                              className="group rounded-xl border border-border bg-ink/[0.025] p-4 transition hover:border-accent/45 hover:bg-accent/[0.035]"
+                            >
+                              <span className="flex items-center justify-between gap-3 font-medium text-ink">
+                                {project.title}
+                                <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-accent-3 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                              </span>
+                              <span className="mt-2 block text-sm leading-relaxed text-ink-dim">
+                                {project.detail}
+                              </span>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
 
                     <div className="mt-6 flex flex-wrap gap-2">
                       {job.stack.map((tech) => (

@@ -22,6 +22,11 @@ export interface ExperienceEntry {
   summary: string
   highlights: string[]
   stack: string[]
+  selectedProjects?: {
+    title: string
+    detail: string
+    href: string
+  }[]
 }
 
 export interface EducationEntry {
@@ -45,6 +50,7 @@ export interface ProjectEntry {
   impact: string
   links?: { label: string; href: string }[]
   featured?: boolean
+  githubFeatured?: boolean
 }
 
 export interface CertificationEntry {

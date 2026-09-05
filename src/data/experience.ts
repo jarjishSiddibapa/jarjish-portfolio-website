@@ -14,6 +14,28 @@ export const experience: ExperienceEntry[] = [
       'Developed SQL and PL/SQL logic for audit reconciliation, missing IOCL PO / Debit Memo detection, GST invoice checks, HSN/master-data quality and ERP reporting.',
       'Integrated REST API data and built Python/OCR document workflows that reduced manual document handling by approximately 80%.',
     ],
+    selectedProjects: [
+      {
+        title: 'Daily Volume Tracker',
+        detail: 'Plant-level production, targets, variance analysis and Excel reporting for 140+ locations.',
+        href: 'https://github.com/jarjishSiddibapa/rdc-daily-volume-tracker',
+      },
+      {
+        title: 'SO Ageing Pipeline',
+        detail: 'Three-hour ERP refreshes with customer-level reconciliation and delivery acknowledgement checks.',
+        href: 'https://github.com/jarjishSiddibapa/rdc-so-ageing-data-push',
+      },
+      {
+        title: 'Accounts Suite',
+        detail: 'Finance reporting, data-quality checks, mappings and reconciliation workflows in one workspace.',
+        href: 'https://github.com/jarjishSiddibapa/rdc-accounts-suite',
+      },
+      {
+        title: 'Digital Signatures',
+        detail: 'Hardware-token PDF signing and batch automation built as an in-house desktop application.',
+        href: 'https://github.com/jarjishSiddibapa/rdc-digital-signatures',
+      },
+    ],
     stack: ['SQL', 'PL/SQL', 'Oracle EBS R12.2.10', 'Python', 'Excel', 'REST APIs', 'Tesseract OCR'],
   },
   {

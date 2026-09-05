@@ -1,4 +1,4 @@
-import { Star, Users, FolderGit2, ArrowUpRight } from 'lucide-react'
+import { Star, Users, FolderGit2, ArrowUpRight, RefreshCw } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa6'
 import { useGithubStats } from '@/hooks/useGithubStats'
 import { githubUsername } from '@/data/profile'
@@ -11,7 +11,7 @@ import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
 import { motion } from 'framer-motion'
 
 export function GithubStats() {
-  const { profile, repos, status } = useGithubStats()
+  const { profile, repos, status, isRefreshing, refreshedAt, refresh } = useGithubStats()
 
   return (
     <section id="github" className="relative py-28 sm:py-36">
@@ -19,8 +19,26 @@ export function GithubStats() {
         <SectionHeading
           eyebrow="GitHub"
           title="A few things I've open-sourced"
-          description="Public repositories behind the featured reporting and finance projects."
+          description="Live repository details from GitHub, including descriptions, stars, languages and recent updates."
         />
+
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 text-sm text-ink-faint">
+          <p>
+            {refreshedAt
+              ? `Last checked ${refreshedAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
+              : 'Loading live repository data…'}
+          </p>
+          <button
+            type="button"
+            onClick={refresh}
+            disabled={isRefreshing}
+            data-cursor-hover
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1.5 text-xs font-medium text-ink-dim transition hover:border-accent/40 hover:text-ink disabled:cursor-wait disabled:opacity-60"
+          >
+            <RefreshCw className={`h-3.5 w-3.5 ${isRefreshing ? 'animate-spin' : ''}`} />
+            Refresh GitHub data
+          </button>
+        </div>
 
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
           <Reveal className="lg:col-span-1">
@@ -143,6 +161,12 @@ export function GithubStats() {
                         {repo.language}
                       </div>
                     )}
+                    <p className="mt-3 text-xs text-ink-faint">
+                      Updated {new Date(repo.updated_at).toLocaleDateString(undefined, {
+                        month: 'short',
+                        year: 'numeric',
+                      })}
+                    </p>
                   </motion.a>
                 ))}
 

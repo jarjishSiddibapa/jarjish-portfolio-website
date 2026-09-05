@@ -20,7 +20,12 @@ test('featured projects lead with professional analytics and isolate practice', 
       assert.notEqual(project.category, 'Other Projects')
     }
   }
-  assert.deepEqual(pinnedRepoSlugs, ['rdc-daily-volume-tracker', 'rdc-accounts-suite'])
+  assert.deepEqual(pinnedRepoSlugs, [
+    'rdc-daily-volume-tracker',
+    'rdc-accounts-suite',
+    'rdc-so-ageing-data-push',
+    'rdc-digital-signatures',
+  ])
   assert.match(projects.find(p => p.id === 'databricks-pyspark-practice').context, /practice \/ learning/)
 })
 

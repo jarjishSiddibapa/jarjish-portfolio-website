@@ -11,6 +11,7 @@ export const projects: ProjectEntry[] = [
     impact: 'Daily production visibility across 140+ concrete plants.',
     links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-daily-volume-tracker' }],
     featured: true,
+    githubFeatured: true,
   },
   {
     id: 'accounts-suite', title: 'RDC Accounts Suite', category: 'Reporting & Automation',
@@ -22,6 +23,7 @@ export const projects: ProjectEntry[] = [
     impact: 'One workspace for repeatable finance reporting and reconciliation, replacing fragmented utilities.',
     links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-accounts-suite' }],
     featured: true,
+    githubFeatured: true,
   },
   {
     id: 'so-ageing-pipeline', title: 'Self-Auditing SO Ageing Pipeline', category: 'Data & Analytics',
@@ -32,6 +34,8 @@ export const projects: ProjectEntry[] = [
     stack: ['SQL', 'PL/SQL', 'Oracle EBS', 'Python', 'REST APIs'],
     impact: 'Independent delivery checks across a 24-hour window, alongside three-hour data refreshes.',
     featured: true,
+    githubFeatured: true,
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-so-ageing-data-push' }],
   },
   {
     id: 'bulk-mailer-suite', title: 'Finance Reporting & Communication Automation', category: 'Reporting & Automation',
@@ -87,6 +91,8 @@ export const projects: ProjectEntry[] = [
     ],
     stack: ['Python', 'customtkinter', 'PKCS#11', 'PDF processing'],
     impact: '₹20k+ per-user licensing cost eliminated across the organization',
+    githubFeatured: true,
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-digital-signatures' }],
   },
   {
     id: 'network-monitoring',
@@ -159,7 +165,7 @@ export const projects: ProjectEntry[] = [
 export const projectCategories = ['All', 'Data & Analytics', 'Reporting & Automation', 'Data Engineering', 'Other Projects'] as const
 
 export const pinnedRepoSlugs = projects
-  .filter((project) => project.featured)
+  .filter((project) => project.githubFeatured)
   .flatMap((project) => project.links ?? [])
   .filter((link) => link.label === 'GitHub')
   .map((link) => link.href.split('/').filter(Boolean).pop()!)
