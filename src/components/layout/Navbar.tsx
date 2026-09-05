@@ -13,17 +13,15 @@ const NAV_LINKS = [
   { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
-  { id: 'education', label: 'Education' },
+  { id: 'github', label: 'GitHub' },
   { id: 'contact', label: 'Contact' },
 ]
-
-const SECTION_IDS = ['hero', ...NAV_LINKS.map((link) => link.id)]
 
 export function Navbar() {
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const active = useActiveSection(SECTION_IDS)
+  const active = useActiveSection(NAV_LINKS.map((link) => link.id))
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -79,7 +77,7 @@ export function Navbar() {
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-white shadow-lg shadow-accent/30">
               {profile.initials}
             </span>
-            <span className="hidden xl:inline">{profile.name}</span>
+            <span className="hidden sm:inline">{profile.name}</span>
           </button>
 
           <nav aria-label="Main navigation" className="hidden items-center gap-1 lg:flex">

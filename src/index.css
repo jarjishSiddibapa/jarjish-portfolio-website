@@ -13,7 +13,7 @@
 
   --color-ink: #0b0d12;
   --color-ink-dim: #4b5565;
-  --color-ink-faint: #627086;
+  --color-ink-faint: #8b96a8;
 
   --color-accent: #3a5cf0;
   --color-accent-2: #7c3aed;
@@ -75,7 +75,7 @@
 
   --color-ink: #f4f6fb;
   --color-ink-dim: #9aa3b8;
-  --color-ink-faint: #8c96ad;
+  --color-ink-faint: #5c6478;
 
   --color-accent: #5b8def;
   --color-accent-2: #8b5cf6;
@@ -227,5 +227,3 @@
     scroll-behavior: auto !important;
   }
 }
-
-section { scroll-margin-top: 6rem; }

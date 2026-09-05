@@ -1,4 +1,4 @@
-# Data Analyst refresh — verification record
+# Data Analyst refresh: verification record
 
 Date: September 5, 2026
 
@@ -6,7 +6,7 @@ Date: September 5, 2026
 
 Reviewed the existing data modules, all page sections, layout/UI primitives, SEO, GitHub fetching, global styles, hooks, resume and GitHub Pages configuration before changing the site. Ran the original site locally and inspected desktop/mobile views. The 375px baseline had a 403px document width and rotated unrelated job identities.
 
-Preserved the visual theme, glass cards, desktop 3D, reveal/timeline animations, theme switch, project filters, GitHub stats, contact integration and Easter egg. Refocused the copy on Data Analyst work and moved professional projects before education/interests. Skill percentages are replaced by four competency groups. The first five case studies are Daily Volume Tracker, Accounts Suite, SO Ageing, finance automation and Databricks/PySpark practice.
+Preserved the visual theme, glass cards, 3D scenes, reveal/timeline animations, theme switch, project filters, GitHub stats, contact integration and Easter egg. Refocused the copy on Data Analyst work while retaining the original section order: education and interests remain before projects. Skill percentages are replaced by four animated competency groups. The first five case studies are Daily Volume Tracker, Accounts Suite, SO Ageing, finance automation and Databricks/PySpark practice.
 
 ## Sources and resume
 
@@ -31,6 +31,6 @@ No conflicting career facts were found in the latest resume. The supplied PDF is
 
 ## Performance and accessibility boundaries
 
-No new runtime libraries. Decorative 3D is lazy-loaded for desktop only and mounted near/in the viewport; mobile showed zero canvases. Interest icons provide a static fallback. Existing Three.js shared chunk remains large (~233 kB gzip); the main application is ~192 kB gzip. Vite still reports its advisory chunk-size warning. This was a targeted performance review, not a Lighthouse benchmark.
+No new runtime libraries. Decorative 3D remains lazy-loaded and appears at the same breakpoints as the original site. The hero scene and all three interactive interest scenes are restored. Existing Three.js shared chunk remains large (~233 kB gzip); the main application is ~192 kB gzip. Vite still reports its advisory chunk-size warning. This was a targeted performance review, not a Lighthouse benchmark.
 
 Reduced-motion paths were reviewed in code: Framer Motion configuration, static counters, reveal fallbacks, no decorative 3D/tilt/magnetic movement, and immediate scroll fallbacks. Browser-level reduced-motion emulation was not available in the testing interface. Focus labels, form error associations, heading hierarchy and muted-text contrast were improved; this is not a full WCAG certification.

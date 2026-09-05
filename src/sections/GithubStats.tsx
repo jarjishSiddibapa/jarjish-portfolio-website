@@ -61,7 +61,7 @@ export function GithubStats() {
                     {status === 'success' ? (
                       <AnimatedCounter value={profile?.followers ?? 0} />
                     ) : (
-                      '—'
+                      'N/A'
                     )}
                   </p>
                   <p className="text-xs text-ink-faint">Followers</p>
@@ -72,7 +72,7 @@ export function GithubStats() {
                     {status === 'success' ? (
                       <AnimatedCounter value={profile?.public_repos ?? 0} />
                     ) : (
-                      '—'
+                      'N/A'
                     )}
                   </p>
                   <p className="text-xs text-ink-faint">Repositories</p>

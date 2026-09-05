@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import { skillCategories } from '@/data/skills'
 import { iconMap } from '@/utils/icon-map'
 import { Container } from '@/components/ui/Container'
@@ -29,10 +30,20 @@ export function Skills() {
 
                   <p className="mb-5 text-sm text-ink-dim">{category.description}</p>
                   <ul className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
-                      <li key={skill} className="rounded-xl border border-border bg-ink/[0.035] px-3 py-2 text-sm text-ink-dim">
+                    {category.skills.map((skill, skillIndex) => (
+                      <motion.li
+                        key={skill}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: '-20px' }}
+                        whileHover={{ y: -3, scale: 1.03 }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ duration: 0.3, delay: skillIndex * 0.025 }}
+                        data-cursor-hover
+                        className="cursor-default rounded-xl border border-border bg-ink/[0.035] px-3 py-2 text-sm text-ink-dim transition-colors hover:border-accent/50 hover:bg-accent/10 hover:text-ink"
+                      >
                         {skill}
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
