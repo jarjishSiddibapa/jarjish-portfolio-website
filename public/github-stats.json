@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T08:46:31.597Z",
+  "generatedAt": "2026-09-09T13:31:58.134Z",
   "profile": {
     "followers": 0,
     "public_repos": 29,
@@ -9,6 +9,16 @@
   },
   "repos": [
     {
+      "id": 1344682583,
+      "name": "rdc-accounts-suite",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-accounts-suite",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-09-09T13:07:31Z"
+    },
+    {
       "id": 1318239254,
       "name": "jarjish-portfolio-website",
       "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
@@ -16,7 +26,7 @@
       "stargazers_count": 0,
       "language": "TypeScript",
       "fork": false,
-      "updated_at": "2026-09-09T03:40:37Z"
+      "updated_at": "2026-09-09T08:48:24Z"
     },
     {
       "id": 1357891868,
@@ -57,16 +67,6 @@
       "language": "HTML",
       "fork": false,
       "updated_at": "2026-09-04T10:35:58Z"
-    },
-    {
-      "id": 1344682583,
-      "name": "rdc-accounts-suite",
-      "html_url": "https://github.com/jarjishSiddibapa/rdc-accounts-suite",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "Python",
-      "fork": false,
-      "updated_at": "2026-09-03T05:52:13Z"
     },
     {
       "id": 1067341313,
