@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T14:11:08.802Z",
+  "generatedAt": "2026-09-18T18:07:40.232Z",
   "profile": {
     "followers": 0,
     "public_repos": 31,
@@ -9,6 +9,16 @@
   },
   "repos": [
     {
+      "id": 1318239254,
+      "name": "jarjish-portfolio-website",
+      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "TypeScript",
+      "fork": false,
+      "updated_at": "2026-09-18T14:11:13Z"
+    },
+    {
       "id": 1344682583,
       "name": "rdc-accounts-suite",
       "html_url": "https://github.com/jarjishSiddibapa/rdc-accounts-suite",
@@ -17,16 +27,6 @@
       "language": "Python",
       "fork": false,
       "updated_at": "2026-09-18T11:21:36Z"
-    },
-    {
-      "id": 1318239254,
-      "name": "jarjish-portfolio-website",
-      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "TypeScript",
-      "fork": false,
-      "updated_at": "2026-09-18T09:27:11Z"
     },
     {
       "id": 1370977564,
