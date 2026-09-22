@@ -1,22 +1,32 @@
 {
-  "generatedAt": "2026-09-22T03:52:49.814Z",
+  "generatedAt": "2026-09-22T09:09:00.648Z",
   "profile": {
     "followers": 0,
-    "public_repos": 31,
+    "public_repos": 32,
     "avatar_url": "https://avatars.githubusercontent.com/u/135226973?v=4",
     "bio": null,
     "html_url": "https://github.com/jarjishSiddibapa"
   },
   "repos": [
     {
-      "id": 1318239254,
-      "name": "jarjish-portfolio-website",
-      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
+      "id": 1344682583,
+      "name": "rdc-accounts-suite",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-accounts-suite",
+      "description": null,
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-09-22T09:05:14Z"
+    },
+    {
+      "id": 1380903862,
+      "name": "jersey-test",
+      "html_url": "https://github.com/jarjishSiddibapa/jersey-test",
       "description": null,
       "stargazers_count": 0,
       "language": "TypeScript",
       "fork": false,
-      "updated_at": "2026-09-21T23:53:55Z"
+      "updated_at": "2026-09-22T06:31:14Z"
     },
     {
       "id": 1370977564,
@@ -26,17 +36,17 @@
       "stargazers_count": 0,
       "language": "Python",
       "fork": false,
-      "updated_at": "2026-09-21T12:20:48Z"
+      "updated_at": "2026-09-22T04:58:27Z"
     },
     {
-      "id": 1344682583,
-      "name": "rdc-accounts-suite",
-      "html_url": "https://github.com/jarjishSiddibapa/rdc-accounts-suite",
+      "id": 1318239254,
+      "name": "jarjish-portfolio-website",
+      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
       "description": null,
       "stargazers_count": 0,
-      "language": "Python",
+      "language": "TypeScript",
       "fork": false,
-      "updated_at": "2026-09-19T10:15:20Z"
+      "updated_at": "2026-09-22T03:52:55Z"
     },
     {
       "id": 1371281306,
