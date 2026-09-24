@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { pinnedRepoSlugs } from '@/data/projects'
+import { STATS_FILE } from '@/generated/stats-file'
 
 export interface GithubProfile {
   followers: number
@@ -49,7 +50,13 @@ interface GithubStatsState {
 // authenticated token, not subject to the 60/hour anonymous limit) and
 // published as a static file — every visitor reads the same snapshot
 // same-origin, so no browser ever calls api.github.com directly.
-const statsUrl = `${import.meta.env.BASE_URL}github-stats.json`
+//
+// The filename is content-hashed and regenerated on every run (see
+// scripts/fetch-github-stats.mjs) and baked into the JS bundle at build
+// time via STATS_FILE, so a stale GitHub Pages CDN cache of the old
+// filename is never re-requested — the new bundle always points at a
+// URL the CDN has never seen before.
+const statsUrl = `${import.meta.env.BASE_URL}${STATS_FILE}`
 
 export function useGithubStats() {
   const [state, setState] = useState<GithubStatsState>({
