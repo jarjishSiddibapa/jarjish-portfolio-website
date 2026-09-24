@@ -11,19 +11,54 @@ const headers = {
   ...(token ? { Authorization: `Bearer ${token}` } : {}),
 }
 
-const [profileRes, reposRes] = await Promise.all([
+const to = new Date()
+const from = new Date(to)
+from.setMonth(from.getMonth() - 3)
+
+const contributionsQuery = `
+  query($login: String!, $from: DateTime!, $to: DateTime!) {
+    user(login: $login) {
+      contributionsCollection(from: $from, to: $to) {
+        contributionCalendar {
+          totalContributions
+          weeks {
+            contributionDays {
+              date
+              contributionCount
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+const [profileRes, reposRes, contributionsRes] = await Promise.all([
   fetch(`https://api.github.com/users/${username}`, { headers }),
   fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`, { headers }),
+  fetch('https://api.github.com/graphql', {
+    method: 'POST',
+    headers: { ...headers, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      query: contributionsQuery,
+      variables: { login: username, from: from.toISOString(), to: to.toISOString() },
+    }),
+  }),
 ])
 
-if (!profileRes.ok || !reposRes.ok) {
+if (!profileRes.ok || !reposRes.ok || !contributionsRes.ok) {
   throw new Error(
-    `GitHub API request failed: profile=${profileRes.status} repos=${reposRes.status}`,
+    `GitHub API request failed: profile=${profileRes.status} repos=${reposRes.status} contributions=${contributionsRes.status}`,
   )
 }
 
 const profile = await profileRes.json()
 const repos = await reposRes.json()
+const contributionsBody = await contributionsRes.json()
+if (contributionsBody.errors) {
+  throw new Error(`GitHub GraphQL error: ${JSON.stringify(contributionsBody.errors)}`)
+}
+const calendar = contributionsBody.data.user.contributionsCollection.contributionCalendar
 
 const output = {
   generatedAt: new Date().toISOString(),
@@ -44,6 +79,12 @@ const output = {
     fork: repo.fork,
     updated_at: repo.updated_at,
   })),
+  contributions: {
+    totalContributions: calendar.totalContributions,
+    days: calendar.weeks.flatMap((week) =>
+      week.contributionDays.map((day) => ({ date: day.date, count: day.contributionCount })),
+    ),
+  },
 }
 
 await writeFile('public/github-stats.json', JSON.stringify(output, null, 2) + '\n')

@@ -8,10 +8,11 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Reveal } from '@/components/ui/Reveal'
 import { revealItem } from '@/utils/motion-variants'
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
+import { ContributionHeatmap } from '@/components/ui/ContributionHeatmap'
 import { motion } from 'framer-motion'
 
 export function GithubStats() {
-  const { profile, repos, status, refreshedAt } = useGithubStats()
+  const { profile, repos, contributions, status, refreshedAt } = useGithubStats()
 
   return (
     <section id="github" className="relative py-28 sm:py-36">
@@ -180,19 +181,16 @@ export function GithubStats() {
           </div>
         </div>
 
-        <Reveal delay={0.1}>
-          <div className="glass mt-6 overflow-hidden rounded-2xl p-6">
-            <img
-              src={`https://ghchart.rshah.org/3a5cf0/${githubUsername}`}
-              alt={`${githubUsername}'s GitHub contribution graph`}
-              className="w-full opacity-90"
-              loading="lazy"
-              onError={(e) => {
-                ;(e.currentTarget.parentElement as HTMLElement).style.display = 'none'
-              }}
-            />
-          </div>
-        </Reveal>
+        {status === 'success' && contributions && contributions.days.length > 0 && (
+          <Reveal delay={0.1}>
+            <div className="glass mt-6 rounded-2xl p-6">
+              <p className="mb-4 text-sm text-ink-dim">
+                {contributions.totalContributions} contributions in the last 3 months
+              </p>
+              <ContributionHeatmap days={contributions.days} />
+            </div>
+          </Reveal>
+        )}
       </Container>
     </section>
   )

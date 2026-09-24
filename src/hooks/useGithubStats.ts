@@ -20,15 +20,27 @@ export interface GithubRepo {
   updated_at: string
 }
 
+export interface ContributionDay {
+  date: string
+  count: number
+}
+
+export interface Contributions {
+  totalContributions: number
+  days: ContributionDay[]
+}
+
 interface GithubStatsFile {
   generatedAt: string | null
   profile: GithubProfile | null
   repos: GithubRepo[]
+  contributions?: Contributions
 }
 
 interface GithubStatsState {
   profile: GithubProfile | null
   repos: GithubRepo[]
+  contributions: Contributions | null
   status: 'loading' | 'success' | 'error'
   refreshedAt: Date | null
 }
@@ -43,6 +55,7 @@ export function useGithubStats() {
   const [state, setState] = useState<GithubStatsState>({
     profile: null,
     repos: [],
+    contributions: null,
     status: 'loading',
     refreshedAt: null,
   })
@@ -55,7 +68,7 @@ export function useGithubStats() {
       .then((data) => {
         if (cancelled) return
         if (!data.profile) {
-          setState({ profile: null, repos: [], status: 'error', refreshedAt: null })
+          setState({ profile: null, repos: [], contributions: null, status: 'error', refreshedAt: null })
           return
         }
         const pinned = pinnedRepoSlugs
@@ -64,6 +77,7 @@ export function useGithubStats() {
         setState({
           profile: data.profile,
           repos: pinned,
+          contributions: data.contributions ?? null,
           status: 'success',
           refreshedAt: data.generatedAt ? new Date(data.generatedAt) : null,
         })
