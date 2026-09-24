@@ -7,7 +7,6 @@ interface ContributionHeatmapProps {
 
 const DAY_LABELS = ['', 'Mon', '', 'Wed', '', 'Fri', '']
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-const CELL_SIZE = 12
 const LEVEL_OPACITY = [0, 0.2, 0.45, 0.7, 1]
 
 function buildWeeks(days: ContributionDay[]): (ContributionDay | null)[][] {
@@ -62,7 +61,7 @@ export function ContributionHeatmap({ days }: ContributionHeatmapProps) {
   const [hovered, setHovered] = useState<string | null>(null)
   const weeks = buildWeeks(days)
   const max = Math.max(1, ...days.map((d) => d.count))
-  const columns = `repeat(${weeks.length}, ${CELL_SIZE}px)`
+  const columns = `repeat(${weeks.length}, minmax(0, 1fr))`
 
   const monthLabels = weeks.map((week, i) => {
     const firstDay = week.find((d) => d)
@@ -75,16 +74,16 @@ export function ContributionHeatmap({ days }: ContributionHeatmapProps) {
   })
 
   return (
-    <div className="flex gap-2 overflow-x-auto pb-1">
+    <div className="flex w-full gap-2">
       <div className="grid shrink-0 grid-rows-7 gap-1 pt-5 text-[10px] text-ink-faint">
         {DAY_LABELS.map((label, i) => (
-          <span key={i} className="flex items-center" style={{ height: CELL_SIZE }}>
+          <span key={i} className="flex h-3 items-center sm:h-[15px]">
             {label}
           </span>
         ))}
       </div>
 
-      <div className="shrink-0">
+      <div className="min-w-0 flex-1">
         <div className="grid gap-1" style={{ gridTemplateColumns: columns }}>
           {monthLabels.map((label, i) => (
             <span key={i} className="block h-4 text-[10px] text-ink-faint">
@@ -103,12 +102,8 @@ export function ContributionHeatmap({ days }: ContributionHeatmapProps) {
                     onMouseEnter={() => day && setHovered(key)}
                     onMouseLeave={() => setHovered(null)}
                     onTouchStart={() => day && setHovered((h) => (h === key ? null : key))}
-                    className="block rounded-[2px]"
-                    style={{
-                      width: CELL_SIZE,
-                      height: CELL_SIZE,
-                      background: day ? swatchBackground(levelFor(day.count, max)) : 'transparent',
-                    }}
+                    className="block aspect-square w-full rounded-[2px]"
+                    style={{ background: day ? swatchBackground(levelFor(day.count, max)) : 'transparent' }}
                   />
                   {day && hovered === key && (
                     <span className="glass pointer-events-none absolute bottom-full left-1/2 z-10 mb-1.5 -translate-x-1/2 whitespace-nowrap rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink shadow-lg">
