@@ -175,8 +175,8 @@ export function GithubStats() {
 
         {status === 'success' && contributions && contributions.days.length > 0 && (
           <Reveal delay={0.1}>
-            <div className="glass mt-6 rounded-2xl p-6">
-              <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+            <div className="glass mt-6 w-fit max-w-full rounded-2xl p-6">
+              <div className="mb-4 flex flex-wrap items-center gap-x-6 gap-y-2">
                 <p className="text-sm text-ink-dim">
                   {contributions.totalContributions} contributions in the last 3 months
                 </p>
