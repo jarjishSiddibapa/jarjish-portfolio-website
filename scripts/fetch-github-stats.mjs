@@ -13,7 +13,7 @@ const headers = {
 
 const to = new Date()
 const from = new Date(to)
-from.setMonth(from.getMonth() - 3)
+from.setFullYear(from.getFullYear() - 1)
 
 const contributionsQuery = `
   query($login: String!, $from: DateTime!, $to: DateTime!) {

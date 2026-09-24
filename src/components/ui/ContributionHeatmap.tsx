@@ -7,7 +7,7 @@ interface ContributionHeatmapProps {
 
 const DAY_LABELS = ['', 'Mon', '', 'Wed', '', 'Fri', '']
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-const CELL_SIZE = 20
+const CELL_SIZE = 12
 const LEVEL_OPACITY = [0, 0.2, 0.45, 0.7, 1]
 
 function buildWeeks(days: ContributionDay[]): (ContributionDay | null)[][] {

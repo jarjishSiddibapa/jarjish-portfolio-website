@@ -178,7 +178,7 @@ export function GithubStats() {
             <div className="glass mt-6 w-fit max-w-full rounded-2xl p-6">
               <div className="mb-4 flex flex-wrap items-center gap-x-6 gap-y-2">
                 <p className="text-sm text-ink-dim">
-                  {contributions.totalContributions} contributions in the last 3 months
+                  {contributions.totalContributions} contributions in the last year
                 </p>
                 <ContributionLegend />
               </div>
