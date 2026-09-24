@@ -12,7 +12,7 @@ import { ContributionHeatmap } from '@/components/ui/ContributionHeatmap'
 import { motion } from 'framer-motion'
 
 export function GithubStats() {
-  const { profile, repos, contributions, status, refreshedAt } = useGithubStats()
+  const { profile, repos, contributions, status } = useGithubStats()
 
   return (
     <section id="github" className="relative py-28 sm:py-36">
@@ -22,14 +22,6 @@ export function GithubStats() {
           title="A few things I've open-sourced"
           description="Live repository details from GitHub, including descriptions, stars, languages and recent updates."
         />
-
-        <div className="mt-6 text-sm text-ink-faint">
-          <p>
-            {refreshedAt
-              ? `Synced hourly · last updated ${refreshedAt.toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}`
-              : 'Loading repository data…'}
-          </p>
-        </div>
 
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
           <Reveal className="lg:col-span-1">
