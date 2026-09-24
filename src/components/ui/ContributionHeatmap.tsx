@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { ContributionDay } from '@/hooks/useGithubStats'
 
 interface ContributionHeatmapProps {
@@ -11,6 +12,8 @@ function buildWeeks(days: ContributionDay[]): (ContributionDay | null)[][] {
   if (days.length === 0) return []
   const leadingEmpty = new Date(days[0].date).getDay()
   const cells: (ContributionDay | null)[] = [...Array.from({ length: leadingEmpty }, () => null), ...days]
+  const trailingEmpty = (7 - (cells.length % 7)) % 7
+  cells.push(...Array.from({ length: trailingEmpty }, () => null))
   const weeks: (ContributionDay | null)[][] = []
   for (let i = 0; i < cells.length; i += 7) {
     weeks.push(cells.slice(i, i + 7))
@@ -25,48 +28,78 @@ function levelFor(count: number, max: number): number {
 
 const LEVEL_OPACITY = [0, 0.2, 0.45, 0.7, 1]
 
+function formatDate(dateStr: string): string {
+  return new Date(`${dateStr}T00:00:00`).toLocaleDateString(undefined, {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  })
+}
+
 export function ContributionHeatmap({ days }: ContributionHeatmapProps) {
+  const [hovered, setHovered] = useState<string | null>(null)
   const weeks = buildWeeks(days)
   const max = Math.max(1, ...days.map((d) => d.count))
+  const columns = `repeat(${weeks.length}, minmax(0, 1fr))`
 
   const monthLabels = weeks.map((week, i) => {
     const firstDay = week.find((d) => d)
     if (!firstDay) return null
-    const date = new Date(firstDay.date)
+    const date = new Date(`${firstDay.date}T00:00:00`)
     const prevWeekFirstDay = i > 0 ? weeks[i - 1].find((d) => d) : null
-    const isNewMonth = !prevWeekFirstDay || new Date(prevWeekFirstDay.date).getMonth() !== date.getMonth()
+    const isNewMonth =
+      !prevWeekFirstDay || new Date(`${prevWeekFirstDay.date}T00:00:00`).getMonth() !== date.getMonth()
     return isNewMonth ? MONTH_NAMES[date.getMonth()] : null
   })
 
   return (
-    <div className="flex gap-2 overflow-x-auto">
+    <div className="flex w-full gap-2">
       <div className="grid shrink-0 grid-rows-7 gap-1 pt-5 text-[10px] text-ink-faint">
         {DAY_LABELS.map((label, i) => (
-          <span key={i} className="flex h-3 items-center">
+          <span key={i} className="flex h-3 items-center sm:h-4">
             {label}
           </span>
         ))}
       </div>
-      <div className="flex gap-1">
-        {weeks.map((week, weekIndex) => (
-          <div key={weekIndex} className="flex flex-col gap-1">
-            <span className="block h-4 text-[10px] text-ink-faint">{monthLabels[weekIndex] ?? ''}</span>
-            {week.map((day, dayIndex) => (
-              <span
-                key={dayIndex}
-                className="block h-3 w-3 rounded-[2px]"
-                style={{
-                  background: !day
-                    ? 'transparent'
-                    : day.count === 0
-                      ? 'color-mix(in oklab, var(--color-ink) 8%, transparent)'
-                      : `color-mix(in oklab, var(--color-accent) ${LEVEL_OPACITY[levelFor(day.count, max)] * 100}%, transparent)`,
-                }}
-                title={day ? `${day.count} contribution${day.count === 1 ? '' : 's'} on ${day.date}` : undefined}
-              />
-            ))}
-          </div>
-        ))}
+
+      <div className="min-w-0 flex-1">
+        <div className="grid gap-1" style={{ gridTemplateColumns: columns }}>
+          {monthLabels.map((label, i) => (
+            <span key={i} className="block h-4 text-[10px] text-ink-faint">
+              {label ?? ''}
+            </span>
+          ))}
+        </div>
+
+        <div className="grid grid-flow-col grid-rows-7 gap-1" style={{ gridTemplateColumns: columns }}>
+          {weeks.flatMap((week, weekIndex) =>
+            week.map((day, dayIndex) => {
+              const key = `${weekIndex}-${dayIndex}`
+              return (
+                <span key={key} className="relative">
+                  <span
+                    onMouseEnter={() => day && setHovered(key)}
+                    onMouseLeave={() => setHovered(null)}
+                    onTouchStart={() => day && setHovered((h) => (h === key ? null : key))}
+                    className="block aspect-square w-full rounded-[2px]"
+                    style={{
+                      background: !day
+                        ? 'transparent'
+                        : day.count === 0
+                          ? 'color-mix(in oklab, var(--color-ink) 8%, transparent)'
+                          : `color-mix(in oklab, var(--color-accent) ${LEVEL_OPACITY[levelFor(day.count, max)] * 100}%, transparent)`,
+                    }}
+                  />
+                  {day && hovered === key && (
+                    <span className="glass pointer-events-none absolute bottom-full left-1/2 z-10 mb-1.5 -translate-x-1/2 whitespace-nowrap rounded-lg px-2.5 py-1.5 text-xs font-medium text-ink shadow-lg">
+                      {day.count} contribution{day.count === 1 ? '' : 's'} on {formatDate(day.date)}
+                    </span>
+                  )}
+                </span>
+              )
+            }),
+          )}
+        </div>
       </div>
     </div>
   )
