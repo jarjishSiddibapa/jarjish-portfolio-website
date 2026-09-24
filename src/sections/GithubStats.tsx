@@ -8,7 +8,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Reveal } from '@/components/ui/Reveal'
 import { revealItem } from '@/utils/motion-variants'
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
-import { ContributionHeatmap } from '@/components/ui/ContributionHeatmap'
+import { ContributionHeatmap, ContributionLegend } from '@/components/ui/ContributionHeatmap'
 import { motion } from 'framer-motion'
 
 export function GithubStats() {
@@ -176,9 +176,12 @@ export function GithubStats() {
         {status === 'success' && contributions && contributions.days.length > 0 && (
           <Reveal delay={0.1}>
             <div className="glass mt-6 rounded-2xl p-6">
-              <p className="mb-4 text-sm text-ink-dim">
-                {contributions.totalContributions} contributions in the last 3 months
-              </p>
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+                <p className="text-sm text-ink-dim">
+                  {contributions.totalContributions} contributions in the last 3 months
+                </p>
+                <ContributionLegend />
+              </div>
               <ContributionHeatmap days={contributions.days} />
             </div>
           </Reveal>
