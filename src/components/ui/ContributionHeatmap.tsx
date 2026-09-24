@@ -56,10 +56,11 @@ export function ContributionHeatmap({ days }: ContributionHeatmapProps) {
                 key={dayIndex}
                 className="block h-3 w-3 rounded-[2px]"
                 style={{
-                  background: day
-                    ? `color-mix(in oklab, var(--color-accent) ${LEVEL_OPACITY[levelFor(day.count, max)] * 100}%, transparent)`
-                    : 'transparent',
-                  outline: day ? '1px solid color-mix(in oklab, var(--color-ink) 6%, transparent)' : 'none',
+                  background: !day
+                    ? 'transparent'
+                    : day.count === 0
+                      ? 'color-mix(in oklab, var(--color-ink) 8%, transparent)'
+                      : `color-mix(in oklab, var(--color-accent) ${LEVEL_OPACITY[levelFor(day.count, max)] * 100}%, transparent)`,
                 }}
                 title={day ? `${day.count} contribution${day.count === 1 ? '' : 's'} on ${day.date}` : undefined}
               />
