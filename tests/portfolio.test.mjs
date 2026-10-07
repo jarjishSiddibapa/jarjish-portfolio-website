@@ -24,7 +24,11 @@ test('featured projects lead with professional analytics and isolate practice', 
     'rdc-daily-volume-tracker',
     'rdc-accounts-suite',
     'rdc-so-ageing-data-push',
+    'rdc-payment-reminder-v2',
+    'rdc-stamper-v2',
+    'rdc-pdc-project',
     'rdc-digital-signatures',
+    'rdc-website-chatbot',
   ])
   assert.match(projects.find(p => p.id === 'databricks-pyspark-practice').context, /practice \/ learning/)
 })

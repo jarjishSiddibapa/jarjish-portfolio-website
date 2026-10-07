@@ -45,7 +45,9 @@ export const projects: ProjectEntry[] = [
     highlights: ['AP exception reporting: unaccounted transactions, pending MRNs and uninvoiced expense POs', 'Validated Balance Confirmation and Payment Reminder datasets', 'PDF and email workflows across three business entities'],
     stack: ['SQL', 'Python', 'Excel', 'Oracle EBS', 'PDF generation', 'Email automation'],
     impact: 'About one hour/day of AP reporting automated; a 2–3 day confirmation/reminder process reduced to minutes.',
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-payment-reminder-v2' }],
     featured: true,
+    githubFeatured: true,
   },
   {
     id: 'databricks-pyspark-practice',
@@ -69,14 +71,33 @@ export const projects: ProjectEntry[] = [
     title: 'RDC Stamper V1 / V2',
     category: 'Reporting & Automation',
     description:
-      'An OCR-based desktop tool for processing and stamping high volumes of PDF documents, with duplicate-detection logic to catch reprocessing errors.',
+      'A Windows desktop tool that verifies scanned invoice PDFs against an Excel list, stamps only the matching pages and writes an Excel verification report, with an offline OCR fallback and duplicate detection.',
     highlights: [
-      'Tesseract OCR pipeline for automated document reading',
-      'Duplicate-detection logic to prevent double-processing',
+      'Matches invoice numbers and dates to an Excel list; flags duplicates, date mismatches and missing invoices in a report',
+      'Offline Tesseract OCR fallback with parallel page analysis',
       'Formally recognized by the CFO for its impact',
     ],
-    stack: ['Python', 'Tesseract OCR', 'PyMuPDF', 'customtkinter'],
+    stack: ['Python', 'PySide6', 'PyMuPDF', 'Tesseract OCR', 'pandas'],
     impact: '~80% reduction in manual document handling time',
+    githubFeatured: true,
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-stamper-v2' }],
+  },
+  {
+    id: 'pdc-manager',
+    title: 'RDC PDC Manager',
+    category: 'Reporting & Automation',
+    context: 'Professional work · Finance operations',
+    description:
+      'A role-based Flask application that manages post-dated cheques from collection to clearance, with a 13-status workflow, ERP-synchronised master data, dashboards and an Excel report builder.',
+    highlights: [
+      'Role-scoped workflow for sales, accounts, HO accounts and credit control, with a full audit trail',
+      'Oracle ERP sync of customers and sales representatives on a configurable schedule',
+      'Excel report builder with filters, column selection and formatted export',
+    ],
+    stack: ['Python', 'Flask', 'MySQL', 'Oracle ERP', 'Chart.js'],
+    impact: 'One audited workflow for every post-dated cheque, from collection to clearance, bounce or settlement.',
+    githubFeatured: true,
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-pdc-project' }],
   },
   {
     id: 'digital-signature-app',
@@ -113,14 +134,16 @@ export const projects: ProjectEntry[] = [
     title: 'AI Chatbot for Corporate Website',
     category: 'Other Projects',
     description:
-      'An LLM-powered chatbot built for the corporate website, combining Gemini and Claude APIs behind a Flask backend, with architecture documented for a clean handover to stakeholders.',
+      'A multilingual, voice-enabled chat assistant for the corporate website, built on Gemini with Google Search grounding and Google Cloud Text-to-Speech, behind a Flask API and a lightweight chat widget.',
     highlights: [
-      'Backed by Gemini and Claude LLM APIs',
-      'Flask backend with a lightweight HTML/CSS/JS front end',
+      'Text and voice questions, with spoken replies in Hindi, Marathi, Telugu or Indian English',
+      'Knowledge base built from scraped website pages and a locations file, with Google Search as a fallback',
       'Architecture documented for non-technical stakeholder handover',
     ],
-    stack: ['Python', 'Flask', 'Gemini API', 'Claude API', 'JavaScript'],
+    stack: ['Python', 'Flask', 'Gemini API', 'Google Cloud TTS', 'JavaScript'],
     impact: 'Live AI assistant shipped end-to-end for a corporate website',
+    githubFeatured: true,
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-website-chatbot' }],
   },
   {
     id: 'lung-disease-classification',
