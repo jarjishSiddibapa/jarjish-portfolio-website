@@ -1,32 +1,112 @@
 {
-  "generatedAt": "2026-10-07T06:56:33.451Z",
+  "generatedAt": "2026-10-07T10:48:19.054Z",
   "profile": {
     "followers": 0,
-    "public_repos": 32,
+    "public_repos": 36,
     "avatar_url": "https://avatars.githubusercontent.com/u/135226973?v=4",
     "bio": null,
     "html_url": "https://github.com/jarjishSiddibapa"
   },
   "repos": [
     {
-      "id": 1370977564,
-      "name": "rdc_onboarding",
-      "html_url": "https://github.com/jarjishSiddibapa/rdc_onboarding",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "Python",
-      "fork": false,
-      "updated_at": "2026-10-07T06:42:31Z"
-    },
-    {
       "id": 1318239254,
       "name": "jarjish-portfolio-website",
       "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
-      "description": null,
+      "description": "Personal Data Analyst portfolio built with React, TypeScript, Vite and Tailwind, deployed on GitHub Pages with an hourly GitHub stats refresh.",
       "stargazers_count": 0,
       "language": "TypeScript",
       "fork": false,
-      "updated_at": "2026-10-07T04:58:26Z"
+      "updated_at": "2026-10-07T10:48:03Z"
+    },
+    {
+      "id": 1408387946,
+      "name": "rdc-website-chatbot",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-website-chatbot",
+      "description": "Multilingual, voice-enabled chat assistant for a corporate website: Gemini with Google Search grounding, Google Cloud Text-to-Speech, a Flask API and a lightweight chat widget.",
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-10-07T10:48:01Z"
+    },
+    {
+      "id": 1357892360,
+      "name": "rdc-digital-signatures",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-digital-signatures",
+      "description": "Desktop app for hardware-token (PKCS#11 USB) digital signing of PDFs, with hot-plug detection, dual signature-placement modes and batch processing.",
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-10-07T10:47:59Z"
+    },
+    {
+      "id": 1370977564,
+      "name": "rdc_onboarding",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc_onboarding",
+      "description": "Role-based Flask app for employee onboarding: configurable approval workflow, attendance-system push and a staffing-norms hiring gate. 362 automated tests.",
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-10-07T10:47:57Z"
+    },
+    {
+      "id": 1408387260,
+      "name": "rdc-pdc-project",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-pdc-project",
+      "description": "Role-based Flask app that manages post-dated cheques from collection to clearance: 13-status workflow, Oracle ERP-synced master data, dashboards and an Excel report builder.",
+      "stargazers_count": 0,
+      "language": "HTML",
+      "fork": false,
+      "updated_at": "2026-10-07T10:47:56Z"
+    },
+    {
+      "id": 1408389264,
+      "name": "rdc-stamper-v2",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-stamper-v2",
+      "description": "Windows desktop tool that verifies scanned invoice PDFs against an Excel list, stamps matching pages and writes a verification report, with an offline OCR fallback.",
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-10-07T10:47:54Z"
+    },
+    {
+      "id": 1408388602,
+      "name": "rdc-payment-reminder-v2",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-payment-reminder-v2",
+      "description": "Desktop app that groups overdue ERP invoices by customer and generates payment-reminder PDFs and emails (Python, PySide6).",
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-10-07T10:47:52Z"
+    },
+    {
+      "id": 1357891868,
+      "name": "rdc-so-ageing-data-push",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-so-ageing-data-push",
+      "description": "Self-auditing SO Ageing pipeline: Oracle EBS data refreshed every three hours and pushed to an API, with independent 24-hour reconciliation to catch silent failures.",
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-10-07T10:47:49Z"
+    },
+    {
+      "id": 1344682583,
+      "name": "rdc-accounts-suite",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-accounts-suite",
+      "description": "Finance operations workspace: Excel reporting, Oracle ERP enrichment, shared mappings, reconciliation and scheduled communication with permission control.",
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-10-07T10:47:48Z"
+    },
+    {
+      "id": 1349203728,
+      "name": "rdc-daily-volume-tracker",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-daily-volume-tracker",
+      "description": "Daily production and volume tracker for 140+ concrete plants: Oracle ERP sync, manual entry, target variance, zero-volume alerts and Excel reports.",
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-10-07T10:47:46Z"
     },
     {
       "id": 1346880508,
@@ -37,16 +117,6 @@
       "language": "HTML",
       "fork": false,
       "updated_at": "2026-10-06T05:12:27Z"
-    },
-    {
-      "id": 1344682583,
-      "name": "rdc-accounts-suite",
-      "html_url": "https://github.com/jarjishSiddibapa/rdc-accounts-suite",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "Python",
-      "fork": false,
-      "updated_at": "2026-09-28T08:23:34Z"
     },
     {
       "id": 1380903862,
@@ -67,36 +137,6 @@
       "language": "Python",
       "fork": false,
       "updated_at": "2026-09-16T07:43:54Z"
-    },
-    {
-      "id": 1357891868,
-      "name": "rdc-so-ageing-data-push",
-      "html_url": "https://github.com/jarjishSiddibapa/rdc-so-ageing-data-push",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "Python",
-      "fork": false,
-      "updated_at": "2026-09-05T10:03:27Z"
-    },
-    {
-      "id": 1357892360,
-      "name": "rdc-digital-signatures",
-      "html_url": "https://github.com/jarjishSiddibapa/rdc-digital-signatures",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "Python",
-      "fork": false,
-      "updated_at": "2026-09-05T09:20:34Z"
-    },
-    {
-      "id": 1349203728,
-      "name": "rdc-daily-volume-tracker",
-      "html_url": "https://github.com/jarjishSiddibapa/rdc-daily-volume-tracker",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "Python",
-      "fork": false,
-      "updated_at": "2026-09-05T06:57:26Z"
     },
     {
       "id": 1067341313,
@@ -330,7 +370,7 @@
     }
   ],
   "contributions": {
-    "totalContributions": 220,
+    "totalContributions": 238,
     "days": [
       {
         "date": "2025-10-07",
@@ -1794,7 +1834,7 @@
       },
       {
         "date": "2026-10-07",
-        "count": 3
+        "count": 21
       }
     ]
   }
