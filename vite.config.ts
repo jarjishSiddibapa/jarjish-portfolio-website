@@ -19,7 +19,14 @@ export default defineConfig({
     <meta data-rh="true" property="og:title" content="${escape(seo.title)}" />
     <meta data-rh="true" property="og:description" content="${escape(seo.description)}" />
     <meta data-rh="true" property="og:url" content="${seo.siteUrl}" />
-    <meta data-rh="true" name="twitter:card" content="summary" />
+    <meta data-rh="true" property="og:site_name" content="Jarjish Siddibapa" />
+    <meta data-rh="true" property="og:locale" content="en_IN" />
+    <meta data-rh="true" property="og:image" content="${seo.siteUrl}${seo.imagePath}" />
+    <meta data-rh="true" property="og:image:width" content="1200" />
+    <meta data-rh="true" property="og:image:height" content="630" />
+    <meta data-rh="true" property="og:image:alt" content="${escape(seo.imageAlt)}" />
+    <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+    <meta data-rh="true" name="twitter:image" content="${seo.siteUrl}${seo.imagePath}" />
     <meta data-rh="true" name="twitter:title" content="${escape(seo.title)}" />
     <meta data-rh="true" name="twitter:description" content="${escape(seo.description)}" />`)
     },

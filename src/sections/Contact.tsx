@@ -1,5 +1,4 @@
 import { useState, type FormEvent } from 'react'
-import emailjs from '@emailjs/browser'
 import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
 import { profile, socials } from '@/data/profile'
 import { Container } from '@/components/ui/Container'
@@ -47,12 +46,20 @@ export function Contact() {
     if (Object.keys(nextErrors).length > 0) return
 
     if (!isConfigured) {
+      // No mail service configured: hand the message to the visitor's own mail app so it is never lost.
+      const subject = encodeURIComponent(`Portfolio enquiry from ${name}`)
+      const body = encodeURIComponent(`${message}
+
+${name}
+${email}`)
+      window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
       setStatus('unconfigured')
       return
     }
 
     try {
       setStatus('sending')
+      const { default: emailjs } = await import('@emailjs/browser')
       await emailjs.sendForm(serviceId!, templateId!, form, { publicKey })
       setStatus('success')
       form.reset()
@@ -100,13 +107,12 @@ export function Contact() {
                 <p className="text-xs text-ink-faint uppercase">Elsewhere</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {socials
-                    .filter((s) => s.icon === 'github' || s.icon === 'linkedin')
+                    .filter((s) => s.icon === 'github' || s.icon === 'linkedin' || s.icon === 'resume')
                     .map((s) => (
                       <a
                         key={s.label}
                         href={s.href}
-                        target="_blank"
-                        rel="noreferrer"
+                        {...(s.icon === 'resume' ? { download: true } : { target: '_blank', rel: 'noreferrer' })}
                         data-cursor-hover
                         className="rounded-full border border-border px-4 py-2 text-sm text-ink-dim transition hover:border-accent/50 hover:text-ink"
                       >
@@ -211,11 +217,11 @@ export function Contact() {
                 )}
                 {status === 'unconfigured' && (
                   <span role="status" className="text-sm text-ink-faint">
-                    Please email{' '}
+                    Opening your email app with your message. If nothing opens, write to{' '}
                     <a href={`mailto:${profile.email}`} className="text-accent-3 hover:underline">
                       {profile.email}
-                    </a>{' '}
-                    directly.
+                    </a>
+                    .
                   </span>
                 )}
               </div>

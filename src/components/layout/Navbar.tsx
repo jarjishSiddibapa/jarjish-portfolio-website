@@ -70,7 +70,7 @@ export function Navbar() {
         >
           <button
             onClick={() => scrollTo('hero')}
-            aria-label="Back to introduction"
+            aria-label={`${profile.initials} ${profile.name}: back to introduction`}
             data-cursor-hover
             className="font-display flex items-center gap-2 text-lg font-semibold tracking-tight"
           >

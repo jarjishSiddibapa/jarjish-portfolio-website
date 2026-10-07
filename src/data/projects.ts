@@ -100,6 +100,23 @@ export const projects: ProjectEntry[] = [
     links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-pdc-project' }],
   },
   {
+    id: 'onboarding-portal',
+    title: 'RDC Employee Onboarding Portal',
+    category: 'Reporting & Automation',
+    context: 'Professional work · HR operations',
+    description:
+      'A role-based Flask application that takes a new hire from hiring request to registration in the attendance system through a configurable multi-step approval workflow, with a staffing-norms gate that blocks over-norm hiring.',
+    highlights: [
+      'Approval workflow built as a state machine, with region and company routing and an append-only audit log',
+      'Approved employees pushed to the Truein attendance API with validation, retries and a pre-flight check',
+      'Headcount reconciled from ZingHR and Truein against plant production volume to enforce staffing norms',
+    ],
+    stack: ['Python', 'Flask', 'SQLAlchemy', 'MySQL', 'REST APIs', 'pytest'],
+    impact: 'One audited route from hiring request to attendance registration, backed by 362 automated tests.',
+    githubFeatured: true,
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc_onboarding' }],
+  },
+  {
     id: 'digital-signature-app',
     title: 'RDC Digital Signature Application',
     category: 'Other Projects',

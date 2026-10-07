@@ -1,4 +1,4 @@
-import { GraduationCap, Award, Sparkles } from 'lucide-react'
+import { GraduationCap, Award, Sparkles, IndianRupee } from 'lucide-react'
 import { education } from '@/data/experience'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -18,7 +18,7 @@ const achievements = [
     detail: 'Graduated with Honors in Artificial Intelligence & Machine Learning, CGPA 9.54/10.',
   },
   {
-    icon: GraduationCap,
+    icon: IndianRupee,
     title: '₹20k+ Cost Savings',
     detail: 'In-house Digital Signature App replaced a paid tool costing ₹20k+ per user license.',
   },

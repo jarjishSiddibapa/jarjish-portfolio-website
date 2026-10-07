@@ -1,6 +1,7 @@
-import { lazy, Suspense, useRef } from 'react'
+import { lazy, Suspense } from 'react'
 import { BookOpen, Gamepad2, Users } from 'lucide-react'
 import { useScrollProgressRef } from '@/hooks/useScrollProgressRef'
+import { useInViewOnce } from '@/hooks/useInViewOnce'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -36,8 +37,8 @@ const interests = [
 ]
 
 function InterestCard({ interest }: { interest: (typeof interests)[number] }) {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const progressRef = useScrollProgressRef(cardRef)
+  const [cardRef, seen] = useInViewOnce<HTMLDivElement>()
+  const progressRef = useScrollProgressRef(cardRef, seen)
   const reducedMotion = useReducedMotion()
   const Icon = interest.icon
 
@@ -47,7 +48,7 @@ function InterestCard({ interest }: { interest: (typeof interests)[number] }) {
       className="glow-border glass group overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-0.5deg]"
     >
       <div className="h-44 w-full cursor-grab active:cursor-grabbing" data-cursor-hover>
-        {!reducedMotion && (
+        {!reducedMotion && seen && (
           <Suspense
             fallback={<div className="h-full w-full animate-pulse bg-ink/[0.025]" />}
           >

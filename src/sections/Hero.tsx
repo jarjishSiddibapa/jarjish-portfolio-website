@@ -5,6 +5,8 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa6'
 import { profile, socials } from '@/data/profile'
 import { useTypewriter } from '@/hooks/useTypewriter'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { useIdleReady } from '@/hooks/useIdleReady'
 import { Container } from '@/components/ui/Container'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { getLenis } from '@/hooks/useLenis'
@@ -16,6 +18,8 @@ const HeroScene = lazy(() =>
 export function Hero() {
   const capability = useTypewriter(profile.roles)
   const reducedMotion = useReducedMotion()
+  const isWide = useMediaQuery('(min-width: 1024px)')
+  const idle = useIdleReady()
   const githubLink = socials.find((s) => s.icon === 'github')
   const linkedinLink = socials.find((s) => s.icon === 'linkedin')
 
@@ -32,7 +36,7 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center overflow-hidden pt-32 pb-20"
     >
-      {!reducedMotion && (
+      {!reducedMotion && isWide && idle && (
         <div className="pointer-events-none absolute inset-0 -z-0 opacity-90 [mask-image:radial-gradient(ellipse_38%_42%_at_84%_42%,black,transparent)]">
           <Suspense fallback={null}>
             <HeroScene />
@@ -56,8 +60,8 @@ export function Hero() {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ y: 16 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-6xl leading-[1.02] font-semibold tracking-tight text-balance sm:text-7xl lg:text-8xl"
           >

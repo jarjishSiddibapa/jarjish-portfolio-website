@@ -13,7 +13,13 @@ const jsonLd = {
   url: siteUrl,
   email: profile.email,
   knowsAbout: ['Data Analysis', 'SQL', 'PL/SQL', 'Python', 'Excel', 'SUMIFS', 'Pivot Tables', 'XLOOKUP', 'Oracle EBS', 'Reporting', 'Reconciliation', 'Data Quality', 'Automation', 'Databricks', 'PySpark'],
+  image: `${siteUrl}${seo.imagePath}`,
+  description: seo.description,
   worksFor: { '@type': 'Organization', name: 'RDC Concrete' },
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'A.P. Shah Institute of Technology' },
+    { '@type': 'CollegeOrUniversity', name: 'Muchhala Polytechnic' },
+  ],
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Thane',

@@ -6,10 +6,11 @@ import { useEffect, useRef, type RefObject } from 'react'
  * the top). Written to a mutable ref rather than React state so consumers
  * (e.g. an R3F useFrame loop) can read it every frame without re-rendering.
  */
-export function useScrollProgressRef(targetRef: RefObject<HTMLElement | null>) {
+export function useScrollProgressRef(targetRef: RefObject<HTMLElement | null>, enabled = true) {
   const progress = useRef(0)
 
   useEffect(() => {
+    if (!enabled) return
     let raf: number
 
     const update = () => {
@@ -25,7 +26,7 @@ export function useScrollProgressRef(targetRef: RefObject<HTMLElement | null>) {
 
     raf = requestAnimationFrame(update)
     return () => cancelAnimationFrame(raf)
-  }, [targetRef])
+  }, [targetRef, enabled])
 
   return progress
 }

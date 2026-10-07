@@ -124,7 +124,7 @@ export function GithubStats() {
                     rel="noreferrer"
                     data-cursor-hover
                     variants={revealItem}
-                    className="glass group rounded-2xl border border-border p-5 transition hover:border-accent/40"
+                    className="glass group rounded-2xl border border-border p-5 transition hover:border-accent/40 sm:[&:last-child:nth-child(odd)]:col-span-2"
                   >
                     <div className="flex items-center justify-between gap-2">
                       <span className="flex min-w-0 items-center gap-2 break-words font-medium text-ink">

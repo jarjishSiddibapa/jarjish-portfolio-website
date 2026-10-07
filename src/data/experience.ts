@@ -31,6 +31,16 @@ export const experience: ExperienceEntry[] = [
         href: 'https://github.com/jarjishSiddibapa/rdc-accounts-suite',
       },
       {
+        title: 'PDC Manager',
+        detail: 'Post-dated cheque workflow from collection to clearance, with Oracle ERP sync and an Excel report builder.',
+        href: 'https://github.com/jarjishSiddibapa/rdc-pdc-project',
+      },
+      {
+        title: 'Onboarding Portal',
+        detail: 'Approval workflow for new hires with attendance-system push and a staffing-norms gate.',
+        href: 'https://github.com/jarjishSiddibapa/rdc_onboarding',
+      },
+      {
         title: 'Digital Signatures',
         detail: 'Hardware-token PDF signing and batch automation built as an in-house desktop application.',
         href: 'https://github.com/jarjishSiddibapa/rdc-digital-signatures',

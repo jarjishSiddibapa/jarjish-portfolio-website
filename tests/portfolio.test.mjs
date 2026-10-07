@@ -27,6 +27,7 @@ test('featured projects lead with professional analytics and isolate practice', 
     'rdc-payment-reminder-v2',
     'rdc-stamper-v2',
     'rdc-pdc-project',
+    'rdc_onboarding',
     'rdc-digital-signatures',
     'rdc-website-chatbot',
   ])
@@ -49,7 +50,9 @@ test('production HTML exposes shared SEO without JavaScript', async () => {
   assert.ok(html.includes(seo.title.replaceAll('&', '&amp;')))
   assert.ok(html.includes(seo.description))
   assert.equal((html.match(/<title>/g) ?? []).length, 1)
-  for (const field of ['og:title', 'og:description', 'og:url', 'twitter:title', 'twitter:description']) assert.ok(html.includes(field))
+  for (const field of ['og:title', 'og:description', 'og:url', 'og:image', 'twitter:title', 'twitter:description', 'twitter:image']) assert.ok(html.includes(field))
+  assert.ok(html.includes(`${seo.siteUrl}${seo.imagePath}`))
+  await readFile(new URL(`../dist/${seo.imagePath}`, import.meta.url))
   for (const file of ['sitemap.xml', 'robots.txt']) {
     assert.ok((await readFile(new URL(`../dist/${file}`, import.meta.url), 'utf8')).includes(seo.siteUrl))
   }
