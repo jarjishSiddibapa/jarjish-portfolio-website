@@ -31,7 +31,7 @@ test('featured projects lead with professional analytics and isolate practice', 
 
 test('skill groups contain unique named competencies without proficiency scores', async () => {
   const { skillCategories } = await loadData('skills')
-  assert.equal(skillCategories.length, 4)
+  assert.equal(skillCategories.length, 5)
   for (const category of skillCategories) {
     assert.equal(new Set(category.skills).size, category.skills.length)
     assert.ok(category.skills.every(skill => typeof skill === 'string' && skill.length > 0))
