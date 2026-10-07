@@ -47,9 +47,9 @@ export const stats: StatEntry[] = [
 export const githubUsername = 'jarjishSiddibapa'
 
 export const aboutPillars = [
-  { icon: 'BarChart3', title: 'Reporting & analysis', description: 'Production visibility, variance analysis and Excel reporting that help teams act on operational data.' },
+  { icon: 'BarChart3', title: 'Reporting & analysis', description: 'Production visibility, variance analysis and Excel reporting (SUMIFS, lookups, pivot tables) that help teams act on operational data.' },
   { icon: 'Database', title: 'Reconciliation & data quality', description: 'SQL and PL/SQL checks for complete, consistent ERP data and finance exception reporting.' },
   { icon: 'Bot', title: 'Data automation', description: 'Python and REST API workflows that validate data and reduce repetitive reporting work.' },
 ]
 
-export const skillMarquee = ['SQL', 'PL/SQL', 'Python', 'Excel', 'Oracle EBS', 'Reporting', 'Reconciliation', 'Data Quality', 'pandas', 'REST APIs', 'Databricks', 'PySpark']
+export const skillMarquee = ['SQL', 'PL/SQL', 'Python', 'Excel', 'Oracle EBS', 'Reporting', 'Reconciliation', 'Data Quality', 'pandas', 'REST APIs', 'Databricks', 'PySpark', 'SUMIFS', 'Pivot Tables', 'XLOOKUP']

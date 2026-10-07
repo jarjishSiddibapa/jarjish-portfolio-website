@@ -5,6 +5,7 @@ import {
   Database,
   Plug,
   Code2,
+  Table2,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -15,4 +16,5 @@ export const iconMap: Record<string, LucideIcon> = {
   Database,
   Plug,
   Code2,
+  Table2,
 }

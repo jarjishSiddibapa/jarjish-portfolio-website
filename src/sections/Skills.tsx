@@ -12,14 +12,18 @@ export function Skills() {
         <SectionHeading
           eyebrow="Skills"
           title="Tools for analysis, reporting and reliable data"
-          description="SQL and Python at the core, supported by enterprise platforms and data engineering practice."
+          description="SQL, Excel and Python at the core, supported by enterprise platforms and data engineering practice."
         />
 
         <div className="mt-16 grid gap-6 md:grid-cols-2">
           {skillCategories.map((category, i) => {
             const Icon = iconMap[category.icon]
             return (
-              <Reveal key={category.id} delay={(i % 3) * 0.08}>
+              <Reveal
+                key={category.id}
+                delay={(i % 3) * 0.08}
+                className={i === skillCategories.length - 1 && skillCategories.length % 2 === 1 ? 'md:col-span-2' : undefined}
+              >
                 <div className="glow-border glass group h-full rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-1">
                   <div className="mb-5 flex items-center gap-3">
                     <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-accent/20 to-accent-2/20 text-accent-3">

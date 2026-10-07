@@ -12,7 +12,7 @@ const jsonLd = {
   jobTitle: profile.primaryRole,
   url: siteUrl,
   email: profile.email,
-  knowsAbout: ['Data Analysis', 'SQL', 'PL/SQL', 'Python', 'Excel', 'Oracle EBS', 'Reporting', 'Reconciliation', 'Data Quality', 'Automation', 'Databricks', 'PySpark'],
+  knowsAbout: ['Data Analysis', 'SQL', 'PL/SQL', 'Python', 'Excel', 'SUMIFS', 'Pivot Tables', 'XLOOKUP', 'Oracle EBS', 'Reporting', 'Reconciliation', 'Data Quality', 'Automation', 'Databricks', 'PySpark'],
   worksFor: { '@type': 'Organization', name: 'RDC Concrete' },
   address: {
     '@type': 'PostalAddress',

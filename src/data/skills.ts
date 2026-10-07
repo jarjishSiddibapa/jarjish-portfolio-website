@@ -4,7 +4,12 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'sql', title: 'SQL & Analytics', icon: 'BarChart3',
     description: 'Query, reconcile and explain operational and financial data.',
-    skills: ['Advanced SQL', 'PL/SQL', 'Complex joins', 'CTEs', 'Subqueries', 'Window functions', 'Aggregations', 'Stored procedures', 'Query optimization', 'Excel', 'Data reconciliation', 'Data validation', 'Data quality', 'Reporting', 'Anomaly / exception analysis'],
+    skills: ['Advanced SQL', 'PL/SQL', 'Complex joins', 'CTEs', 'Subqueries', 'Window functions', 'Aggregations', 'Stored procedures', 'Query optimization', 'Data reconciliation', 'Data validation', 'Data quality', 'Reporting', 'Anomaly / exception analysis'],
+  },
+  {
+    id: 'excel', title: 'Excel & Reporting', icon: 'Table2',
+    description: 'Summarise, look up and report on data in spreadsheets stakeholders already use.',
+    skills: ['Excel', 'SUMIFS / COUNTIFS / AVERAGEIFS', 'Aggregate functions', 'XLOOKUP / VLOOKUP / INDEX-MATCH', 'Pivot tables', 'Data cleaning', 'Excel reconciliation', 'Variance reporting'],
   },
   {
     id: 'python', title: 'Python & Data Analysis', icon: 'Code2',
