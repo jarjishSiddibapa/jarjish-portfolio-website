@@ -22,7 +22,6 @@ export function Projects() {
     <section id="projects" className="relative py-28 sm:py-36">
       <Container>
         <SectionHeading
-          eyebrow="Projects"
           title="Data work with a business purpose"
           description="Professional reporting, reconciliation and automation first, followed by hands-on data engineering practice."
         />
@@ -34,7 +33,7 @@ export function Projects() {
               onClick={() => setFilter(cat)}
               aria-pressed={filter === cat}
               aria-controls="project-grid"
-              data-cursor-hover
+             
               className={cn(
                 'rounded-full border px-4 py-2 text-sm font-medium transition-colors',
                 filter === cat
@@ -59,7 +58,7 @@ export function Projects() {
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className={cn('min-w-0', project.featured && 'md:col-span-2')}
               >
-                <TiltCard className="glow-border glass h-full rounded-2xl p-7 sm:p-8">
+                <TiltCard className="glass h-full rounded-2xl p-7 sm:p-8">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-ink/[0.035] px-3 py-1 text-xs font-medium text-accent-3">
                       {project.featured && <Sparkles className="h-3 w-3" />}
@@ -72,7 +71,7 @@ export function Projects() {
                           href={link.href}
                           target="_blank"
                           rel="noreferrer"
-                          data-cursor-hover
+                         
                           className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border px-3 text-sm text-ink-dim transition hover:border-accent/50 hover:text-ink"
                           aria-label={`${project.title}: ${link.label}`}
                         >

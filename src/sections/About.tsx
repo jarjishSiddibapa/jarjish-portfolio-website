@@ -19,7 +19,6 @@ export function About() {
     <section id="about" className="relative py-28 sm:py-36">
       <Container>
         <SectionHeading
-          eyebrow="About"
           title="Accurate data. Useful reports. Less manual work."
           description="An early-career Data Analyst working with enterprise data and the teams who depend on it."
         />
@@ -31,9 +30,9 @@ export function About() {
               <motion.div
                 key={pillar.title}
                 variants={revealItem}
-                className="glow-border glass rounded-2xl p-6"
+                className="glass rounded-2xl p-6"
               >
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-accent/20 to-accent/5 text-accent-3">
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-accent/10 text-accent-3">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
                 <h3 className="font-display mt-4 text-lg font-semibold">{pillar.title}</h3>
@@ -71,9 +70,9 @@ export function About() {
                 <motion.div
                   key={stat.id}
                   variants={revealItem}
-                  className="glow-border glass rounded-2xl p-6"
+                  className="glass rounded-2xl p-6"
                 >
-                  <div className="font-display text-3xl sm:text-4xl font-semibold text-gradient">
+                  <div className="font-display text-3xl sm:text-4xl font-semibold">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                   </div>
                   <p className="mt-2 text-sm text-ink-dim">{stat.label}</p>

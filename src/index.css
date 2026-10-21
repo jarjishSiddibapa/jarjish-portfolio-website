@@ -15,8 +15,8 @@
   --color-ink-dim: #4b5565;
   --color-ink-faint: #5d6a7e;
 
-  --color-accent: #3a5cf0;
-  --color-accent-2: #7c3aed;
+  --color-accent: #1558d6;
+  --color-accent-2: #0e7490;
   --color-accent-3: #0e7490;
   --color-warm: #c2760c;
 
@@ -77,8 +77,8 @@
   --color-ink-dim: #9aa3b8;
   --color-ink-faint: #8089a0;
 
-  --color-accent: #5b8def;
-  --color-accent-2: #8b5cf6;
+  --color-accent: #6aa5ff;
+  --color-accent-2: #22d3ee;
   --color-accent-3: #22d3ee;
   --color-warm: #f0b429;
 
@@ -114,6 +114,11 @@
   h3,
   h4 {
     @apply font-display;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {
@@ -144,65 +149,15 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(
-      100deg,
-      var(--color-ink) 15%,
-      var(--color-accent) 55%,
-      var(--color-accent-2) 85%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    color: var(--color-ink);
   }
 
   .glass {
-    background: color-mix(in oklab, var(--color-surface) 88%, transparent);
-    backdrop-filter: blur(16px) saturate(140%);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-    border: 1px solid color-mix(in oklab, var(--color-ink) 6%, transparent);
-    box-shadow:
-      0px -1px 1px rgba(var(--shadow-rgb), calc(0.02 * var(--shadow-strength))),
-      0px 1px 3px rgba(var(--shadow-rgb), calc(0.03 * var(--shadow-strength))),
-      0px 4px 8px rgba(var(--shadow-rgb), calc(0.04 * var(--shadow-strength))),
-      0px 12px 20px -4px rgba(var(--shadow-rgb), calc(0.06 * var(--shadow-strength))),
-      0px 24px 40px -8px rgba(var(--shadow-rgb), calc(0.08 * var(--shadow-strength)));
+    background: var(--color-surface);
   }
 
   .shadow-soft {
-    box-shadow:
-      0px -1px 1px rgba(var(--shadow-rgb), calc(0.02 * var(--shadow-strength))),
-      0px 1px 3px rgba(var(--shadow-rgb), calc(0.03 * var(--shadow-strength))),
-      0px 4px 8px rgba(var(--shadow-rgb), calc(0.04 * var(--shadow-strength))),
-      0px 12px 20px -4px rgba(var(--shadow-rgb), calc(0.06 * var(--shadow-strength))),
-      0px 24px 40px -8px rgba(var(--shadow-rgb), calc(0.08 * var(--shadow-strength)));
-  }
-
-  .glow-border {
-    position: relative;
-  }
-  .glow-border::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      120deg,
-      color-mix(in oklab, var(--color-accent) 60%, transparent),
-      transparent 40%,
-      color-mix(in oklab, var(--color-accent-2) 60%, transparent)
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-  }
-  .glow-border:hover::before {
-    opacity: 1;
+    box-shadow: 0 8px 24px -8px rgba(var(--shadow-rgb), calc(0.18 * var(--shadow-strength)));
   }
 
   .noise {

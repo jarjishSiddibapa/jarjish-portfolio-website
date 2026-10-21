@@ -71,10 +71,9 @@ export function Navbar() {
           <button
             onClick={() => scrollTo('hero')}
             aria-label={`${profile.initials} ${profile.name}: back to introduction`}
-            data-cursor-hover
             className="font-display flex items-center gap-2 text-lg font-semibold tracking-tight"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent-2 text-sm font-bold text-white shadow-lg shadow-accent/30">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent text-sm font-bold text-white">
               {profile.initials}
             </span>
             <span className="hidden sm:inline">{profile.name}</span>
@@ -85,8 +84,7 @@ export function Navbar() {
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
-                data-cursor-hover
-                className={cn(
+                    className={cn(
                   'relative rounded-full px-4 py-2 text-sm font-medium text-ink-dim transition-colors hover:text-ink',
                   active === link.id && 'text-ink',
                 )}
@@ -108,14 +106,13 @@ export function Navbar() {
             <MagneticButton
               href={profile.resumeHref}
               download
-              className="hidden items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-bg shadow-soft transition hover:opacity-85 sm:inline-flex"
+              className="hidden items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-bg transition hover:opacity-85 sm:inline-flex"
             >
               Resume <ArrowUpRight className="h-3.5 w-3.5" />
             </MagneticButton>
             <button
               onClick={() => setMenuOpen((v) => !v)}
-              data-cursor-hover
-              className="grid h-10 w-10 place-items-center rounded-full text-ink lg:hidden"
+                className="grid h-10 w-10 place-items-center rounded-full text-ink lg:hidden"
               ref={menuButtonRef}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}

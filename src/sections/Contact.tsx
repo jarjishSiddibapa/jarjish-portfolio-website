@@ -72,7 +72,6 @@ ${email}`)
     <section id="contact" className="relative py-28 sm:py-36">
       <Container>
         <SectionHeading
-          eyebrow="Contact"
           align="center"
           title="Let's talk data"
           description="Open to Data Analyst roles: remote, hybrid or on-site across Thane, Navi Mumbai and Mumbai."
@@ -85,17 +84,17 @@ ${email}`)
               {contactInfo.map((item) => {
                 const Content = (
                   <div className="glass flex items-center gap-4 rounded-2xl p-5">
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-accent/20 to-accent-2/20 text-accent-3">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent-3">
                       <item.icon className="h-5 w-5" />
                     </span>
                     <div className="min-w-0">
-                      <p className="text-xs text-ink-faint uppercase">{item.label}</p>
+                      <p className="text-sm text-ink-faint">{item.label}</p>
                       <p className="mt-0.5 break-words text-sm font-medium text-ink">{item.value}</p>
                     </div>
                   </div>
                 )
                 return item.href ? (
-                  <a key={item.label} href={item.href} data-cursor-hover>
+                  <a key={item.label} href={item.href}>
                     {Content}
                   </a>
                 ) : (
@@ -104,7 +103,7 @@ ${email}`)
               })}
 
               <div className="glass mt-2 flex flex-1 flex-col justify-between rounded-2xl p-5">
-                <p className="text-xs text-ink-faint uppercase">Elsewhere</p>
+                <p className="text-sm text-ink-faint">Elsewhere</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {socials
                     .filter((s) => s.icon === 'github' || s.icon === 'linkedin' || s.icon === 'resume')
@@ -113,7 +112,7 @@ ${email}`)
                         key={s.label}
                         href={s.href}
                         {...(s.icon === 'resume' ? { download: true } : { target: '_blank', rel: 'noreferrer' })}
-                        data-cursor-hover
+                       
                         className="rounded-full border border-border px-4 py-2 text-sm text-ink-dim transition hover:border-accent/50 hover:text-ink"
                       >
                         {s.label}
@@ -126,7 +125,7 @@ ${email}`)
 
           <Reveal delay={0.1} className="relative lg:col-span-3">
             <ConfettiBurst active={status === 'success'} />
-            <form onSubmit={handleSubmit} noValidate className="glow-border glass rounded-2xl p-6 sm:p-8">
+            <form onSubmit={handleSubmit} noValidate className="glass rounded-2xl p-6 sm:p-8">
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="sm:col-span-1">
                   <label htmlFor="name" className="mb-1.5 block text-sm text-ink-dim">
@@ -195,7 +194,7 @@ ${email}`)
                 <MagneticButton
                   type="submit"
                   disabled={status === 'sending'}
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent to-accent-2 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent/30 disabled:opacity-60"
+                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-white disabled:opacity-60"
                 >
                   {status === 'sending' ? (
                     <Loader2 className="h-4 w-4 animate-spin" />

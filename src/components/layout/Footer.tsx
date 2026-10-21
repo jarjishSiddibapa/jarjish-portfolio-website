@@ -29,7 +29,7 @@ export function Footer() {
       <Container>
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">
           <div>
-            <p className="font-display text-2xl font-semibold text-gradient">
+            <p className="font-display text-2xl font-semibold">
               {profile.name}
             </p>
             <p className="mt-2 max-w-sm text-sm text-ink-dim">{profile.tagline}</p>
@@ -46,7 +46,7 @@ export function Footer() {
                     href={s.href}
                     target={s.icon === 'mail' ? undefined : '_blank'}
                     rel="noreferrer"
-                    data-cursor-hover
+                   
                     aria-label={s.label}
                     className="grid h-11 w-11 place-items-center rounded-full border border-border text-ink-dim transition hover:border-accent/50 hover:text-ink"
                   >
@@ -56,9 +56,9 @@ export function Footer() {
               })}
             <button
               onClick={scrollTop}
-              data-cursor-hover
+             
               aria-label="Back to top"
-              className="grid h-11 w-11 place-items-center rounded-full bg-ink text-bg shadow-soft transition hover:opacity-85"
+              className="grid h-11 w-11 place-items-center rounded-full bg-ink text-bg transition hover:opacity-85"
             >
               <ArrowUp className="h-4 w-4" />
             </button>

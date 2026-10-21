@@ -9,7 +9,7 @@ export function ThemeToggle({ className }: { className?: string }) {
   return (
     <button
       onClick={toggleTheme}
-      data-cursor-hover
+     
       aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
       className={cn(
         'relative grid h-10 w-10 place-items-center overflow-hidden rounded-full border border-border text-ink-dim transition hover:border-accent/50 hover:text-ink',

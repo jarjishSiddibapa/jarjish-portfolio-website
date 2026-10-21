@@ -16,15 +16,15 @@ export function Reveal({
   children,
   className,
   delay = 0,
-  y = 28,
+  y = 20,
   once = true,
 }: RevealProps) {
   const reducedMotion = useReducedMotion()
   return (
     <motion.div
       className={cn(className)}
-      initial={reducedMotion ? false : { opacity: 0, y, filter: 'blur(6px)' }}
-      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      initial={reducedMotion ? false : { opacity: 0, y }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, margin: '-80px' }}
       transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
     >

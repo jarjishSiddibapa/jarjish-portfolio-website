@@ -29,7 +29,6 @@ export function Education() {
     <section id="education" className="relative py-28 sm:py-36">
       <Container>
         <SectionHeading
-          eyebrow="Education & Achievements"
           title="Foundation and formal recognition"
         />
 
@@ -37,9 +36,9 @@ export function Education() {
           <div className="flex flex-col gap-6">
             {education.map((edu, i) => (
               <Reveal key={edu.id} delay={i * 0.08}>
-                <div className="glow-border glass rounded-2xl p-6 sm:p-8">
+                <div className="glass rounded-2xl p-6 sm:p-8">
                   <div className="flex items-start gap-4">
-                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-accent/20 to-accent-2/20 text-accent-3">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent-3">
                       <GraduationCap className="h-5 w-5" />
                     </span>
                     <div>
@@ -65,7 +64,7 @@ export function Education() {
                 variants={revealItem}
                 className="glass flex items-start gap-4 rounded-2xl p-6"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-accent-2/20 to-accent-3/20 text-accent-3">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent-3">
                   <item.icon className="h-5 w-5" />
                 </span>
                 <div>

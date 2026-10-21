@@ -45,9 +45,9 @@ function InterestCard({ interest }: { interest: (typeof interests)[number] }) {
   return (
     <div
       ref={cardRef}
-      className="glow-border glass group overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-[-0.5deg]"
+      className="glass group overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5"
     >
-      <div className="h-44 w-full cursor-grab active:cursor-grabbing" data-cursor-hover>
+      <div className="h-44 w-full cursor-grab active:cursor-grabbing">
         {!reducedMotion && seen && (
           <Suspense
             fallback={<div className="h-full w-full animate-pulse bg-ink/[0.025]" />}
@@ -72,7 +72,6 @@ export function Interests() {
     <section id="interests" className="relative py-28 sm:py-36">
       <Container>
         <SectionHeading
-          eyebrow="Beyond the Resume"
           title="What I'm like off the clock"
           description="The résumé covers the work. This is the rest of it."
         />

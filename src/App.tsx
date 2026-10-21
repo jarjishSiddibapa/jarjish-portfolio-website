@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import { useLenis } from '@/hooks/useLenis'
 import { profile } from '@/data/profile'
 import { AmbientBackground } from '@/components/ui/AmbientBackground'
-import { CustomCursor } from '@/components/ui/CustomCursor'
 import { EasterEgg } from '@/components/ui/EasterEgg'
 import { SEO } from '@/components/layout/SEO'
 import { Navbar } from '@/components/layout/Navbar'
@@ -36,7 +35,6 @@ function App() {
     <MotionConfig reducedMotion="user">
       <SEO />
       <AmbientBackground />
-      <CustomCursor />
       <EasterEgg />
       <Navbar />
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-surface focus:p-4">Skip to content</a>

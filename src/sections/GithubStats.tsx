@@ -18,14 +18,13 @@ export function GithubStats() {
     <section id="github" className="relative py-28 sm:py-36">
       <Container>
         <SectionHeading
-          eyebrow="GitHub"
           title="A few things I've open-sourced"
           description="Live repository details from GitHub, including descriptions, stars, languages and recent updates."
         />
 
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
           <Reveal className="lg:col-span-1">
-            <div className="glow-border glass flex h-full flex-col rounded-2xl p-7">
+            <div className="glass flex h-full flex-col rounded-2xl p-7">
               <div className="flex items-center gap-4">
                 {profile?.avatar_url ? (
                   <img
@@ -45,7 +44,7 @@ export function GithubStats() {
                     href={`https://github.com/${githubUsername}`}
                     target="_blank"
                     rel="noreferrer"
-                    data-cursor-hover
+                   
                     className="mt-1 inline-flex items-center gap-1 text-sm text-accent-3 hover:underline"
                   >
                     View profile <ArrowUpRight className="h-3 w-3" />
@@ -122,7 +121,7 @@ export function GithubStats() {
                     href={repo.html_url}
                     target="_blank"
                     rel="noreferrer"
-                    data-cursor-hover
+                   
                     variants={revealItem}
                     className="glass group rounded-2xl border border-border p-5 transition hover:border-accent/40 sm:[&:last-child:nth-child(odd)]:col-span-2"
                   >

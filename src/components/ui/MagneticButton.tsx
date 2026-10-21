@@ -57,7 +57,7 @@ export function MagneticButton({
     'aria-label': ariaLabel,
     onMouseMove: handleMove,
     onMouseLeave: handleLeave,
-    'data-cursor-hover': true,
+    '': true,
     style: reducedMotion ? undefined : { x: springX, y: springY },
     className: cn(className),
     whileTap: disabled || reducedMotion ? undefined : { scale: 0.94 },

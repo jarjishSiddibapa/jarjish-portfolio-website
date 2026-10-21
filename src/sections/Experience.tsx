@@ -40,7 +40,6 @@ export function Experience() {
     <section id="experience" className="relative py-28 sm:py-36">
       <Container>
         <SectionHeading
-          eyebrow="Experience"
           title="Where I've built this"
           description="Operational reporting, finance reconciliation and data quality, with automation built around business needs."
         />
@@ -49,18 +48,18 @@ export function Experience() {
           <div className="absolute top-1 bottom-1 left-3.5 w-px bg-border sm:left-5" />
           <div
             ref={lineRef}
-            className="absolute top-1 bottom-1 left-3.5 w-px motion-safe:scale-y-0 bg-gradient-to-b from-accent via-accent-2 to-accent-3 sm:left-5"
+            className="absolute top-1 bottom-1 left-3.5 w-px motion-safe:scale-y-0 bg-accent/40 sm:left-5"
           />
 
           <div className="flex flex-col gap-14">
             {experience.map((job, i) => (
               <Reveal key={job.id} delay={i * 0.05}>
                 <div className="relative">
-                  <span className="absolute top-1.5 -left-10 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border border-accent/40 bg-bg-soft text-accent-3 shadow-[0_0_20px_-4px_var(--color-accent)] sm:-left-14">
+                  <span className="absolute top-1.5 -left-10 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border border-accent/40 bg-bg-soft text-accent-3 sm:-left-14">
                     <Building2 className="h-3.5 w-3.5" />
                   </span>
 
-                  <div className="glow-border glass rounded-2xl p-6 sm:p-8">
+                  <div className="glass rounded-2xl p-6 sm:p-8">
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div>
                         <h3 className="font-display text-xl font-semibold sm:text-2xl">
@@ -70,7 +69,7 @@ export function Experience() {
                           {job.company} &middot; {job.location}
                         </p>
                       </div>
-                      <span className="rounded-full border border-border bg-surface/60 px-3 py-1 text-xs font-medium tracking-wide text-ink-dim uppercase">
+                      <span className="rounded-full border border-border bg-surface/60 px-3 py-1 text-xs font-medium text-ink-dim">
                         {job.start} - {job.end}
                       </span>
                     </div>
@@ -99,7 +98,7 @@ export function Experience() {
                               href={project.href}
                               target="_blank"
                               rel="noreferrer"
-                              data-cursor-hover
+                             
                               className="group rounded-xl border border-border bg-ink/[0.025] p-4 transition hover:border-accent/45 hover:bg-accent/[0.035]"
                             >
                               <span className="flex items-center justify-between gap-3 font-medium text-ink">
