@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T13:34:37.178Z",
+  "generatedAt": "2026-10-22T18:23:03.919Z",
   "profile": {
     "followers": 0,
     "public_repos": 36,
@@ -9,6 +9,16 @@
   },
   "repos": [
     {
+      "id": 1318239254,
+      "name": "jarjish-portfolio-website",
+      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
+      "description": "Personal Data Analyst portfolio built with React, TypeScript, Vite and Tailwind, deployed on GitHub Pages with an hourly GitHub stats refresh.",
+      "stargazers_count": 0,
+      "language": "TypeScript",
+      "fork": false,
+      "updated_at": "2026-10-22T13:41:03Z"
+    },
+    {
       "id": 1346880508,
       "name": "rdc-erp-meeting-tracker",
       "html_url": "https://github.com/jarjishSiddibapa/rdc-erp-meeting-tracker",
@@ -17,16 +27,6 @@
       "language": "JavaScript",
       "fork": false,
       "updated_at": "2026-10-22T10:22:57Z"
-    },
-    {
-      "id": 1318239254,
-      "name": "jarjish-portfolio-website",
-      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
-      "description": "Personal Data Analyst portfolio built with React, TypeScript, Vite and Tailwind, deployed on GitHub Pages with an hourly GitHub stats refresh.",
-      "stargazers_count": 0,
-      "language": "TypeScript",
-      "fork": false,
-      "updated_at": "2026-10-22T07:15:36Z"
     },
     {
       "id": 1344682583,
