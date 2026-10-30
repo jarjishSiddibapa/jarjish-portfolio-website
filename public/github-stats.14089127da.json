@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T15:39:58.409Z",
+  "generatedAt": "2026-10-30T20:29:51.398Z",
   "profile": {
     "followers": 0,
     "public_repos": 37,
@@ -9,6 +9,16 @@
   },
   "repos": [
     {
+      "id": 1318239254,
+      "name": "jarjish-portfolio-website",
+      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
+      "description": "Personal Data Analyst portfolio built with React, TypeScript, Vite and Tailwind, deployed on GitHub Pages with an hourly GitHub stats refresh.",
+      "stargazers_count": 0,
+      "language": "TypeScript",
+      "fork": false,
+      "updated_at": "2026-10-30T15:40:02Z"
+    },
+    {
       "id": 1344682583,
       "name": "rdc-accounts-suite",
       "html_url": "https://github.com/jarjishSiddibapa/rdc-accounts-suite",
@@ -17,16 +27,6 @@
       "language": "Python",
       "fork": false,
       "updated_at": "2026-10-30T09:42:01Z"
-    },
-    {
-      "id": 1318239254,
-      "name": "jarjish-portfolio-website",
-      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
-      "description": "Personal Data Analyst portfolio built with React, TypeScript, Vite and Tailwind, deployed on GitHub Pages with an hourly GitHub stats refresh.",
-      "stargazers_count": 0,
-      "language": "TypeScript",
-      "fork": false,
-      "updated_at": "2026-10-30T08:14:27Z"
     },
     {
       "id": 1437939397,
