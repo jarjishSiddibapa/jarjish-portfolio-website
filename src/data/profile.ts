@@ -17,7 +17,7 @@ export const profile = {
   tagline:
     'I analyse Oracle ERP data across 140+ concrete plants with SQL, Python and advanced Excel, and build the web applications and automation that put reliable numbers in front of the teams who use them.',
   bio: [
-    "I'm a Data Analyst (Graduate Engineer Trainee) at RDC Concrete in Thane. Since October 2025, I've worked with SQL, PL/SQL, Oracle EBS, Python and advanced Excel to improve reporting, finance workflows and ERP data quality across 140+ concrete plants.",
+    "I'm a Software Developer (Graduate Engineer Trainee) at RDC Concrete in Thane. Since October 2025, I've worked with SQL, PL/SQL, Oracle EBS, Python and advanced Excel to improve reporting, finance workflows and ERP data quality across 140+ concrete plants.",
     'My work connects analysis with measurable improvements: Accounts Payables reporting replaces about an hour of daily manual work, while validated Balance Confirmation and Payment Reminder workflows turn a 2–3 day process into minutes. Python/OCR document processing has reduced manual handling by approximately 80%.',
     'I also build the applications around the data: Flask, FastAPI and Node/Express back ends with React front ends and MySQL, including role-based access, audit trails, scheduled ERP and ManageEngine syncs, Excel reporting and automated backups. The code for these is on my GitHub.',
   ],

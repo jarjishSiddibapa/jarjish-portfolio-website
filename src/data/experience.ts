@@ -3,7 +3,7 @@ import type { EducationEntry, ExperienceEntry } from '@/types'
 export const experience: ExperienceEntry[] = [
   {
     id: 'rdc-concrete',
-    role: 'Data Analyst (Graduate Engineer Trainee)',
+    role: 'Software Developer (Graduate Engineer Trainee)',
     company: 'RDC Concrete', location: 'Thane, Maharashtra', start: 'Oct 2025', end: 'Present',
     summary: 'Analyse operational and finance data with SQL, PL/SQL, Oracle EBS, Python and advanced Excel, and build the web applications and automation around it: reporting, reconciliation, data quality and role-based internal tools.',
     highlights: [
