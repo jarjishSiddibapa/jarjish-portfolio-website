@@ -41,7 +41,7 @@ export interface EducationEntry {
 export interface ProjectEntry {
   id: string
   title: string
-  category: 'Reporting & Automation' | 'Data & Analytics' | 'Web Applications' | 'Data Engineering' | 'Other Projects'
+  category: 'Reporting & Automation' | 'Data & Analytics' | 'Web Applications' | 'Machine Learning' | 'Data Engineering' | 'Other Projects'
   problem?: string
   context?: string
   description: string

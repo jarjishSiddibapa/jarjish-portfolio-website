@@ -62,22 +62,6 @@ export const projects: ProjectEntry[] = [
     githubFeatured: true,
   },
   {
-    id: 'databricks-pyspark-practice',
-    title: 'Databricks & PySpark Data Engineering Practice',
-    category: 'Data Engineering',
-    context: 'Hands-on practice / learning',
-    problem: 'Develop practical skills in transforming and incrementally loading larger datasets.',
-    description:
-      'Notebook-based data engineering workflows built to go deep on the Databricks and PySpark patterns that show up in production pipelines: DataFrame transformations, joins, window functions, and incremental Delta Lake loads.',
-    highlights: [
-      'DataFrame operations, joins, and window functions in PySpark and Spark SQL',
-      'Deduplication and incremental loading patterns',
-      'Delta Lake MERGE/upserts and partition-aware processing',
-    ],
-    stack: ['Databricks', 'PySpark', 'Spark SQL', 'Delta Lake'],
-    impact: 'Practice in repeatable transformations and incremental loading; a learning project, not an RDC production system',
-  },
-  {
     id: 'rdc-stamper',
     title: 'RDC Stamper V1 / V2',
     category: 'Reporting & Automation',
@@ -92,6 +76,23 @@ export const projects: ProjectEntry[] = [
     impact: '~80% reduction in manual document handling time',
     githubFeatured: true,
     links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-stamper-v2' }],
+  },
+  {
+    id: 'digitization-review',
+    title: 'RDC Digitization Review',
+    category: 'Web Applications',
+    context: 'Professional work · Service request and digitization tracking',
+    description:
+      'A role-based internal platform for service requests and digitization projects, with a 30-minute ManageEngine sync, Excel bulk updates, weekly PDF report import and field-level history.',
+    highlights: [
+      'Download, edit and upload Excel round trip with previews, diff-only updates and transactional writes',
+      'Dashboard figures calculated on the server, with overdue logic per request category',
+      'Admin, editor and viewer roles, scheduled MySQL backups and a CI-tested codebase',
+    ],
+    stack: ['React', 'Node.js', 'Express', 'MySQL', 'Ant Design', 'JWT', 'GitHub Actions'],
+    impact: 'One tracked source of truth in place of separate status files, vendor reports and manual follow-ups.',
+    githubFeatured: true,
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-erp-meeting-tracker' }],
   },
   {
     id: 'pdc-manager',
@@ -128,21 +129,20 @@ export const projects: ProjectEntry[] = [
     links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc_onboarding' }],
   },
   {
-    id: 'digitization-review',
-    title: 'RDC Digitization Review',
+    id: 'ai-chatbot',
+    title: 'AI Chatbot for Corporate Website',
     category: 'Web Applications',
-    context: 'Professional work · Service request and digitization tracking',
     description:
-      'A role-based internal platform for service requests and digitization projects, with a 30-minute ManageEngine sync, Excel bulk updates, weekly PDF report import and field-level history.',
+      'A multilingual, voice-enabled chat assistant for the corporate website, built on Gemini with Google Search grounding and Google Cloud Text-to-Speech, behind a Flask API and a lightweight chat widget.',
     highlights: [
-      'Download, edit and upload Excel round trip with previews, diff-only updates and transactional writes',
-      'Dashboard figures calculated on the server, with overdue logic per request category',
-      'Admin, editor and viewer roles, scheduled MySQL backups and a CI-tested codebase',
+      'Text and voice questions, with spoken replies in Hindi, Marathi, Telugu or Indian English',
+      'Knowledge base built from scraped website pages and a locations file, with Google Search as a fallback',
+      'Architecture documented for non-technical stakeholder handover',
     ],
-    stack: ['React', 'Node.js', 'Express', 'MySQL', 'Ant Design', 'JWT', 'GitHub Actions'],
-    impact: 'One tracked source of truth in place of separate status files, vendor reports and manual follow-ups.',
+    stack: ['Python', 'Flask', 'Gemini API', 'Google Cloud TTS', 'JavaScript'],
+    impact: 'Live AI assistant shipped end-to-end for a corporate website',
     githubFeatured: true,
-    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-erp-meeting-tracker' }],
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-website-chatbot' }],
   },
   {
     id: 'digital-signature-app',
@@ -175,25 +175,57 @@ export const projects: ProjectEntry[] = [
     impact: 'Replaced a legacy monitoring tool across 14+ business sites',
   },
   {
-    id: 'ai-chatbot',
-    title: 'AI Chatbot for Corporate Website',
-    category: 'Web Applications',
+    id: 'heart-disease-classification',
+    title: 'Heart Disease Classification',
+    category: 'Machine Learning',
+    context: 'Personal project · Machine learning',
     description:
-      'A multilingual, voice-enabled chat assistant for the corporate website, built on Gemini with Google Search grounding and Google Cloud Text-to-Speech, behind a Flask API and a lightweight chat widget.',
+      'An end-to-end classification project on the Cleveland Heart Disease dataset (303 patients, 14 clinical features), from data cleaning and exploration to model comparison and evaluation.',
     highlights: [
-      'Text and voice questions, with spoken replies in Hindi, Marathi, Telugu or Indian English',
-      'Knowledge base built from scraped website pages and a locations file, with Google Search as a fallback',
-      'Architecture documented for non-technical stakeholder handover',
+      'Data cleaning and visual exploration with pandas, Matplotlib and Seaborn',
+      'Logistic Regression, K-Neighbors and Random Forest compared with cross-validation and hyperparameter search',
+      'Evaluated with a confusion matrix, precision, recall, F1 score and ROC curve',
     ],
-    stack: ['Python', 'Flask', 'Gemini API', 'Google Cloud TTS', 'JavaScript'],
-    impact: 'Live AI assistant shipped end-to-end for a corporate website',
-    githubFeatured: true,
-    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-website-chatbot' }],
+    stack: ['Python', 'pandas', 'scikit-learn', 'Matplotlib', 'Seaborn', 'Jupyter'],
+    impact: 'A complete analysis-to-evaluation workflow on a public medical dataset.',
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/heart-disease-classification' }],
+  },
+  {
+    id: 'bulldozer-price-prediction',
+    title: 'Blue Book for Bulldozers Price Prediction',
+    category: 'Machine Learning',
+    context: 'Personal project · Kaggle competition data',
+    description:
+      'A regression model that predicts auction sale prices of heavy equipment from the Kaggle Blue Book for Bulldozers dataset, with feature-importance analysis and saved test predictions.',
+    highlights: [
+      'Validation R² of 0.88 and RMSLE of 0.245, against 0.96 and 0.145 on training data',
+      'Feature-importance visualisation to explain what drives price',
+      'Reproducible environment file and a documented end-to-end notebook',
+    ],
+    stack: ['Python', 'pandas', 'scikit-learn', 'Matplotlib', 'Jupyter'],
+    impact: 'Price prediction on real auction data, explained through feature importance.',
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/bulldozer-price-prediction' }],
+  },
+  {
+    id: 'bank-remake',
+    title: 'Bank Management System (Spring Boot)',
+    category: 'Web Applications',
+    context: 'Practice project · Java back end',
+    description:
+      'A bank management back end in Java and Spring Boot with REST APIs for users, accounts and transactions, PostgreSQL storage and role-based security.',
+    highlights: [
+      'Deposits, withdrawals and transfers with validation',
+      'ADMIN and USER roles enforced with Spring Security',
+      'Layered controller, service and repository design, with JUnit and Mockito tests',
+    ],
+    stack: ['Java 17', 'Spring Boot', 'Spring Security', 'PostgreSQL', 'JUnit'],
+    impact: 'Shows back-end Java alongside the Python and Node work.',
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/bank-remake' }],
   },
   {
     id: 'lung-disease-classification',
     title: 'Lung Disease Classification (Deep Learning)',
-    category: 'Other Projects',
+    category: 'Machine Learning',
     description:
       'A deep learning system that classifies chest X-rays into COVID-19, Pneumonia, Tuberculosis, or Normal using transfer learning on ResNet50, deployed behind a Flask web app for real-time image upload and diagnosis.',
     highlights: [
@@ -211,7 +243,7 @@ export const projects: ProjectEntry[] = [
   {
     id: 'vizdoom-rl',
     title: 'VizDoom RL Agent',
-    category: 'Other Projects',
+    category: 'Machine Learning',
     description:
       'A reinforcement learning research project comparing PPO, DQN, A2C, and DDPG agents inside the VizDoom environment, with a Jupyter pipeline for tracking and visualizing training performance across levels.',
     highlights: [
@@ -228,9 +260,25 @@ export const projects: ProjectEntry[] = [
       },
     ],
   },
+  {
+    id: 'databricks-pyspark-practice',
+    title: 'Databricks & PySpark Data Engineering Practice',
+    category: 'Data Engineering',
+    context: 'Hands-on practice / learning',
+    problem: 'Develop practical skills in transforming and incrementally loading larger datasets.',
+    description:
+      'Notebook-based data engineering workflows built to go deep on the Databricks and PySpark patterns that show up in production pipelines: DataFrame transformations, joins, window functions, and incremental Delta Lake loads.',
+    highlights: [
+      'DataFrame operations, joins, and window functions in PySpark and Spark SQL',
+      'Deduplication and incremental loading patterns',
+      'Delta Lake MERGE/upserts and partition-aware processing',
+    ],
+    stack: ['Databricks', 'PySpark', 'Spark SQL', 'Delta Lake'],
+    impact: 'Practice in repeatable transformations and incremental loading; a learning project, not an RDC production system',
+  },
 ]
 
-export const projectCategories = ['All', 'Data & Analytics', 'Reporting & Automation', 'Web Applications', 'Data Engineering', 'Other Projects'] as const
+export const projectCategories = ['All', 'Data & Analytics', 'Reporting & Automation', 'Web Applications', 'Machine Learning', 'Data Engineering', 'Other Projects'] as const
 
 export const pinnedRepoSlugs = projects
   .filter((project) => project.githubFeatured)

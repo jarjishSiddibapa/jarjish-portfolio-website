@@ -27,11 +27,11 @@ test('featured projects lead with professional analytics and web applications an
     'rdc-so-ageing-data-push',
     'rdc-payment-reminder-v2',
     'rdc-stamper-v2',
+    'rdc-erp-meeting-tracker',
     'rdc-pdc-project',
     'rdc_onboarding',
-    'rdc-erp-meeting-tracker',
-    'rdc-digital-signatures',
     'rdc-website-chatbot',
+    'rdc-digital-signatures',
   ])
   assert.match(projects.find(p => p.id === 'databricks-pyspark-practice').context, /practice \/ learning/)
 })

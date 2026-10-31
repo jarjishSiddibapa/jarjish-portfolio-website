@@ -23,7 +23,7 @@ export function Projects() {
       <Container>
         <SectionHeading
           title="Data work with a business purpose"
-          description="Professional reporting, reconciliation and automation first, followed by hands-on data engineering practice."
+          description="Professional reporting, reconciliation and web applications first, followed by machine learning and practice projects."
         />
 
         <div className="mt-10 flex flex-wrap gap-2">
