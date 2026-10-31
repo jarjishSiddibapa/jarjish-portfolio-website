@@ -12,7 +12,7 @@ const jsonLd = {
   jobTitle: profile.primaryRole,
   url: siteUrl,
   email: profile.email,
-  knowsAbout: ['Data Analysis', 'SQL', 'PL/SQL', 'Python', 'Excel', 'SUMIFS', 'Pivot Tables', 'XLOOKUP', 'Oracle EBS', 'Reporting', 'Reconciliation', 'Data Quality', 'Automation', 'Databricks', 'PySpark'],
+  knowsAbout: ['Data Analysis', 'SQL', 'PL/SQL', 'Python', 'Excel', 'SUMIFS', 'Pivot Tables', 'XLOOKUP', 'Oracle EBS', 'Reporting', 'Reconciliation', 'Data Quality', 'Automation', 'Software Development', 'Full-Stack Development', 'React', 'Node.js', 'Flask', 'FastAPI', 'MySQL', 'REST APIs', 'Databricks', 'PySpark'],
   image: `${siteUrl}${seo.imagePath}`,
   description: seo.description,
   worksFor: { '@type': 'Organization', name: 'RDC Concrete' },

@@ -109,7 +109,7 @@ Try the Konami code (`↑ ↑ ↓ ↓ ← → ← → b a`) anywhere on the site
 
 ## Career positioning
 
-The permanent headline is **Data Analyst & Full-Stack Developer**, supported by SQL/PLSQL, Advanced Excel, Python, React/Node.js and Oracle EBS. The default project filter features Daily Volume Tracker, Accounts Suite, ManageEngine Analytics, SO Ageing and finance reporting/communication automation. Databricks/PySpark is listed as learning work only. Other projects remain available through filters.
+The permanent headline is **Data Analyst & Software Developer**, supported by SQL/PLSQL, Advanced Excel, Python, React/Node.js and Oracle EBS. The default project filter features Daily Volume Tracker, Accounts Suite, ManageEngine Analytics, SO Ageing and finance reporting/communication automation. Databricks/PySpark is listed as learning work only. Other projects remain available through filters.
 
 The public resume is the supplied ATS Data Analyst PDF (updated September 5, 2026), copied byte-for-byte to the existing public path. A local source copy named `Jarjish Siddibapa Resume.pdf` is ignored to avoid publishing a duplicate.
 

@@ -5,8 +5,8 @@ const resumeHref = `${import.meta.env.BASE_URL}resume/Jarjish-Siddibapa-Resume.p
 export const profile = {
   name: 'Jarjish Siddibapa',
   initials: 'JS',
-  primaryRole: 'Data Analyst & Full-Stack Developer',
-  role: 'Data Analyst & Full-Stack Developer | SQL & PL/SQL | Advanced Excel | Python | React & Node.js',
+  primaryRole: 'Data Analyst & Software Developer',
+  role: 'Data Analyst & Software Developer | SQL & PL/SQL | Advanced Excel | Python | React & Node.js',
   roles: [
     'SQL & PL/SQL',
     'Advanced Excel',
@@ -26,7 +26,7 @@ export const profile = {
   email: 'jarjishsiddibapa@gmail.com',
   phone: '+91 7249550565',
   resumeHref,
-  availability: 'Open to Data Analyst & Full-Stack roles',
+  availability: 'Open to Data Analyst & Software Developer roles',
 }
 
 export const socials: SocialLink[] = [
