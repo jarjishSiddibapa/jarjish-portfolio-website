@@ -70,7 +70,6 @@ export function Hero() {
             className="mt-6 font-display text-2xl font-medium sm:text-3xl"
           >
             <span className="font-semibold text-ink">{profile.primaryRole}</span>
-            <span className="text-accent-3"> &middot; SQL &amp; PL/SQL &middot; Python &middot; Excel</span>
           </motion.p>
 
           <motion.p

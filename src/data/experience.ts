@@ -5,7 +5,7 @@ export const experience: ExperienceEntry[] = [
     id: 'rdc-concrete',
     role: 'Data Analyst (Graduate Engineer Trainee)',
     company: 'RDC Concrete', location: 'Thane, Maharashtra', start: 'Oct 2025', end: 'Present',
-    summary: 'Analyze operational and finance data using SQL, PL/SQL, Oracle EBS, Python and Excel, with a focus on reporting, reconciliation, data quality and repeatable automation.',
+    summary: 'Analyse operational and finance data with SQL, PL/SQL, Oracle EBS, Python and advanced Excel, and build the web applications and automation around it: reporting, reconciliation, data quality and role-based internal tools.',
     highlights: [
       'Built and deployed the Daily Volume Tracker for 140+ concrete plants, providing daily production and volume visibility and identifying zero-production locations.',
       'Designed a self-auditing SO Ageing workflow that refreshes Oracle EBS data every three hours and independently reconciles delivery over a 24-hour window.',
@@ -13,6 +13,7 @@ export const experience: ExperienceEntry[] = [
       'Built validated datasets, automated PDF generation and email distribution for Balance Confirmation and Payment Reminder workflows, reducing a 2–3 day process to minutes.',
       'Developed SQL and PL/SQL logic for audit reconciliation, missing IOCL PO / Debit Memo detection, GST invoice checks, HSN/master-data quality and ERP reporting.',
       'Integrated REST API data and built Python/OCR document workflows that reduced manual document handling by approximately 80%.',
+      'Built full-stack internal web applications (React with Node/Express, Flask and FastAPI, on MySQL) with role-based access, audit history, scheduled syncs and Excel reports, including ServiceDesk analytics over roughly 60,000 service requests.',
     ],
     selectedProjects: [
       {
@@ -31,6 +32,16 @@ export const experience: ExperienceEntry[] = [
         href: 'https://github.com/jarjishSiddibapa/rdc-accounts-suite',
       },
       {
+        title: 'ManageEngine Analytics',
+        detail: 'React and Express dashboards on technician turnaround and SR handling, with scheduled syncs and Excel reports.',
+        href: 'https://github.com/jarjishSiddibapa/rdc-manageengine-analytics',
+      },
+      {
+        title: 'Digitization Review',
+        detail: 'Service-request and digitization tracker with ManageEngine sync, Excel bulk updates and an audit history.',
+        href: 'https://github.com/jarjishSiddibapa/rdc-erp-meeting-tracker',
+      },
+      {
         title: 'PDC Manager',
         detail: 'Post-dated cheque workflow from collection to clearance, with Oracle ERP sync and an Excel report builder.',
         href: 'https://github.com/jarjishSiddibapa/rdc-pdc-project',
@@ -46,7 +57,7 @@ export const experience: ExperienceEntry[] = [
         href: 'https://github.com/jarjishSiddibapa/rdc-digital-signatures',
       },
     ],
-    stack: ['SQL', 'PL/SQL', 'Oracle EBS R12.2.10', 'Python', 'Excel', 'REST APIs', 'Tesseract OCR'],
+    stack: ['SQL', 'PL/SQL', 'Oracle EBS R12.2.10', 'Python', 'Advanced Excel', 'React', 'Node.js', 'Flask', 'FastAPI', 'MySQL', 'REST APIs'],
   },
   {
     id: 'aurionpro', role: 'Software Engineer Trainee', company: 'AurionPro',

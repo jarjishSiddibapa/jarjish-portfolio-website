@@ -20,7 +20,7 @@ export function About() {
       <Container>
         <SectionHeading
           title="Accurate data. Useful reports. Less manual work."
-          description="An early-career Data Analyst working with enterprise data and the teams who depend on it."
+          description="An early-career data analyst and full-stack developer, working with enterprise data and the teams who depend on it."
         />
 
         <RevealGroup className="mt-12 grid gap-4 sm:grid-cols-3">

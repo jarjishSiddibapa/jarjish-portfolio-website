@@ -26,6 +26,18 @@ export const projects: ProjectEntry[] = [
     githubFeatured: true,
   },
   {
+    id: 'manageengine-analytics', title: 'ManageEngine Analytics', category: 'Web Applications',
+    context: 'Professional work · IT service desk reporting',
+    problem: 'ServiceDesk Plus could not show how long each technician takes to close requests, or how requests are handled along the way.',
+    description: 'A full-stack analytics application that reads service requests from ManageEngine and turns them into technician turnaround, handling and team dashboards, with Excel reports and user management.',
+    highlights: ['Turnaround by technician, plus reassignments, reopens, first reply and time on hold from the change history of roughly 60,000 requests', 'Scheduled incremental and daily deep syncs, with Excel, CSV and PNG downloads on every chart', 'Admin, manager and viewer roles, an activity log, encrypted connection secrets and scheduled database backups'],
+    stack: ['React', 'Node.js', 'Express', 'MySQL', 'Ant Design', 'Recharts', 'Excel reports'],
+    impact: 'Request-handling analytics across roughly 60,000 service requests, read-only against the source system.',
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-manageengine-analytics' }],
+    featured: true,
+    githubFeatured: true,
+  },
+  {
     id: 'so-ageing-pipeline', title: 'Self-Auditing SO Ageing Pipeline', category: 'Data & Analytics',
     context: 'Professional work · RDC Concrete',
     problem: 'A successful data push alone could not establish that ERP ageing data had been delivered completely.',
@@ -63,7 +75,6 @@ export const projects: ProjectEntry[] = [
       'Delta Lake MERGE/upserts and partition-aware processing',
     ],
     stack: ['Databricks', 'PySpark', 'Spark SQL', 'Delta Lake'],
-    featured: true,
     impact: 'Practice in repeatable transformations and incremental loading; a learning project, not an RDC production system',
   },
   {
@@ -85,7 +96,7 @@ export const projects: ProjectEntry[] = [
   {
     id: 'pdc-manager',
     title: 'RDC PDC Manager',
-    category: 'Reporting & Automation',
+    category: 'Web Applications',
     context: 'Professional work · Finance operations',
     description:
       'A role-based Flask application that manages post-dated cheques from collection to clearance, with a 13-status workflow, ERP-synchronised master data, dashboards and an Excel report builder.',
@@ -102,7 +113,7 @@ export const projects: ProjectEntry[] = [
   {
     id: 'onboarding-portal',
     title: 'RDC Employee Onboarding Portal',
-    category: 'Reporting & Automation',
+    category: 'Web Applications',
     context: 'Professional work · HR operations',
     description:
       'A role-based Flask application that takes a new hire from hiring request to registration in the attendance system through a configurable multi-step approval workflow, with a staffing-norms gate that blocks over-norm hiring.',
@@ -115,6 +126,23 @@ export const projects: ProjectEntry[] = [
     impact: 'One audited route from hiring request to attendance registration, backed by 362 automated tests.',
     githubFeatured: true,
     links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc_onboarding' }],
+  },
+  {
+    id: 'digitization-review',
+    title: 'RDC Digitization Review',
+    category: 'Web Applications',
+    context: 'Professional work · Service request and digitization tracking',
+    description:
+      'A role-based internal platform for service requests and digitization projects, with a 30-minute ManageEngine sync, Excel bulk updates, weekly PDF report import and field-level history.',
+    highlights: [
+      'Download, edit and upload Excel round trip with previews, diff-only updates and transactional writes',
+      'Dashboard figures calculated on the server, with overdue logic per request category',
+      'Admin, editor and viewer roles, scheduled MySQL backups and a CI-tested codebase',
+    ],
+    stack: ['React', 'Node.js', 'Express', 'MySQL', 'Ant Design', 'JWT', 'GitHub Actions'],
+    impact: 'One tracked source of truth in place of separate status files, vendor reports and manual follow-ups.',
+    githubFeatured: true,
+    links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-erp-meeting-tracker' }],
   },
   {
     id: 'digital-signature-app',
@@ -149,7 +177,7 @@ export const projects: ProjectEntry[] = [
   {
     id: 'ai-chatbot',
     title: 'AI Chatbot for Corporate Website',
-    category: 'Other Projects',
+    category: 'Web Applications',
     description:
       'A multilingual, voice-enabled chat assistant for the corporate website, built on Gemini with Google Search grounding and Google Cloud Text-to-Speech, behind a Flask API and a lightweight chat widget.',
     highlights: [
@@ -202,7 +230,7 @@ export const projects: ProjectEntry[] = [
   },
 ]
 
-export const projectCategories = ['All', 'Data & Analytics', 'Reporting & Automation', 'Data Engineering', 'Other Projects'] as const
+export const projectCategories = ['All', 'Data & Analytics', 'Reporting & Automation', 'Web Applications', 'Data Engineering', 'Other Projects'] as const
 
 export const pinnedRepoSlugs = projects
   .filter((project) => project.githubFeatured)

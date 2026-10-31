@@ -9,10 +9,10 @@ async function loadData(name) {
   return import(`data:text/javascript;base64,${Buffer.from(outputText).toString('base64')}`)
 }
 
-test('featured projects lead with professional analytics and isolate practice', async () => {
+test('featured projects lead with professional analytics and web applications and isolate practice', async () => {
   const { projects, projectCategories, pinnedRepoSlugs } = await loadData('projects')
   assert.equal(new Set(projects.map(p => p.id)).size, projects.length)
-  assert.deepEqual(projects.filter(p => p.featured).map(p => p.id), ['daily-volume-tracker', 'accounts-suite', 'so-ageing-pipeline', 'bulk-mailer-suite', 'databricks-pyspark-practice'])
+  assert.deepEqual(projects.filter(p => p.featured).map(p => p.id), ['daily-volume-tracker', 'accounts-suite', 'manageengine-analytics', 'so-ageing-pipeline', 'bulk-mailer-suite'])
   for (const project of projects) {
     assert.ok(projectCategories.includes(project.category))
     if (project.featured) {
@@ -23,11 +23,13 @@ test('featured projects lead with professional analytics and isolate practice', 
   assert.deepEqual(pinnedRepoSlugs, [
     'rdc-daily-volume-tracker',
     'rdc-accounts-suite',
+    'rdc-manageengine-analytics',
     'rdc-so-ageing-data-push',
     'rdc-payment-reminder-v2',
     'rdc-stamper-v2',
     'rdc-pdc-project',
     'rdc_onboarding',
+    'rdc-erp-meeting-tracker',
     'rdc-digital-signatures',
     'rdc-website-chatbot',
   ])
@@ -36,7 +38,7 @@ test('featured projects lead with professional analytics and isolate practice', 
 
 test('skill groups contain unique named competencies without proficiency scores', async () => {
   const { skillCategories } = await loadData('skills')
-  assert.equal(skillCategories.length, 5)
+  assert.equal(skillCategories.length, 6)
   for (const category of skillCategories) {
     assert.equal(new Set(category.skills).size, category.skills.length)
     assert.ok(category.skills.every(skill => typeof skill === 'string' && skill.length > 0))

@@ -6,6 +6,7 @@ import {
   Plug,
   Code2,
   Table2,
+  Globe,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -17,4 +18,5 @@ export const iconMap: Record<string, LucideIcon> = {
   Plug,
   Code2,
   Table2,
+  Globe,
 }
