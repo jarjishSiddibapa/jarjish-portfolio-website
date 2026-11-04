@@ -67,3 +67,13 @@ test('production resume is an unchanged PDF at the existing public path', async 
   assert.equal(built.subarray(0, 5).toString(), '%PDF-')
   assert.deepEqual(built, source)
 })
+
+test('production HTML ships a content security policy that allows no remote scripts', async () => {
+  const html = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8')
+  const csp = html.match(/http-equiv="Content-Security-Policy" content="([^"]+)"/)?.[1]
+  assert.ok(csp, 'CSP meta tag missing')
+  assert.match(csp, /script-src 'self' 'sha256-[^']+'/)
+  assert.doesNotMatch(csp, /script-src[^;]*(https?:|unsafe-eval)/)
+  assert.match(csp, /object-src 'none'/)
+  assert.match(csp, /base-uri 'self'/)
+})

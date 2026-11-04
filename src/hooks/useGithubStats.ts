@@ -58,6 +58,17 @@ interface GithubStatsState {
 // URL the CDN has never seen before.
 const statsUrl = `${import.meta.env.BASE_URL}${STATS_FILE}`
 
+// The stats file is same-origin and written by our own workflow, but links and images
+// from it are only used when they point at GitHub over https.
+const isGithubUrl = (value: string, hosts: string[]) => {
+  try {
+    const url = new URL(value)
+    return url.protocol === 'https:' && hosts.includes(url.hostname)
+  } catch {
+    return false
+  }
+}
+
 export function useGithubStats() {
   const [state, setState] = useState<GithubStatsState>({
     profile: null,
@@ -80,9 +91,10 @@ export function useGithubStats() {
         }
         const pinned = pinnedRepoSlugs
           .map((slug) => data.repos.find((r) => r.name === slug))
-          .filter((r): r is GithubRepo => Boolean(r))
+          .filter((r): r is GithubRepo => r !== undefined && isGithubUrl(r.html_url, ['github.com']))
+        const avatarOk = isGithubUrl(data.profile.avatar_url, ['avatars.githubusercontent.com'])
         setState({
-          profile: data.profile,
+          profile: { ...data.profile, avatar_url: avatarOk ? data.profile.avatar_url : '' },
           repos: pinned,
           contributions: data.contributions ?? null,
           status: 'success',

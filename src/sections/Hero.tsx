@@ -48,10 +48,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-5 flex items-center gap-2 text-sm text-ink-dim"
+            className="mb-5 text-sm text-ink-dim"
           >
-            <span className="h-2 w-2 shrink-0 rounded-full bg-emerald-500" />
-            {profile.availability} &middot; {profile.openTo}
+            {profile.availability}. {profile.openTo}.
           </motion.div>
 
           <motion.h1

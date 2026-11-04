@@ -3,7 +3,7 @@ import type { ProjectEntry } from '@/types'
 export const projects: ProjectEntry[] = [
   {
     id: 'daily-volume-tracker', title: 'RDC Daily Volume Tracker', category: 'Data & Analytics',
-    context: 'Professional work · RDC Concrete',
+    context: 'Professional work: RDC Concrete',
     problem: 'Daily production data was spread across Oracle ERP, manual plant updates and spreadsheets.',
     description: 'Combined ERP-synchronized and manually entered volumes in one controlled workflow for daily plant and area reporting.',
     highlights: ['Target tracking, variance analysis and historical comparisons', 'Repeatable Excel reports and Oracle ERP synchronization', 'Zero-volume alerts and audit history for accountable updates'],
@@ -15,7 +15,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     id: 'accounts-suite', title: 'RDC Accounts Suite', category: 'Reporting & Automation',
-    context: 'Professional work · Finance operations',
+    context: 'Professional work: Finance operations',
     problem: 'Finance teams relied on separate utilities and spreadsheets for reporting, mappings and reconciliation.',
     description: 'Consolidated financial data processing, Excel reporting, Oracle ERP enrichment and scheduled finance communication in a permission-controlled workspace.',
     highlights: ['Data validation and exception detection for finance reporting', 'Shared mappings and reconciliation workflows', 'Controlled Excel processing and scheduled communication'],
@@ -27,7 +27,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     id: 'manageengine-analytics', title: 'ManageEngine Analytics', category: 'Web Applications',
-    context: 'Professional work · IT service desk reporting',
+    context: 'Professional work: IT service desk reporting',
     problem: 'ServiceDesk Plus could not show how long each technician takes to close requests, or how requests are handled along the way.',
     description: 'A full-stack analytics application that reads service requests from ManageEngine and turns them into technician turnaround, handling and team dashboards, with Excel reports and user management.',
     highlights: ['Turnaround by technician, plus reassignments, reopens, first reply and time on hold from the change history of roughly 60,000 requests', 'Scheduled incremental and daily deep syncs, with Excel, CSV and PNG downloads on every chart', 'Admin, manager and viewer roles, an activity log, encrypted connection secrets and scheduled database backups'],
@@ -39,7 +39,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     id: 'so-ageing-pipeline', title: 'Self-Auditing SO Ageing Pipeline', category: 'Data & Analytics',
-    context: 'Professional work · RDC Concrete',
+    context: 'Professional work: RDC Concrete',
     problem: 'A successful data push alone could not establish that ERP ageing data had been delivered completely.',
     description: 'Built scheduled Oracle EBS refreshes with independent reconciliation to check delivery integrity and expose silent failures.',
     highlights: ['SQL / PL/SQL processing with refreshes every three hours', 'ERP-to-API delivery with an independent 24-hour reconciliation window', 'Completeness checks and failure detection to support data trust'],
@@ -51,7 +51,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     id: 'bulk-mailer-suite', title: 'Finance Reporting & Communication Automation', category: 'Reporting & Automation',
-    context: 'Professional work · Accounts Payables, Balance Confirmation & Payment Reminder',
+    context: 'Professional work: Accounts Payables, Balance Confirmation & Payment Reminder',
     problem: 'Daily AP reports and periodic customer finance communication required repetitive manual preparation.',
     description: 'Used SQL, Python and Excel to prepare validated finance datasets, generate PDFs and automate report and email distribution.',
     highlights: ['AP exception reporting: unaccounted transactions, pending MRNs and uninvoiced expense POs', 'Validated Balance Confirmation and Payment Reminder datasets', 'PDF and email workflows across three business entities'],
@@ -81,7 +81,7 @@ export const projects: ProjectEntry[] = [
     id: 'digitization-review',
     title: 'RDC Digitization Review',
     category: 'Web Applications',
-    context: 'Professional work · Service request and digitization tracking',
+    context: 'Professional work: Service request and digitization tracking',
     description:
       'A role-based internal platform for service requests and digitization projects, with a 30-minute ManageEngine sync, Excel bulk updates, weekly PDF report import and field-level history.',
     highlights: [
@@ -98,7 +98,7 @@ export const projects: ProjectEntry[] = [
     id: 'pdc-manager',
     title: 'RDC PDC Manager',
     category: 'Web Applications',
-    context: 'Professional work · Finance operations',
+    context: 'Professional work: Finance operations',
     description:
       'A role-based Flask application that manages post-dated cheques from collection to clearance, with a 13-status workflow, ERP-synchronised master data, dashboards and an Excel report builder.',
     highlights: [
@@ -115,7 +115,7 @@ export const projects: ProjectEntry[] = [
     id: 'onboarding-portal',
     title: 'RDC Employee Onboarding Portal',
     category: 'Web Applications',
-    context: 'Professional work · HR operations',
+    context: 'Professional work: HR operations',
     description:
       'A role-based Flask application that takes a new hire from hiring request to registration in the attendance system through a configurable multi-step approval workflow, with a staffing-norms gate that blocks over-norm hiring.',
     highlights: [
@@ -178,7 +178,7 @@ export const projects: ProjectEntry[] = [
     id: 'heart-disease-classification',
     title: 'Heart Disease Classification',
     category: 'Machine Learning',
-    context: 'Personal project · Machine learning',
+    context: 'Personal project: Machine learning',
     description:
       'An end-to-end classification project on the Cleveland Heart Disease dataset (303 patients, 14 clinical features), from data cleaning and exploration to model comparison and evaluation.',
     highlights: [
@@ -194,7 +194,7 @@ export const projects: ProjectEntry[] = [
     id: 'bulldozer-price-prediction',
     title: 'Blue Book for Bulldozers Price Prediction',
     category: 'Machine Learning',
-    context: 'Personal project · Kaggle competition data',
+    context: 'Personal project: Kaggle competition data',
     description:
       'A regression model that predicts auction sale prices of heavy equipment from the Kaggle Blue Book for Bulldozers dataset, with feature-importance analysis and saved test predictions.',
     highlights: [
@@ -210,7 +210,7 @@ export const projects: ProjectEntry[] = [
     id: 'bank-remake',
     title: 'Bank Management System (Spring Boot)',
     category: 'Web Applications',
-    context: 'Practice project · Java back end',
+    context: 'Practice project: Java back end',
     description:
       'A bank management back end in Java and Spring Boot with REST APIs for users, accounts and transactions, PostgreSQL storage and role-based security.',
     highlights: [

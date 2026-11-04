@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
+import { createHash } from 'node:crypto'
 import { seo } from './src/data/seo.js'
 
 // https://vite.dev/config/
@@ -9,9 +10,30 @@ export default defineConfig({
   base: '/jarjish-portfolio-website/',
   plugins: [react(), tailwindcss(), {
     name: 'portfolio-seo',
-    transformIndexHtml(html) {
+    transformIndexHtml(html, ctx) {
       const escape = (value: string) => value.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;')
-      return html.replace('<!-- portfolio-seo -->', `
+      const sha = (text: string) => `'sha256-${createHash('sha256').update(text).digest('base64')}'`
+      const inlineScripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map((m) => sha(m[1]))
+      const handlers = [...html.matchAll(/\sonload="([^"]*)"/g)].map((m) => sha(m[1]))
+      // Production only: the dev server needs inline and eval'd scripts for hot reload.
+      const csp = ctx.server
+        ? ''
+        : `
+    <meta http-equiv="Content-Security-Policy" content="${[
+      "default-src 'self'",
+      `script-src 'self' ${inlineScripts.join(' ')}`,
+      `script-src-attr 'unsafe-hashes' ${handlers.join(' ')}`,
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src https://fonts.gstatic.com",
+      "img-src 'self' data: blob: https://avatars.githubusercontent.com",
+      "connect-src 'self' https://api.emailjs.com",
+      "worker-src 'self' blob:",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+    ].join('; ')}" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />`
+      return html.replace('<!-- portfolio-seo -->', `${csp}
     <title>${escape(seo.title)}</title>
     <meta data-rh="true" name="description" content="${escape(seo.description)}" />
     <link data-rh="true" rel="canonical" href="${seo.siteUrl}" />
