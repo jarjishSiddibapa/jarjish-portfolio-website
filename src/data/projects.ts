@@ -56,7 +56,7 @@ export const projects: ProjectEntry[] = [
     description: 'Used SQL, Python and Excel to prepare validated finance datasets, generate PDFs and automate report and email distribution.',
     highlights: ['AP exception reporting: unaccounted transactions, pending MRNs and uninvoiced expense POs', 'Validated Balance Confirmation and Payment Reminder datasets', 'PDF and email workflows across three business entities'],
     stack: ['SQL', 'Python', 'Excel', 'Oracle EBS', 'PDF generation', 'Email automation'],
-    impact: 'About one hour/day of AP reporting automated; a 2–3 day confirmation/reminder process reduced to minutes.',
+    impact: 'About one hour/day of AP reporting automated; a 2 to 3 day confirmation/reminder process reduced to minutes.',
     links: [{ label: 'GitHub', href: 'https://github.com/jarjishSiddibapa/rdc-payment-reminder-v2' }],
     featured: true,
     githubFeatured: true,

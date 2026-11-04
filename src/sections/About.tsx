@@ -32,10 +32,10 @@ export function About() {
                 variants={revealItem}
                 className="glass rounded-2xl p-6"
               >
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-accent/10 text-accent-3">
-                  <Icon className="h-5 w-5" aria-hidden />
-                </span>
-                <h3 className="font-display mt-4 text-lg font-semibold">{pillar.title}</h3>
+                <h3 className="font-display flex items-center gap-2.5 text-lg font-semibold">
+                  <Icon className="h-5 w-5 shrink-0 text-accent-3" aria-hidden />
+                  {pillar.title}
+                </h3>
                 <p className="mt-2 text-sm text-ink-dim">{pillar.description}</p>
               </motion.div>
             )

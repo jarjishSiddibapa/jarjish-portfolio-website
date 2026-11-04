@@ -47,7 +47,7 @@ function InterestCard({ interest }: { interest: (typeof interests)[number] }) {
       ref={cardRef}
       className="glass group overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1.5"
     >
-      <div className="h-44 w-full cursor-grab active:cursor-grabbing">
+      <div aria-hidden="true" className="h-44 w-full cursor-grab active:cursor-grabbing">
         {!reducedMotion && seen && (
           <Suspense
             fallback={<div className="h-full w-full animate-pulse bg-ink/[0.025]" />}

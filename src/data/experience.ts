@@ -10,7 +10,7 @@ export const experience: ExperienceEntry[] = [
       'Built and deployed the Daily Volume Tracker for 140+ concrete plants, providing daily production and volume visibility and identifying zero-production locations.',
       'Designed a self-auditing SO Ageing workflow that refreshes Oracle EBS data every three hours and independently reconciles delivery over a 24-hour window.',
       'Automated Accounts Payables exception reporting for unaccounted transactions, pending MRNs and uninvoiced expense POs, replacing approximately one hour of daily manual reporting with a single-click workflow.',
-      'Built validated datasets, automated PDF generation and email distribution for Balance Confirmation and Payment Reminder workflows, reducing a 2–3 day process to minutes.',
+      'Built validated datasets, automated PDF generation and email distribution for Balance Confirmation and Payment Reminder workflows, reducing a 2 to 3 day process to minutes.',
       'Developed SQL and PL/SQL logic for audit reconciliation, missing IOCL PO / Debit Memo detection, GST invoice checks, HSN/master-data quality and ERP reporting.',
       'Integrated REST API data and built Python/OCR document workflows that reduced manual document handling by approximately 80%.',
       'Built full-stack internal web applications (React with Node/Express, Flask and FastAPI, on MySQL) with role-based access, audit history, scheduled syncs and Excel reports, including ServiceDesk analytics over roughly 60,000 service requests.',

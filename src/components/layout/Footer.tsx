@@ -15,16 +15,13 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-border pt-16 pb-8">
-      <div aria-hidden="true" className="mb-14 overflow-hidden border-y border-border/60 py-4">
-        <div className="animate-marquee flex w-max gap-10 text-sm text-ink-faint">
-          {[...skillMarquee, ...skillMarquee].map((item, i) => (
-            <span key={i} className="flex items-center gap-10">
-              {item}
-              <span className="h-1 w-1 rounded-full bg-accent-3/60" />
-            </span>
+      <Container>
+        <ul className="mb-14 flex flex-wrap gap-x-6 gap-y-2 border-y border-border/60 py-4 text-sm text-ink-faint">
+          {skillMarquee.map((item) => (
+            <li key={item}>{item}</li>
           ))}
-        </div>
-      </div>
+        </ul>
+      </Container>
 
       <Container>
         <div className="flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-end">

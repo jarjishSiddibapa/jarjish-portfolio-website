@@ -43,7 +43,7 @@ function formatDate(dateStr: string): string {
 
 export function ContributionLegend() {
   return (
-    <div className="flex items-center gap-1.5 text-[10px] text-ink-faint">
+    <div className="flex items-center gap-1.5 text-[11px] text-ink-faint">
       <span>Less</span>
       {[0, 1, 2, 3, 4].map((level) => (
         <span
@@ -75,7 +75,7 @@ export function ContributionHeatmap({ days }: ContributionHeatmapProps) {
 
   return (
     <div className="flex w-full gap-2">
-      <div className="grid shrink-0 grid-rows-7 gap-1 pt-5 text-[10px] text-ink-faint">
+      <div className="grid shrink-0 grid-rows-7 gap-1 pt-5 text-[11px] text-ink-faint">
         {DAY_LABELS.map((label, i) => (
           <span key={i} className="flex h-3 items-center sm:h-[15px]">
             {label}
@@ -86,7 +86,7 @@ export function ContributionHeatmap({ days }: ContributionHeatmapProps) {
       <div className="min-w-0 flex-1">
         <div className="grid gap-1" style={{ gridTemplateColumns: columns }}>
           {monthLabels.map((label, i) => (
-            <span key={i} className="block h-4 text-[10px] text-ink-faint">
+            <span key={i} className="block h-4 text-[11px] text-ink-faint">
               {label ?? ''}
             </span>
           ))}

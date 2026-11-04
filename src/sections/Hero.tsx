@@ -32,10 +32,10 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center overflow-hidden pt-32 pb-20"
+      className="relative flex min-h-dvh items-center overflow-hidden pt-32 pb-20"
     >
       {!reducedMotion && isWide && idle && (
-        <div className="pointer-events-none absolute inset-0 -z-0 opacity-90 [mask-image:radial-gradient(ellipse_38%_42%_at_84%_42%,black,transparent)]">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-0 opacity-90 [mask-image:radial-gradient(ellipse_38%_42%_at_84%_42%,black,transparent)]">
           <Suspense fallback={null}>
             <HeroScene />
           </Suspense>
