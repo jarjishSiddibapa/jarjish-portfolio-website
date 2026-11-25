@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T01:58:57.688Z",
+  "generatedAt": "2026-11-25T11:08:05.870Z",
   "profile": {
     "followers": 0,
     "public_repos": 38,
@@ -9,24 +9,154 @@
   },
   "repos": [
     {
-      "id": 1318239254,
-      "name": "jarjish-portfolio-website",
-      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
-      "description": "Personal Data Analyst portfolio built with React, TypeScript, Vite and Tailwind, deployed on GitHub Pages with an hourly GitHub stats refresh.",
-      "stargazers_count": 0,
-      "language": "TypeScript",
-      "fork": false,
-      "updated_at": "2026-11-12T10:25:57Z"
-    },
-    {
       "id": 1437939397,
       "name": "rdc-manageengine-analytics",
       "html_url": "https://github.com/jarjishSiddibapa/rdc-manageengine-analytics",
-      "description": null,
+      "description": "React and Express analytics app for ManageEngine ServiceDesk Plus: technician turnaround, request handling and team dashboards, Excel reports, role-based access.",
+      "stargazers_count": 0,
+      "language": "JavaScript",
+      "fork": false,
+      "updated_at": "2026-11-25T06:48:25Z"
+    },
+    {
+      "id": 1318239254,
+      "name": "jarjish-portfolio-website",
+      "html_url": "https://github.com/jarjishSiddibapa/jarjish-portfolio-website",
+      "description": "Developer portfolio built with React, TypeScript, Vite and Tailwind CSS: ERP-integrated web apps, SQL and Python projects, live GitHub stats.",
+      "stargazers_count": 0,
+      "language": "TypeScript",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:26Z"
+    },
+    {
+      "id": 1380903862,
+      "name": "jersey-test",
+      "html_url": "https://github.com/jarjishSiddibapa/jersey-test",
+      "description": "dibs.lol prototype: a jersey spot-claiming site with dynamic pricing and a full booking flow, in Vite and TypeScript. Live demo linked.",
+      "stargazers_count": 0,
+      "language": "TypeScript",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:25Z"
+    },
+    {
+      "id": 948488238,
+      "name": "responsive-food-website",
+      "html_url": "https://github.com/jarjishSiddibapa/responsive-food-website",
+      "description": "Responsive food website landing page in HTML and CSS.",
+      "stargazers_count": 0,
+      "language": "CSS",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:24Z"
+    },
+    {
+      "id": 925053648,
+      "name": "travel-page",
+      "html_url": "https://github.com/jarjishSiddibapa/travel-page",
+      "description": "Multi-page static travel website built with HTML and CSS.",
       "stargazers_count": 0,
       "language": "HTML",
       "fork": false,
-      "updated_at": "2026-11-11T13:20:10Z"
+      "updated_at": "2026-11-25T05:35:22Z"
+    },
+    {
+      "id": 1371281306,
+      "name": "fluent_python",
+      "html_url": "https://github.com/jarjishSiddibapa/fluent_python",
+      "description": "Notes and exercises while working through Fluent Python.",
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:21Z"
+    },
+    {
+      "id": 1046919757,
+      "name": "mvc-bank-app",
+      "html_url": "https://github.com/jarjishSiddibapa/mvc-bank-app",
+      "description": "A comprehensive digital banking application built using Java MVC architecture with JSP/Servlet technology, featuring user authentication, fund transfers, dark/light themes, and admin dashboard.",
+      "stargazers_count": 0,
+      "language": "Java",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:19Z"
+    },
+    {
+      "id": 1026598056,
+      "name": "kendriya_vidyalay",
+      "html_url": "https://github.com/jarjishSiddibapa/kendriya_vidyalay",
+      "description": "School management app using database with java!",
+      "stargazers_count": 0,
+      "language": "Java",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:19Z"
+    },
+    {
+      "id": 863021744,
+      "name": "vizdoom-reinforcement-learning",
+      "html_url": "https://github.com/jarjishSiddibapa/vizdoom-reinforcement-learning",
+      "description": "Comparison of PPO, DQN, A2C and DDPG agents in VizDoom, with Jupyter pipelines to visualise training across levels.",
+      "stargazers_count": 1,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:18Z"
+    },
+    {
+      "id": 924078570,
+      "name": "lung-disease-classification",
+      "html_url": "https://github.com/jarjishSiddibapa/lung-disease-classification",
+      "description": "A deep learning-based chest X-ray classification system that detects COVID-19, Pneumonia, Tuberculosis, and Normal cases with high accuracy. Built using ResNet50, transfer learning, and a Flask web interface for easy image upload and diagnosis.",
+      "stargazers_count": 0,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:16Z"
+    },
+    {
+      "id": 861810347,
+      "name": "heart-disease-classification",
+      "html_url": "https://github.com/jarjishSiddibapa/heart-disease-classification",
+      "description": "Predicts heart disease using the Cleveland Heart Disease dataset. Features models like Logistic Regression and Random Forest. Achieved over 95% accuracy. Explore the project for insights!",
+      "stargazers_count": 1,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:15Z"
+    },
+    {
+      "id": 863029724,
+      "name": "bulldozer-price-prediction",
+      "html_url": "https://github.com/jarjishSiddibapa/bulldozer-price-prediction",
+      "description": "Regression model predicting auction prices of bulldozers (Kaggle Blue Book data), with feature-importance analysis.",
+      "stargazers_count": 1,
+      "language": "Jupyter Notebook",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:14Z"
+    },
+    {
+      "id": 1067341313,
+      "name": "bank-remake",
+      "html_url": "https://github.com/jarjishSiddibapa/bank-remake",
+      "description": "Bank management back end in Java 17 and Spring Boot: REST APIs, PostgreSQL, Spring Security roles, JUnit and Mockito tests.",
+      "stargazers_count": 0,
+      "language": "Java",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:13Z"
+    },
+    {
+      "id": 1449264459,
+      "name": "rdc-ultrafine-tally-so-integration",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-ultrafine-tally-so-integration",
+      "description": "FastAPI sales-order approval app (sales, accounts, admin roles) with email notifications and a transactional outbox that queues approved orders for Tally.",
+      "stargazers_count": 0,
+      "language": "Python",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:11Z"
+    },
+    {
+      "id": 1346880508,
+      "name": "rdc-erp-meeting-tracker",
+      "html_url": "https://github.com/jarjishSiddibapa/rdc-erp-meeting-tracker",
+      "description": "Role-based service-request and digitization tracker: ManageEngine sync, Excel bulk updates, weekly PDF import and field-level history.",
+      "stargazers_count": 0,
+      "language": "JavaScript",
+      "fork": false,
+      "updated_at": "2026-11-25T05:35:09Z"
     },
     {
       "id": 1344682583,
@@ -37,26 +167,6 @@
       "language": "Python",
       "fork": false,
       "updated_at": "2026-11-11T11:06:04Z"
-    },
-    {
-      "id": 1449264459,
-      "name": "rdc-ultrafine-tally-so-integration",
-      "html_url": "https://github.com/jarjishSiddibapa/rdc-ultrafine-tally-so-integration",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "Python",
-      "fork": false,
-      "updated_at": "2026-11-11T10:56:34Z"
-    },
-    {
-      "id": 1346880508,
-      "name": "rdc-erp-meeting-tracker",
-      "html_url": "https://github.com/jarjishSiddibapa/rdc-erp-meeting-tracker",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "JavaScript",
-      "fork": false,
-      "updated_at": "2026-11-06T04:33:14Z"
     },
     {
       "id": 1349203728,
@@ -139,56 +249,6 @@
       "updated_at": "2026-10-07T10:47:49Z"
     },
     {
-      "id": 1380903862,
-      "name": "jersey-test",
-      "html_url": "https://github.com/jarjishSiddibapa/jersey-test",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "TypeScript",
-      "fork": false,
-      "updated_at": "2026-09-22T10:39:34Z"
-    },
-    {
-      "id": 1371281306,
-      "name": "fluent_python",
-      "html_url": "https://github.com/jarjishSiddibapa/fluent_python",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "Python",
-      "fork": false,
-      "updated_at": "2026-09-16T07:43:54Z"
-    },
-    {
-      "id": 1067341313,
-      "name": "bank-remake",
-      "html_url": "https://github.com/jarjishSiddibapa/bank-remake",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "Java",
-      "fork": false,
-      "updated_at": "2025-09-30T18:23:47Z"
-    },
-    {
-      "id": 1046919757,
-      "name": "mvc-bank-app",
-      "html_url": "https://github.com/jarjishSiddibapa/mvc-bank-app",
-      "description": "A comprehensive digital banking application built using Java MVC architecture with JSP/Servlet technology, featuring user authentication, fund transfers, dark/light themes, and admin dashboard.",
-      "stargazers_count": 0,
-      "language": "Java",
-      "fork": false,
-      "updated_at": "2025-09-28T07:29:09Z"
-    },
-    {
-      "id": 1026598056,
-      "name": "kendriya_vidyalay",
-      "html_url": "https://github.com/jarjishSiddibapa/kendriya_vidyalay",
-      "description": "School management app using database with java!",
-      "stargazers_count": 0,
-      "language": "Java",
-      "fork": false,
-      "updated_at": "2025-08-04T05:52:33Z"
-    },
-    {
       "id": 1017129887,
       "name": "swabhav-assignments",
       "html_url": "https://github.com/jarjishSiddibapa/swabhav-assignments",
@@ -217,36 +277,6 @@
       "language": "HTML",
       "fork": false,
       "updated_at": "2025-04-05T14:52:50Z"
-    },
-    {
-      "id": 948488238,
-      "name": "responsive-food-website",
-      "html_url": "https://github.com/jarjishSiddibapa/responsive-food-website",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "CSS",
-      "fork": false,
-      "updated_at": "2025-03-23T09:34:26Z"
-    },
-    {
-      "id": 925053648,
-      "name": "travel-page",
-      "html_url": "https://github.com/jarjishSiddibapa/travel-page",
-      "description": null,
-      "stargazers_count": 0,
-      "language": "HTML",
-      "fork": false,
-      "updated_at": "2025-03-13T17:08:24Z"
-    },
-    {
-      "id": 924078570,
-      "name": "lung-disease-classification",
-      "html_url": "https://github.com/jarjishSiddibapa/lung-disease-classification",
-      "description": "A deep learning-based chest X-ray classification system that detects COVID-19, Pneumonia, Tuberculosis, and Normal cases with high accuracy. Built using ResNet50, transfer learning, and a Flask web interface for easy image upload and diagnosis.",
-      "stargazers_count": 0,
-      "language": "Jupyter Notebook",
-      "fork": false,
-      "updated_at": "2025-02-07T11:13:34Z"
     },
     {
       "id": 923097286,
@@ -299,16 +329,6 @@
       "updated_at": "2025-01-20T15:23:56Z"
     },
     {
-      "id": 863021744,
-      "name": "vizdoom-reinforcement-learning",
-      "html_url": "https://github.com/jarjishSiddibapa/vizdoom-reinforcement-learning",
-      "description": null,
-      "stargazers_count": 1,
-      "language": "Jupyter Notebook",
-      "fork": false,
-      "updated_at": "2025-01-19T13:59:58Z"
-    },
-    {
       "id": 866476349,
       "name": "last_day_example",
       "html_url": "https://github.com/jarjishSiddibapa/last_day_example",
@@ -319,16 +339,6 @@
       "updated_at": "2024-10-02T15:15:42Z"
     },
     {
-      "id": 861810347,
-      "name": "heart-disease-classification",
-      "html_url": "https://github.com/jarjishSiddibapa/heart-disease-classification",
-      "description": "Predicts heart disease using the Cleveland Heart Disease dataset. Features models like Logistic Regression and Random Forest. Achieved over 95% accuracy. Explore the project for insights!",
-      "stargazers_count": 1,
-      "language": "Jupyter Notebook",
-      "fork": false,
-      "updated_at": "2024-10-02T10:31:14Z"
-    },
-    {
       "id": 861851807,
       "name": "movie-recommendation-system",
       "html_url": "https://github.com/jarjishSiddibapa/movie-recommendation-system",
@@ -337,16 +347,6 @@
       "language": null,
       "fork": false,
       "updated_at": "2024-10-02T10:31:13Z"
-    },
-    {
-      "id": 863029724,
-      "name": "bulldozer-price-prediction",
-      "html_url": "https://github.com/jarjishSiddibapa/bulldozer-price-prediction",
-      "description": null,
-      "stargazers_count": 1,
-      "language": "Jupyter Notebook",
-      "fork": false,
-      "updated_at": "2024-10-02T10:31:08Z"
     },
     {
       "id": 861573933,
@@ -390,7 +390,7 @@
     }
   ],
   "contributions": {
-    "totalContributions": 382,
+    "totalContributions": 408,
     "days": [
       {
         "date": "2025-11-25",
@@ -1854,7 +1854,7 @@
       },
       {
         "date": "2026-11-25",
-        "count": 0
+        "count": 26
       }
     ]
   }
