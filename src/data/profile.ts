@@ -15,7 +15,7 @@ export const profile = {
     'Automation & Reporting',
   ],
   tagline:
-    'I turn business problems into working software: web apps, automation, data pipelines, OCR and AI tools. 12 built and shipped for teams across 140+ concrete plants.',
+    'I turn business problems into working software: web apps, ERP and API integrations, automation, OCR and AI tools. 12 built and shipped for teams across 140+ concrete plants.',
   footerLine: 'Give me a business problem and a system with data or an API, and I will build the software for it.',
   bio: [
     "I'm a Software Developer (Graduate Engineer Trainee) at RDC Concrete in Thane. Since October 2025 I've built the internal web applications that finance, sales and operations teams use every day: Flask, FastAPI and Node/Express back ends with React front ends on MySQL, with role-based access, audit trails, scheduled ERP and ManageEngine syncs, Excel reporting and automated backups.",
