@@ -29,7 +29,8 @@ export function Footer() {
             <p className="font-display text-2xl font-semibold">
               {profile.name}
             </p>
-            <p className="mt-2 max-w-sm text-sm text-ink-dim">{profile.tagline}</p>
+            <p className="mt-1 text-base font-medium text-ink">{profile.primaryRole}</p>
+            <p className="mt-2 max-w-md text-base leading-relaxed text-ink-dim">{profile.footerLine}</p>
           </div>
 
           <div className="flex items-center gap-3">
