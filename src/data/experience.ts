@@ -5,17 +5,22 @@ export const experience: ExperienceEntry[] = [
     id: 'rdc-concrete',
     role: 'Software Developer (Graduate Engineer Trainee)',
     company: 'RDC Concrete', location: 'Thane, Maharashtra', start: 'Oct 2025', end: 'Present',
-    summary: 'Analyse operational and finance data with SQL, PL/SQL, Oracle EBS, Python and advanced Excel, and build the web applications and automation around it: reporting, reconciliation, data quality and role-based internal tools.',
+    summary: 'Build role-based internal web applications and automation in Python, React and Node.js on MySQL, integrated with Oracle EBS and ManageEngine, with SQL, PL/SQL and advanced Excel for reporting, reconciliation and data quality.',
     highlights: [
+      'Built full-stack internal web applications (React with Node/Express, Flask and FastAPI, on MySQL) with role-based access, audit history, scheduled syncs and Excel reports, including ServiceDesk analytics over roughly 60,000 service requests.',
       'Built and deployed the Daily Volume Tracker for 140+ concrete plants, providing daily production and volume visibility and identifying zero-production locations.',
       'Designed a self-auditing SO Ageing workflow that refreshes Oracle EBS data every three hours and independently reconciles delivery over a 24-hour window.',
       'Automated Accounts Payables exception reporting for unaccounted transactions, pending MRNs and uninvoiced expense POs, replacing approximately one hour of daily manual reporting with a single-click workflow.',
       'Built validated datasets, automated PDF generation and email distribution for Balance Confirmation and Payment Reminder workflows, reducing a 2 to 3 day process to minutes.',
       'Developed SQL and PL/SQL logic for audit reconciliation, missing IOCL PO / Debit Memo detection, GST invoice checks, HSN/master-data quality and ERP reporting.',
       'Integrated REST API data and built Python/OCR document workflows that reduced manual document handling by approximately 80%.',
-      'Built full-stack internal web applications (React with Node/Express, Flask and FastAPI, on MySQL) with role-based access, audit history, scheduled syncs and Excel reports, including ServiceDesk analytics over roughly 60,000 service requests.',
     ],
     selectedProjects: [
+      {
+        title: 'Ultrafine Sales Orders',
+        detail: 'FastAPI sales-order approval workflow with roles, email notifications, a Tally queue and a pytest suite.',
+        href: 'https://github.com/jarjishSiddibapa/rdc-ultrafine-tally-so-integration',
+      },
       {
         title: 'Daily Volume Tracker',
         detail: 'Plant-level production, targets, variance analysis and Excel reporting for 140+ locations.',
@@ -57,7 +62,7 @@ export const experience: ExperienceEntry[] = [
         href: 'https://github.com/jarjishSiddibapa/rdc-digital-signatures',
       },
     ],
-    stack: ['SQL', 'PL/SQL', 'Oracle EBS R12.2.10', 'Python', 'Advanced Excel', 'React', 'Node.js', 'Flask', 'FastAPI', 'MySQL', 'REST APIs'],
+    stack: ['Python', 'FastAPI', 'Flask', 'React', 'Node.js', 'MySQL', 'REST APIs', 'SQL', 'PL/SQL', 'Oracle EBS R12.2.10', 'Advanced Excel'],
   },
   {
     id: 'aurionpro', role: 'Software Engineer Trainee', company: 'AurionPro',

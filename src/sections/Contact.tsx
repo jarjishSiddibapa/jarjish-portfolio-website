@@ -74,7 +74,7 @@ ${email}`)
         <SectionHeading
           align="center"
           title="Let's talk data"
-          description="Open to Data Analyst and Software Developer roles: remote, hybrid or on-site across Thane, Navi Mumbai and Mumbai."
+          description="Open to Python, backend and full-stack developer roles: remote, hybrid or on-site across Thane, Navi Mumbai and Mumbai."
           className="mx-auto"
         />
 

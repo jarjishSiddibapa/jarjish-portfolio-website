@@ -5,28 +5,28 @@ const resumeHref = `${import.meta.env.BASE_URL}resume/Jarjish-Siddibapa-Resume.p
 export const profile = {
   name: 'Jarjish Siddibapa',
   initials: 'JS',
-  primaryRole: 'Data Analyst & Software Developer',
-  role: 'Data Analyst & Software Developer | SQL & PL/SQL | Advanced Excel | Python | React & Node.js',
+  primaryRole: 'Python & Full-Stack Developer',
+  role: 'Python & Full-Stack Developer | FastAPI & Flask | React & Node.js | SQL & Oracle ERP',
   roles: [
+    'Python & FastAPI',
+    'React & Node.js',
+    'ERP-Integrated Web Apps',
     'SQL & PL/SQL',
-    'Advanced Excel',
-    'Python & Automation',
-    'Full-Stack Web Applications',
-    'Oracle EBS Analytics',
+    'Automation & Reporting',
   ],
   tagline:
-    'I analyse Oracle ERP data across 140+ concrete plants with SQL, Python and advanced Excel, and build the web applications and automation that put reliable numbers in front of the teams who use them.',
+    'I build role-based business web applications in Python, React and Node.js that connect to Oracle EBS and ManageEngine, backed by strong SQL and PL/SQL, for teams across 140+ concrete plants.',
   bio: [
-    "I'm a Software Developer (Graduate Engineer Trainee) at RDC Concrete in Thane. Since October 2025, I've worked with SQL, PL/SQL, Oracle EBS, Python and advanced Excel to improve reporting, finance workflows and ERP data quality across 140+ concrete plants.",
-    'My work connects analysis with measurable improvements: Accounts Payables reporting replaces about an hour of daily manual work, while validated Balance Confirmation and Payment Reminder workflows turn a 2 to 3 day process into minutes. Python/OCR document processing has reduced manual handling by approximately 80%.',
-    'I also build the applications around the data: Flask, FastAPI and Node/Express back ends with React front ends and MySQL, including role-based access, audit trails, scheduled ERP and ManageEngine syncs, Excel reporting and automated backups. The code for these is on my GitHub.',
+    "I'm a Software Developer (Graduate Engineer Trainee) at RDC Concrete in Thane. Since October 2025 I've built the internal web applications that finance, sales and operations teams use every day: Flask, FastAPI and Node/Express back ends with React front ends on MySQL, with role-based access, audit trails, scheduled ERP and ManageEngine syncs, Excel reporting and automated backups.",
+    'They sit on top of strong data foundations: SQL, PL/SQL and Oracle EBS for reconciliation and data quality across 140+ concrete plants. Accounts Payables reporting replaces about an hour of daily manual work, validated Balance Confirmation and Payment Reminder workflows turn a 2 to 3 day process into minutes, and Python/OCR document processing has reduced manual handling by approximately 80%.',
+    'I write tests and document what I build, and the code and screenshots are on my GitHub. I also use AI coding assistants in my workflow and can explain and maintain everything I ship.',
   ],
   location: 'Thane, Maharashtra, India',
   openTo: 'Remote, hybrid & on-site across Thane, Navi Mumbai & Mumbai',
   email: 'jarjishsiddibapa@gmail.com',
   phone: '+91 7249550565',
   resumeHref,
-  availability: 'Open to Data Analyst & Software Developer roles',
+  availability: 'Open to Python, backend and full-stack developer roles',
 }
 
 export const socials: SocialLink[] = [
@@ -39,7 +39,7 @@ export const socials: SocialLink[] = [
 
 export const stats: StatEntry[] = [
   { id: 'plants', label: 'Concrete plants covered by automation', value: 140, suffix: '+' },
-  { id: 'apps', label: 'Applications and tools built for RDC teams', value: 11 },
+  { id: 'apps', label: 'Applications and tools built for RDC teams', value: 12 },
   { id: 'ocr', label: 'Reduction in manual document handling', value: 80, suffix: '%' },
   { id: 'cgpa', label: 'CGPA in B.E. Computer Science (Hons. AI/ML)', value: 9.54, suffix: '/10' },
 ]
@@ -47,11 +47,11 @@ export const stats: StatEntry[] = [
 export const githubUsername = 'jarjishSiddibapa'
 
 export const aboutPillars = [
-  { icon: 'BarChart3', title: 'Reporting & analysis', description: 'Production visibility, variance analysis and Excel reporting (SUMIFS, lookups, pivot tables) that help teams act on operational data.' },
-  { icon: 'Database', title: 'Reconciliation & data quality', description: 'SQL and PL/SQL checks for complete, consistent ERP data and finance exception reporting.' },
-  { icon: 'Code2', title: 'Web applications & automation', description: 'Python, React and Node.js applications, REST APIs and scheduled jobs with role-based access and audit trails, replacing repetitive manual work.' },
+  { icon: 'Code2', title: 'Web applications', description: 'Python, React and Node.js applications with REST APIs, role-based access, audit trails, scheduled syncs and automated tests, replacing repetitive manual work.' },
+  { icon: 'Database', title: 'ERP integration & data quality', description: 'Oracle EBS, Tally and ManageEngine integrations, with SQL and PL/SQL checks for complete, consistent ERP data.' },
+  { icon: 'BarChart3', title: 'Reporting & automation', description: 'Excel reporting, reconciliation, PDF and email automation that give teams reliable numbers without manual effort.' },
 ]
 
 export const skillMarquee = [
-  'SQL', 'PL/SQL', 'Advanced Excel', 'Python', 'pandas', 'Oracle EBS', 'React', 'Node.js', 'Flask', 'FastAPI', 'MySQL', 'REST APIs', 'Reconciliation', 'Data Quality', 'Pivot Tables', 'XLOOKUP',
+  'Python', 'FastAPI', 'Flask', 'React', 'Node.js', 'Express', 'REST APIs', 'MySQL', 'SQL', 'PL/SQL', 'Oracle EBS', 'SQLAlchemy', 'pytest', 'pandas', 'Advanced Excel', 'Reconciliation',
 ]

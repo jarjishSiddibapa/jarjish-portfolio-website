@@ -12,7 +12,7 @@ async function loadData(name) {
 test('featured projects lead with professional analytics and web applications and isolate practice', async () => {
   const { projects, projectCategories, pinnedRepoSlugs } = await loadData('projects')
   assert.equal(new Set(projects.map(p => p.id)).size, projects.length)
-  assert.deepEqual(projects.filter(p => p.featured).map(p => p.id), ['daily-volume-tracker', 'accounts-suite', 'manageengine-analytics', 'so-ageing-pipeline', 'bulk-mailer-suite'])
+  assert.deepEqual(projects.filter(p => p.featured).map(p => p.id), ['manageengine-analytics', 'ultrafine-sales-orders', 'pdc-manager', 'onboarding-portal', 'accounts-suite', 'daily-volume-tracker'])
   for (const project of projects) {
     assert.ok(projectCategories.includes(project.category))
     if (project.featured) {
@@ -21,15 +21,16 @@ test('featured projects lead with professional analytics and web applications an
     }
   }
   assert.deepEqual(pinnedRepoSlugs, [
-    'rdc-daily-volume-tracker',
-    'rdc-accounts-suite',
     'rdc-manageengine-analytics',
+    'rdc-ultrafine-tally-so-integration',
+    'rdc-pdc-project',
+    'rdc_onboarding',
+    'rdc-accounts-suite',
+    'rdc-daily-volume-tracker',
+    'rdc-erp-meeting-tracker',
     'rdc-so-ageing-data-push',
     'rdc-payment-reminder-v2',
     'rdc-stamper-v2',
-    'rdc-erp-meeting-tracker',
-    'rdc-pdc-project',
-    'rdc_onboarding',
     'rdc-website-chatbot',
     'rdc-digital-signatures',
   ])
