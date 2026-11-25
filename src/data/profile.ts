@@ -15,8 +15,8 @@ export const profile = {
     'Automation & Reporting',
   ],
   tagline:
-    'I build web apps that connect Oracle EBS, ManageEngine and MySQL into one workflow, used by teams across 140+ concrete plants.',
-  footerLine: 'Python, React and Node.js apps that connect the systems a business already runs on.',
+    'I turn business problems into working software: web apps, automation, data pipelines, OCR and AI tools. 12 built and shipped for teams across 140+ concrete plants.',
+  footerLine: 'Give me a business problem and a system with data or an API, and I will build the software for it.',
   bio: [
     "I'm a Software Developer (Graduate Engineer Trainee) at RDC Concrete in Thane. Since October 2025 I've built the internal web applications that finance, sales and operations teams use every day: Flask, FastAPI and Node/Express back ends with React front ends on MySQL, with role-based access, audit trails, scheduled ERP and ManageEngine syncs, Excel reporting and automated backups.",
     'They sit on top of strong data foundations: SQL, PL/SQL and Oracle EBS for reconciliation and data quality across 140+ concrete plants. Accounts Payables reporting replaces about an hour of daily manual work, validated Balance Confirmation and Payment Reminder workflows turn a 2 to 3 day process into minutes, and Python/OCR document processing has reduced manual handling by approximately 80%.',
